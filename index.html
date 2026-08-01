@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Odyssey &mdash; Retold</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -550,7 +554,11 @@ document.querySelectorAll('.book.available').forEach(b=>{
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
 },{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const revEls=document.querySelectorAll('.reveal');
+revEls.forEach(el=>obs.observe(el));
+var ckHub=function(){revEls.forEach(function(e){if(!e.classList.contains('visible')&&e.getBoundingClientRect().top<window.innerHeight*1.15){e.classList.add('visible');obs.unobserve(e)}});};
+window.addEventListener('scroll',ckHub,{passive:true});
+setTimeout(ckHub,800);
 
 // ── Email form ──
 document.getElementById('notifyForm').addEventListener('submit',e=>{
@@ -640,3 +648,4 @@ document.querySelector('.hero-scroll')?.addEventListener('click',()=>{
   }
 })();
 </script>
+</html>

@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <title>The Odyssey &middot; Book IV &mdash; The King of Sparta</title>
 <style>
@@ -838,6 +842,9 @@
       en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target); if(interacted)Sound.swell();} });
     },{threshold:.14});
     els.forEach(function(e){io.observe(e)});
+    var ck=function(){els.forEach(function(e){if(!e.classList.contains("in")&&e.getBoundingClientRect().top<window.innerHeight*1.15){e.classList.add("in");io.unobserve(e)}});};
+    window.addEventListener("scroll",ck,{passive:true});
+    setTimeout(ck,800);
   })();
 
   /* ---------------- nepenthe choice ---------------- */
@@ -1212,3 +1219,4 @@
   })();
 })();
 </script>
+</html>

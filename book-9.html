@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Odyssey · Book IX — In the Cave of the Cyclops</title>
 <style>
   :root{
@@ -683,6 +687,9 @@
       en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target); if(interacted)Sound.swell();} });
     },{threshold:.14});
     els.forEach(function(e){io.observe(e)});
+    var ck=function(){els.forEach(function(e){if(!e.classList.contains("in")&&e.getBoundingClientRect().top<window.innerHeight*1.15){e.classList.add("in");io.unobserve(e)}});};
+    window.addEventListener("scroll",ck,{passive:true});
+    setTimeout(ck,800);
   })();
 
   /* ---------------- sequence puzzle ---------------- */
@@ -876,3 +883,4 @@
   })();
 })();
 </script>
+</html>
