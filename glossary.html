@@ -65,7 +65,7 @@ footer{text-align:center;padding:2.5rem 0 1rem;color:var(--ash);font-size:.82rem
 footer small{display:block;margin-top:.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
+.js-reveal .reveal.in{opacity:1;transform:none}
 
 @media(max-width:600px){
   .page{padding:2.5rem 1rem 3rem}
@@ -349,6 +349,7 @@ footer small{display:block;margin-top:.4rem;font-family:var(--mono);font-size:.6
 </div>
 
 <script>
+  document.body.classList.add("js-reveal");
 (function(){
   "use strict";
   var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;

@@ -120,8 +120,9 @@ body{background:var(--abyss);color:var(--bone);font-family:var(--body);-webkit-f
 .footer-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim);opacity:.4;margin-top:.75rem}
 
 /* ── Reveal animation ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+.js-reveal .reveal{opacity:0;transform:translateY(24px)}
+.js-reveal .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* ── Responsive ── */
 @media(max-width:600px){
@@ -374,6 +375,7 @@ body{background:var(--abyss);color:var(--bone);font-family:var(--body);-webkit-f
 </footer>
 
 <script>
+document.body.classList.add("js-reveal");
 // ── Sea canvas ──
 (function(){
   const c=document.getElementById('seaCanvas'),x=c.getContext('2d');
