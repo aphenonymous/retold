@@ -1,0 +1,1432 @@
+<meta charset="utf-8">
+<title>The Odyssey &middot; Book III &mdash; The Gates of Pylos</title>
+<style>
+  :root{
+    --sea-abyss:#060f18;
+    --sea-deep:#0a1c2b;
+    --sea-mid:#0f2a3d;
+    --wine:#3a1526;
+    --wine-glow:#5c1f34;
+    --bronze:#c99a4b;
+    --bronze-bright:#e6c073;
+    --terra:#c8613a;
+    --bone:#ede3cf;
+    --bone-dim:#b6ab97;
+    --ash:#6f7c83;
+    --line:rgba(201,154,75,.22);
+    --line-soft:rgba(237,227,207,.10);
+    --clay:#c26a3d;
+    --clay-lo:#7c3820;
+    --figure:#100a10;
+    --incise:#e0965f;
+
+    --serif:"Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style",Georgia,serif;
+    --body:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,monospace;
+
+    --wrap:44rem;
+  }
+
+  *{box-sizing:border-box}
+  html{color-scheme:dark}
+  body{
+    margin:0;
+    background:var(--sea-abyss);
+    color:var(--bone);
+    font-family:var(--body);
+    font-size:19px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  #sea{position:fixed;inset:0;z-index:0;display:block}
+  .vignette{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% -10%,transparent 40%,rgba(3,8,13,.55) 100%);}
+  main{position:relative;z-index:2}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.36em;
+    text-transform:uppercase;color:var(--bronze);font-weight:600;
+  }
+  .meander{
+    height:14px;width:100%;
+    background-image:repeating-linear-gradient(90deg,
+      var(--bronze) 0 2px, transparent 2px 6px, var(--bronze) 6px 8px, transparent 8px 8px,
+      var(--bronze) 8px 10px, transparent 10px 16px);
+    -webkit-mask:repeating-linear-gradient(90deg,#000 0 1px,transparent 1px 2px);
+    opacity:.5;
+  }
+
+  header.hero{
+    min-height:100svh;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:80px 24px;position:relative;
+  }
+  .hero .key-frame{
+    border:1px solid var(--line);padding:56px 40px 48px;max-width:40rem;position:relative;
+    background:radial-gradient(120% 140% at 50% 0%,rgba(58,21,38,.35),transparent 60%);
+    backdrop-filter:blur(1.5px);
+  }
+  .hero .key-frame::before,
+  .hero .key-frame::after{
+    content:"";position:absolute;width:26px;height:26px;border:1px solid var(--bronze);opacity:.7;
+  }
+  .hero .key-frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .hero .key-frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+
+  .hero h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(2.9rem,9vw,5.4rem);line-height:.98;letter-spacing:.02em;
+    margin:.5rem 0 .2rem;text-wrap:balance;color:var(--bone);
+    text-shadow:0 2px 30px rgba(0,0,0,.5);
+  }
+  .hero h1 .the{
+    display:block;font-size:.26em;letter-spacing:.5em;text-transform:uppercase;
+    color:var(--bronze);margin-bottom:.35em;padding-left:.5em;
+  }
+  .hero .booktag{
+    font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--bone-dim);margin-top:1.4rem;
+  }
+  .hero .booktag b{color:var(--bronze-bright);font-style:normal;font-weight:600}
+  .greek{font-family:var(--serif);color:var(--bronze);letter-spacing:.05em}
+  .scroll-cue{
+    margin-top:3rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--ash);
+    display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  }
+  .scroll-cue span.arrow{width:1px;height:34px;background:linear-gradient(var(--bronze),transparent);animation:drift 2.4s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(8px);opacity:1}}
+
+  section{padding:72px 0;position:relative}
+  .scene-no{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;color:var(--bronze);
+    text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:14px;
+  }
+  .scene-no::after{content:"";flex:1;height:1px;background:var(--line)}
+  h2{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(1.7rem,4.5vw,2.5rem);
+    line-height:1.1;margin:0 0 1.1rem;letter-spacing:.01em;text-wrap:balance;
+  }
+  p{margin:0 0 1.25rem}
+  p.lead::first-letter{
+    font-family:var(--serif);float:left;font-size:3.9rem;line-height:.72;
+    padding:.16em .12em 0 0;color:var(--terra);font-weight:600;
+  }
+  .pull{
+    font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.5;
+    color:var(--bronze-bright);
+    border-left:2px solid var(--bronze);padding:.2rem 0 .2rem 1.4rem;margin:2rem 0;text-wrap:balance;
+  }
+
+  .device{
+    border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(15,42,61,.5),rgba(6,15,24,.5));
+    padding:30px clamp(20px,4vw,34px) 34px;margin:8px 0;
+    box-shadow:0 24px 60px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(237,227,207,.05);
+  }
+  .device .kicker{display:flex;align-items:center;gap:12px;margin-bottom:.6rem}
+  .device .kicker svg{width:22px;height:22px;flex:none}
+  .device h3{font-family:var(--serif);font-size:1.28rem;font-weight:600;margin:0;letter-spacing:.01em}
+  .device .hint{color:var(--bone-dim);font-size:.95rem;margin:.2rem 0 1.4rem}
+
+  ol.seq{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  li.step{
+    display:flex;align-items:center;gap:14px;
+    background:rgba(6,15,24,.7);border:1px solid var(--line-soft);
+    padding:14px 16px;cursor:grab;user-select:none;touch-action:none;
+    transition:border-color .2s,background .2s,transform .06s;
+  }
+  li.step:focus-visible{outline:2px solid var(--bronze-bright);outline-offset:2px}
+  li.step .grip{color:var(--ash);font-size:1.1rem;line-height:1;letter-spacing:-2px;flex:none}
+  li.step .txt{flex:1}
+  li.step .num{
+    font-family:var(--mono);font-size:.75rem;color:var(--bronze);
+    border:1px solid var(--line);width:26px;height:26px;flex:none;
+    display:grid;place-items:center;border-radius:50%;
+  }
+  li.step.dragging{opacity:.35;border-style:dashed}
+  li.step.lift{transform:scale(1.015);border-color:var(--bronze);background:rgba(15,42,61,.9);
+    box-shadow:0 16px 34px -18px rgba(0,0,0,.9);cursor:grabbing}
+  li.step.correct{border-color:rgba(201,154,75,.6);background:rgba(58,21,38,.35)}
+  li.step.wrong{border-color:rgba(200,97,58,.6)}
+  li.step.correct .num{background:var(--bronze);color:var(--sea-abyss);border-color:var(--bronze)}
+
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+  button.btn{
+    font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sea-abyss);background:var(--bronze);border:0;padding:12px 20px;cursor:pointer;
+    font-weight:700;transition:background .2s,transform .1s;
+  }
+  button.btn:hover{background:var(--bronze-bright)}
+  button.btn:active{transform:translateY(1px)}
+  button.btn.ghost{background:transparent;color:var(--bronze);border:1px solid var(--line)}
+  button.btn.ghost:hover{background:rgba(201,154,75,.1);color:var(--bronze-bright)}
+  .verdict{font-family:var(--serif);font-style:italic;font-size:1.05rem;min-height:1.4em;margin-left:4px}
+  .verdict.good{color:var(--bronze-bright)}
+  .verdict.bad{color:var(--terra)}
+
+  .trick{display:grid;gap:16px}
+  .hall-scene{
+    border:1px solid var(--line-soft);background:rgba(6,15,24,.6);
+    padding:22px;display:flex;gap:20px;align-items:center;
+  }
+  .hall-scene svg{width:96px;height:96px;flex:none}
+  .speech{flex:1}
+  .speech .who{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin-bottom:.35rem}
+  .speech .said{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--bone);min-height:1.5em;text-wrap:balance}
+  .choices{display:flex;gap:12px;flex-wrap:wrap}
+  .choices button{
+    font-family:var(--serif);font-size:1.05rem;font-style:italic;
+    background:rgba(15,42,61,.6);border:1px solid var(--line);color:var(--bone);
+    padding:12px 18px;cursor:pointer;transition:.2s;text-align:left;
+  }
+  .choices button:hover{border-color:var(--bronze);color:var(--bronze-bright);background:rgba(15,42,61,.95)}
+  .choices button:disabled{opacity:.4;cursor:default}
+  .aftermath{font-family:var(--body);color:var(--bone-dim);font-size:1rem;line-height:1.6;
+    border-left:2px solid var(--line);padding-left:16px;opacity:0;transform:translateY(6px);
+    transition:opacity .5s,transform .5s}
+  .aftermath.show{opacity:1;transform:none}
+  .aftermath b{color:var(--bronze-bright);font-weight:600}
+
+  .quiz{display:grid;gap:26px}
+  .q .stem{font-family:var(--serif);font-size:1.18rem;margin-bottom:.9rem;line-height:1.4}
+  .q .stem .qn{color:var(--bronze);font-family:var(--mono);font-size:.8rem;margin-right:.6rem}
+  .opts{display:grid;gap:9px}
+  .opt{
+    display:flex;align-items:center;gap:12px;text-align:left;
+    background:rgba(6,15,24,.6);border:1px solid var(--line-soft);color:var(--bone);
+    font-family:var(--body);font-size:1.02rem;padding:13px 15px;cursor:pointer;transition:.18s;
+  }
+  .opt:hover:not(:disabled){border-color:var(--bronze);background:rgba(15,42,61,.7)}
+  .opt .mark{width:24px;height:24px;border:1px solid var(--line);border-radius:50%;flex:none;
+    display:grid;place-items:center;font-family:var(--mono);font-size:.75rem;color:var(--bronze)}
+  .opt.right{border-color:rgba(201,154,75,.7);background:rgba(58,21,38,.4)}
+  .opt.right .mark{background:var(--bronze);color:var(--sea-abyss);border-color:var(--bronze)}
+  .opt.chosen-wrong{border-color:var(--terra);background:rgba(200,97,58,.14)}
+  .opt.chosen-wrong .mark{border-color:var(--terra);color:var(--terra)}
+  .opt:disabled{cursor:default}
+  .why{font-size:.95rem;color:var(--bone-dim);margin-top:.7rem;line-height:1.55;opacity:0;height:0;overflow:hidden;transition:opacity .4s}
+  .why.show{opacity:1;height:auto;margin-top:.7rem}
+  .why b{color:var(--bronze-bright);font-weight:600}
+  .score{
+    text-align:center;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--bronze-bright);
+    padding:20px;border:1px dashed var(--line);margin-top:6px;opacity:0;transition:opacity .5s
+  }
+  .score.show{opacity:1}
+
+  .voyage{display:flex;flex-wrap:wrap;gap:6px 4px;justify-content:center;margin:24px 0 8px}
+  .isle{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ash);border:1px solid var(--line-soft);padding:6px 10px}
+  .isle.here{color:var(--sea-abyss);background:var(--bronze);border-color:var(--bronze);font-weight:700}
+  .isle.done{color:var(--bronze);border-color:var(--line)}
+
+  .scene-head{display:grid;gap:20px 32px;align-items:center;margin-bottom:1.6rem}
+  .tondo{margin:0;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+  .tondo-svg{width:190px;height:190px;filter:drop-shadow(0 16px 34px rgba(0,0,0,.6))}
+  .tondo figcaption{
+    font-family:var(--serif);font-style:italic;font-size:.92rem;line-height:1.45;
+    color:var(--bone-dim);text-align:center;max-width:15rem;text-wrap:balance;
+  }
+  .tondo.amph-wrap{margin:0 auto 6px}
+  .tondo.amph-wrap .tondo-svg{width:118px;height:118px}
+  @media(min-width:720px){
+    .scene-head{grid-template-columns:200px 1fr}
+    .scene-head.flip{grid-template-columns:1fr 200px}
+    .scene-head.flip .tondo{order:2}
+    .scene-head.flip .scene-head-text{order:1}
+  }
+
+  footer{padding:70px 24px 90px;text-align:center}
+  footer .line{max-width:34rem;margin:0 auto 1.5rem;color:var(--bone-dim);font-family:var(--serif);font-style:italic;font-size:1.15rem;text-wrap:balance}
+  footer small{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ash)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .char{
+    border-bottom:1.5px dotted var(--bronze);cursor:pointer;
+    color:inherit;transition:color .2s,border-color .2s;
+    padding-bottom:1px;
+  }
+  .char:hover,.char:focus{color:var(--bronze-bright);border-color:var(--bronze-bright);outline:none}
+
+  .char-overlay{
+    position:fixed;inset:0;z-index:50;background:rgba(3,8,13,.55);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transition:opacity .25s;pointer-events:none;
+  }
+  .char-overlay.open{opacity:1;pointer-events:auto}
+  .char-card{
+    background:linear-gradient(170deg,rgba(15,42,61,.95),rgba(6,15,24,.97));
+    border:1px solid var(--line);
+    max-width:22rem;width:calc(100% - 40px);padding:28px 26px 24px;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.9);
+    transform:translateY(12px) scale(.97);transition:transform .25s ease;
+    position:relative;
+  }
+  .char-overlay.open .char-card{transform:none}
+  .char-card .char-role{
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--bronze);margin-bottom:.45rem;
+  }
+  .char-card .char-name{
+    font-family:var(--serif);font-size:1.5rem;font-weight:600;
+    color:var(--bone);margin:0 0 .15rem;line-height:1.2;
+  }
+  .char-card .char-greek{
+    font-family:var(--serif);font-size:.88rem;color:var(--bronze);
+    letter-spacing:.04em;margin-bottom:.8rem;
+  }
+  .char-card .char-desc{
+    font-family:var(--body);font-size:.95rem;line-height:1.6;
+    color:var(--bone-dim);
+  }
+  .char-card .char-desc b{color:var(--bronze-bright);font-weight:600}
+  .char-card .char-close{
+    position:absolute;top:12px;right:14px;background:none;border:none;
+    color:var(--ash);font-size:1.2rem;cursor:pointer;padding:4px;
+    line-height:1;transition:color .2s;
+  }
+  .char-card .char-close:hover{color:var(--bone)}
+
+  #soundToggle{
+    position:fixed;top:16px;right:16px;z-index:20;width:42px;height:42px;
+    display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;
+    background:rgba(6,15,24,.55);backdrop-filter:blur(5px);color:var(--bronze);cursor:pointer;
+    transition:border-color .2s,color .2s,background .2s,transform .1s;
+  }
+  #soundToggle:hover{border-color:var(--bronze);color:var(--bronze-bright);background:rgba(15,42,61,.8)}
+  #soundToggle:active{transform:scale(.94)}
+  #soundToggle.off{color:var(--ash)}
+  #soundToggle svg{width:20px;height:20px}
+  #soundToggle:focus-visible{outline:2px solid var(--bronze-bright);outline-offset:3px}
+  @media(max-width:560px){#soundToggle{top:12px;right:12px;width:38px;height:38px}}
+  #musicToggle{position:fixed;top:66px;right:16px;z-index:20;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:rgba(6,15,24,.55);backdrop-filter:blur(5px);color:var(--ash);cursor:pointer;transition:border-color .2s,color .2s,background .2s,transform .1s,box-shadow .4s}
+  #musicToggle:hover{border-color:var(--bronze);color:var(--bronze-bright);background:rgba(15,42,61,.8)}
+  #musicToggle:active{transform:scale(.94)}
+  #musicToggle.on{color:var(--bronze);border-color:rgba(201,154,75,.35);box-shadow:0 0 12px rgba(201,154,75,.08)}
+  #musicToggle svg{width:18px;height:18px}
+  #musicToggle:focus-visible{outline:2px solid var(--bronze-bright);outline-offset:3px}
+  @media(max-width:560px){#musicToggle{top:56px;right:12px;width:38px;height:38px}}
+
+  .glossary-link{
+    display:inline-block;margin-top:.9rem;font-family:var(--mono);font-size:.66rem;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);text-decoration:none;
+    border:1px solid var(--line);padding:6px 14px;transition:.2s;
+  }
+  .glossary-link:hover{border-color:var(--bronze);background:rgba(201,154,75,.08);color:var(--bronze-bright)}
+
+  .chapter-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:20;
+    background:rgba(6,15,24,.85);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:10px 24px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .chapter-nav a{
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--bronze);text-decoration:none;padding:8px 14px;border:1px solid var(--line);
+    transition:.2s;display:flex;align-items:center;gap:8px;
+  }
+  .chapter-nav a:hover{border-color:var(--bronze);background:rgba(201,154,75,.08)}
+  .chapter-nav a.disabled{opacity:.3;pointer-events:none}
+  .chapter-nav .chapter-label{
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media (max-width:560px){
+    body{font-size:17px}
+    .hall-scene{flex-direction:column;text-align:center}
+    .chapter-nav{padding:8px 12px}
+    .chapter-nav a{font-size:.6rem;padding:6px 10px}
+  }
+  .share-strip{display:flex;align-items:center;gap:14px;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line-soft);opacity:0;transform:translateY(6px);transition:opacity .6s .3s,transform .6s .3s}
+  .share-strip.show{opacity:1;transform:none}
+  .share-strip canvas{border:1px solid var(--line);cursor:pointer;transition:border-color .2s;max-width:200px;height:auto}
+  .share-strip canvas:hover{border-color:var(--bronze)}
+  .share-strip .share-actions{display:flex;flex-direction:column;gap:8px}
+  .share-strip .share-btn{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);background:none;border:1px solid var(--line);padding:7px 14px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:7px;white-space:nowrap}
+  .share-strip .share-btn:hover{border-color:var(--bronze);background:rgba(201,154,75,.08);color:var(--bronze-bright)}
+  .share-strip .share-btn svg{width:14px;height:14px;flex:none}
+  .share-strip .share-stat{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--bone-dim);line-height:1.4}
+  .share-strip .share-copied{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--bronze-bright);opacity:0;transition:opacity .3s;margin-top:2px}
+  .share-strip .share-copied.show{opacity:1}
+  @media(max-width:560px){.share-strip{flex-direction:column;align-items:flex-start}.share-strip canvas{max-width:160px}}
+</style>
+
+<canvas id="sea" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<main>
+  <header class="hero">
+    <div class="key-frame">
+      <div class="meander" aria-hidden="true"></div>
+      <h1><span class="the">Homer&rsquo;s</span>The&nbsp;Odyssey</h1>
+      <p class="booktag">Book III &middot; <b>The Gates of Pylos</b><br>
+        <span class="greek">&Nu;&#941;&sigma;&tau;&omega;&rho;</span></p>
+      <div class="meander" aria-hidden="true" style="margin-top:20px"></div>
+    </div>
+    <div class="scroll-cue">Read &amp; play<span class="arrow"></span></div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- SCENE 1 -->
+    <section class="reveal">
+      <div class="scene-head">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="Men on the beach of Pylos sacrificing a bull to Poseidon beside a great fire">
+            <defs>
+              <clipPath id="c1"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g1" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g1)"/>
+            <g clip-path="url(#c1)" fill="var(--figure)">
+              <!-- beach/ground line -->
+              <rect x="8" y="148" width="184" height="52"/>
+              <!-- fire -->
+              <path d="M96,100 q4,-24 8,0 q4,-18 6,0 q-5,8 -14,0" fill="var(--incise)" opacity="0.7"/>
+              <path d="M92,100 q6,-32 12,0 q6,-26 8,0 q-8,12 -20,0" fill="var(--incise)" opacity="0.4"/>
+              <!-- smoke wisps -->
+              <path d="M100,78 q-4,-14 2,-28" stroke="var(--incise)" stroke-width="1.5" fill="none" opacity="0.25"/>
+              <path d="M104,82 q6,-16 0,-30" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.2"/>
+              <!-- altar/fire base -->
+              <rect x="86" y="100" width="28" height="10" rx="1"/>
+              <!-- bull on altar -->
+              <ellipse cx="100" cy="96" rx="16" ry="7"/>
+              <path d="M82,92 l-6,-8 l4,0 l4,6" fill="var(--incise)" opacity="0.3"/>
+              <!-- figures around fire - left group -->
+              <circle cx="48" cy="118" r="8"/>
+              <path d="M40,126 L40,150 L56,150 L56,126 Z"/>
+              <!-- raised arm with offering bowl -->
+              <path d="M56,130 L68,118 L72,122 L58,136 Z"/>
+              <circle cx="70" cy="116" r="4"/>
+              <!-- right group -->
+              <circle cx="152" cy="118" r="8"/>
+              <path d="M144,126 L144,150 L160,150 L160,126 Z"/>
+              <!-- kneeling figure -->
+              <circle cx="130" cy="128" r="7"/>
+              <path d="M122,135 L122,150 L138,150 L138,135 Z"/>
+              <!-- tiny figures in background -->
+              <circle cx="30" cy="138" r="4"/>
+              <circle cx="170" cy="138" r="4"/>
+              <circle cx="70" cy="140" r="3.5"/>
+              <circle cx="80" cy="142" r="3"/>
+            </g>
+            <g clip-path="url(#c1)" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.5">
+              <path d="M42,124 q6,-3 12,0"/>
+              <path d="M146,124 q6,-3 12,0"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Four thousand five hundred men on the sand, sacrificing to Poseidon</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene One &middot; The Sacrifice at Pylos</div>
+          <h2>Eighty-one bulls, and the smell of heaven</h2>
+        </div>
+      </div>
+      <p class="lead">The sun climbs out of the sea and strikes the beaches of Pylos, where something extraordinary is happening. Four thousand five hundred men sit in nine companies on the sand, and each company has slaughtered nine bulls to <span class="char" data-char="poseidon" tabindex="0">Poseidon</span>, lord of the sea. The thighbones burn. The fat crackles. The smoke rises in columns.</p>
+      <p>Into this scene sails <span class="char" data-char="telemachus" tabindex="0">Telemachus</span>, with <span class="char" data-char="athena" tabindex="0">Athena</span> still wearing the face of <span class="char" data-char="mentor" tabindex="0">Mentor</span> at his side. He has never been anywhere but Ithaca. He has never met a king who is not a ghost or a memory. Now he must walk up to one of the most famous warriors in the Greek world and ask for help.</p>
+      <p>He hesitates. <em>What do I say? How do I begin? I am young, and he is old, and I have no practice at this.</em></p>
+      <p>Athena answers simply: some of it you will think of yourself, and some a god will put in your mind. You were not born and raised without the gods&rsquo; attention.</p>
+      <p class="pull">&ldquo;Telemachus, you need not be shy. You sailed across the sea for this &mdash; to ask about your father. Go straight to <span class="char" data-char="nestor" tabindex="0">Nestor</span>. He will not lie to you.&rdquo;</p>
+    </section>
+
+    <!-- SCENE 2 -->
+    <section class="reveal">
+      <div class="scene-head flip">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="Old Nestor seated with a staff, speaking to young Telemachus">
+            <defs>
+              <clipPath id="c2"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g2" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g2)"/>
+            <g clip-path="url(#c2)" fill="var(--figure)">
+              <!-- Nestor seated on a throne/chair -->
+              <rect x="110" y="96" width="50" height="68" rx="2" opacity="0.3"/>
+              <circle cx="138" cy="82" r="14"/>
+              <path d="M124,96 L124,164 L152,164 L152,96 Z"/>
+              <!-- long beard -->
+              <path d="M128,92 q10,20 20,0" fill="var(--incise)" opacity="0.3"/>
+              <!-- staff in hand -->
+              <rect x="160" y="56" width="4" height="108"/>
+              <!-- arm holding staff -->
+              <path d="M152,110 L160,100 L164,104 L154,116 Z"/>
+              <!-- Telemachus seated lower, listening -->
+              <circle cx="58" cy="100" r="12"/>
+              <path d="M46,112 L46,164 L70,164 L70,112 Z"/>
+              <!-- leaning forward posture -->
+              <path d="M70,120 L82,114 L82,118 L70,126 Z"/>
+              <!-- wine cup in Telemachus's hand -->
+              <path d="M80,112 l4,-8 l6,0 l4,8 z" fill="var(--incise)" opacity="0.5"/>
+              <!-- ground -->
+              <rect x="8" y="158" width="184" height="42"/>
+            </g>
+            <g clip-path="url(#c2)" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.5">
+              <path d="M130,88 q8,-3 16,0"/>
+              <path d="M50,106 q8,-3 16,0"/>
+              <path d="M128,120 q6,6 12,0 q6,6 12,0" opacity="0.25"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Nestor tells Telemachus what befell the heroes after Troy</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene Two &middot; The Old King&rsquo;s Tale</div>
+          <h2>What happened to the men who sailed from Troy</h2>
+        </div>
+      </div>
+      <p>Nestor does not ask who they are. First he seats them on soft fleeces on the sand, gives them cuts of meat and pours them wine. Only after they have eaten does he ask their names. This is <em>xenia</em> &mdash; the sacred law of hospitality. You feed a stranger before you question him.</p>
+      <p>When Telemachus identifies himself, Nestor looks at him a long time. <em>Your voice</em>, he says. <em>You speak just as he did.</em> Then he tells his tale.</p>
+      <p>After Troy fell, the Greeks quarrelled. <span class="char" data-char="menelaus" tabindex="0">Menelaus</span> wanted to sail at once. <span class="char" data-char="agamemnon" tabindex="0">Agamemnon</span> wanted to stay and sacrifice to Athena, to atone for <span class="char" data-char="ajax" tabindex="0">Ajax</span>&rsquo;s crime in her temple. The army split in two &mdash; half sailed, half stayed. Nestor sailed with Menelaus. They parted at Lesbos. Nestor reached home safely. Menelaus was blown to Egypt. And Agamemnon &mdash; Agamemnon came home to the worst homecoming of all.</p>
+      <p class="pull">&ldquo;His own wife&rsquo;s lover was waiting. <span class="char" data-char="aegisthus" tabindex="0">Aegisthus</span> set a feast &mdash; and killed the king of Mycenae at his own table, like an ox at the manger.&rdquo;</p>
+      <p>Of <span class="char" data-char="odysseus" tabindex="0">Odysseus</span>, Nestor knows nothing. He last saw him at Troy. But he tells Telemachus to go to Sparta, to Menelaus, who wandered longest and heard the most. <b>Arrange the events as Nestor told them.</b></p>
+
+      <div class="device">
+        <div class="kicker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--bronze)" stroke-width="1.4"><path d="M12 2l2.4 5.6L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-1.4z"/></svg>
+          <h3>The Fates of the Greeks</h3>
+        </div>
+        <p class="hint">Drag the events into the order they happened after Troy fell. Or focus a step and press &#8593; / &#8595;.</p>
+        <ol class="seq" id="seq"></ol>
+        <div class="row">
+          <button class="btn" id="seqCheck">Check the order</button>
+          <button class="btn ghost" id="seqReset">Shuffle</button>
+          <span class="verdict" id="seqVerdict" role="status"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 3 -->
+    <section class="reveal">
+      <div class="scene-head">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="A great hawk rises from the ground, revealing Athena&rsquo;s divinity">
+            <defs>
+              <clipPath id="c3"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g3" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g3)"/>
+            <g clip-path="url(#c3)" fill="var(--figure)">
+              <!-- hawk in flight, wings spread wide -->
+              <!-- body -->
+              <ellipse cx="100" cy="78" rx="14" ry="9"/>
+              <!-- head -->
+              <circle cx="112" cy="72" r="7"/>
+              <!-- beak -->
+              <path d="M118,74 L128,72 L118,76 Z" fill="var(--incise)" opacity="0.6"/>
+              <!-- eye -->
+              <circle cx="114" cy="71" r="1.5" fill="var(--incise)" opacity="0.8"/>
+              <!-- left wing (spread wide, upward) -->
+              <path d="M88,76 C72,64 46,56 24,60 C34,62 50,68 64,72 C74,76 82,78 88,80 Z"/>
+              <path d="M88,80 C78,84 60,86 42,82 C56,86 72,84 86,82 Z"/>
+              <!-- right wing (spread wide, upward) -->
+              <path d="M112,76 C128,64 154,56 176,60 C166,62 150,68 136,72 C126,76 118,78 112,80 Z"/>
+              <path d="M112,80 C122,84 140,86 158,82 C144,86 128,84 114,82 Z"/>
+              <!-- tail feathers -->
+              <path d="M86,82 L74,96 L80,94 L86,98 L92,94 L98,96 L88,82 Z"/>
+              <!-- talons -->
+              <path d="M94,86 L90,96 L88,94 L92,86" fill="var(--incise)" opacity="0.4"/>
+              <path d="M106,86 L110,96 L112,94 L108,86" fill="var(--incise)" opacity="0.4"/>
+              <!-- divine glow lines radiating outward -->
+              <line x1="100" y1="58" x2="100" y2="42" stroke="var(--incise)" stroke-width="1.5" opacity="0.3"/>
+              <line x1="80" y1="62" x2="68" y2="48" stroke="var(--incise)" stroke-width="1.5" opacity="0.25"/>
+              <line x1="120" y1="62" x2="132" y2="48" stroke="var(--incise)" stroke-width="1.5" opacity="0.25"/>
+              <!-- awestruck figures below -->
+              <circle cx="54" cy="138" r="8"/>
+              <path d="M46,146 L46,170 L62,170 L62,146 Z"/>
+              <path d="M46,150 L32,138 L30,142 L44,154 Z"/>
+              <circle cx="100" cy="132" r="8"/>
+              <path d="M92,140 L92,170 L108,170 L108,140 Z"/>
+              <path d="M92,144 L80,130 L78,134 L90,148 Z"/>
+              <path d="M108,144 L120,130 L122,134 L110,148 Z"/>
+              <circle cx="148" cy="138" r="8"/>
+              <path d="M140,146 L140,170 L156,170 L156,146 Z"/>
+              <path d="M156,150 L168,138 L170,142 L158,154 Z"/>
+              <!-- ground -->
+              <rect x="8" y="164" width="184" height="36"/>
+            </g>
+            <g clip-path="url(#c3)" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.5">
+              <path d="M48,144 q6,-3 12,0"/>
+              <path d="M94,138 q6,-3 12,0"/>
+              <path d="M142,144 q6,-3 12,0"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Athena departs as a sea-eagle &mdash; and every man on the beach knows a god was among them</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene Three &middot; The Hawk</div>
+          <h2>The moment a god stops pretending</h2>
+        </div>
+      </div>
+      <p>It happens at dusk. Athena, still wearing Mentor&rsquo;s shape, offers a prayer &mdash; and then simply leaves. But not on foot. Before their eyes, Mentor&rsquo;s form blurs and lifts, and a great sea-eagle rises from the place where the old man stood, beats its wings twice, and is gone over the rooftops.</p>
+      <p>Silence. Then Nestor turns to Telemachus, and his old voice shakes. <em>My friend</em>, he says, <em>you will be neither a coward nor a fool. You are young, and already the gods walk at your side. That was no mortal. That was Athena herself &mdash; the daughter of <span class="char" data-char="zeus" tabindex="0">Zeus</span>, who loved your father above all the Greeks.</em></p>
+      <p>Nestor immediately vows a sacrifice: a yearling heifer, broad-browed, unbroken, with gold laid on her horns. <b>What would you do?</b></p>
+
+      <div class="device">
+        <div class="kicker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--bronze)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2" fill="var(--terra)" stroke="none"/></svg>
+          <h3>A God Among Mortals</h3>
+        </div>
+        <div class="trick">
+          <div class="hall-scene">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" fill="#0a1c2b" stroke="var(--line)"/>
+              <!-- hawk silhouette -->
+              <path d="M60,42 C50,36 32,32 20,36 C36,36 48,40 56,44 Z" fill="var(--bronze)" opacity="0.5"/>
+              <path d="M60,42 C70,36 88,32 100,36 C84,36 72,40 64,44 Z" fill="var(--bronze)" opacity="0.5"/>
+              <ellipse cx="60" cy="44" rx="6" ry="4" fill="var(--bronze)" opacity="0.5"/>
+              <!-- glow lines -->
+              <line x1="60" y1="32" x2="60" y2="22" stroke="var(--bronze)" stroke-width="1" opacity="0.3"/>
+              <line x1="48" y1="34" x2="42" y2="26" stroke="var(--bronze)" stroke-width="1" opacity="0.2"/>
+              <line x1="72" y1="34" x2="78" y2="26" stroke="var(--bronze)" stroke-width="1" opacity="0.2"/>
+              <text x="60" y="90" text-anchor="middle" fill="var(--bronze)" font-family="var(--serif)" font-size="13" font-style="italic">What do you do?</text>
+            </svg>
+            <div class="speech">
+              <div class="who">Nestor Speaks</div>
+              <div class="said" id="hawkSays">&ldquo;That was Athena, daughter of Zeus! Come &mdash; we must honour her at once. Bring a heifer and lay gold on its horns!&rdquo;</div>
+            </div>
+          </div>
+          <div class="choices" id="hawkChoices">
+            <button data-choice="sacrifice">&ldquo;Sacrifice at once. A god has shown herself &mdash; answer with reverence.&rdquo;</button>
+            <button data-choice="doubt">&ldquo;Wait. It could have been a bird. Why waste a gilded heifer on a trick of the light?&rdquo;</button>
+          </div>
+          <div class="aftermath" id="hawkAftermath"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 4 -->
+    <section class="reveal">
+      <div class="scene-head flip">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="A chariot with two young men rides along a coastal road toward distant mountains">
+            <defs>
+              <clipPath id="c4"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g4" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g4)"/>
+            <g clip-path="url(#c4)" fill="var(--figure)">
+              <!-- distant mountains -->
+              <path d="M8,100 L40,60 L70,80 L100,50 L130,75 L160,55 L192,90 L192,120 L8,120 Z" opacity="0.2"/>
+              <!-- road/ground -->
+              <rect x="8" y="130" width="184" height="70"/>
+              <!-- two horses -->
+              <!-- horse 1 (front) -->
+              <path d="M50,108 C52,90 62,86 68,92 L68,130 L62,130 L62,100 C58,96 54,98 54,130 L48,130 L48,100 C44,96 46,92 50,108 Z"/>
+              <path d="M66,88 L72,80 L70,78 L64,86 Z"/>
+              <!-- horse 2 (behind) -->
+              <path d="M38,110 C40,94 48,90 54,96 L50,98 C46,94 42,96 42,130 L36,130 L36,102 C32,98 34,94 38,110 Z" opacity="0.7"/>
+              <!-- chariot body -->
+              <path d="M68,108 L68,130 C68,134 108,134 108,130 L108,108 Z" opacity="0.85"/>
+              <!-- wheel -->
+              <circle cx="92" cy="130" r="12" fill="none" stroke="var(--figure)" stroke-width="3"/>
+              <circle cx="92" cy="130" r="2"/>
+              <line x1="92" y1="118" x2="92" y2="142" stroke="var(--figure)" stroke-width="1"/>
+              <line x1="80" y1="130" x2="104" y2="130" stroke="var(--figure)" stroke-width="1"/>
+              <!-- yoke pole -->
+              <line x1="48" y1="108" x2="70" y2="108" stroke="var(--figure)" stroke-width="2"/>
+              <!-- Peisistratus (driving, standing front) -->
+              <circle cx="78" cy="94" r="7"/>
+              <path d="M72,101 L72,118 L84,118 L84,101 Z"/>
+              <!-- arms holding reins -->
+              <path d="M72,106 L62,104 L62,106 L72,108 Z"/>
+              <!-- Telemachus (standing behind) -->
+              <circle cx="96" cy="90" r="7"/>
+              <path d="M90,97 L90,118 L102,118 L102,97 Z"/>
+              <!-- dust cloud behind -->
+              <circle cx="120" cy="134" r="6" fill="var(--incise)" opacity="0.1"/>
+              <circle cx="132" cy="138" r="8" fill="var(--incise)" opacity="0.08"/>
+              <circle cx="146" cy="136" r="5" fill="var(--incise)" opacity="0.06"/>
+            </g>
+            <g clip-path="url(#c4)" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.5">
+              <path d="M74,100 q4,-2 8,0"/>
+              <path d="M92,96 q4,-2 8,0"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Telemachus and Peisistratus ride south toward Sparta</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene Four &middot; The Road to Sparta</div>
+          <h2>A chariot, a companion, and the open road</h2>
+        </div>
+      </div>
+      <p>The next morning, Nestor has the heifer brought. A goldsmith lays beaten gold on its horns. The sacrifice is made in the courtyard, with the old king&rsquo;s sons and daughters-in-law attending. It is a full royal ceremony &mdash; Nestor has decided that the child of Odysseus deserves nothing less.</p>
+      <p>Then Nestor does something shrewd. He will not let Telemachus sail to Sparta &mdash; the overland route is faster, and safer. Instead he gives him a chariot, fine horses, and his own youngest son, <span class="char" data-char="peisistratus" tabindex="0"><em>Peisistratus</em></span>, as a companion and guide. Peisistratus is the same age as Telemachus. He is steady, good-natured, and brave. For the first time in the poem, Telemachus has a friend.</p>
+      <p>They ride south, past the wheat plains of Pylos, through the countryside, and as the sun sets they stop at Pherae for the night. At dawn they are off again, the horses eating the miles, until the hills of Lacedaemon rise before them and the palace of Menelaus and Helen comes into view.</p>
+      <p class="pull">&ldquo;They held the reins and the horses flew, not unwilling, into the dusk. The sun went down and all the roads grew dark.&rdquo;</p>
+    </section>
+
+    <!-- SCENE 5 -->
+    <section class="reveal">
+      <div class="scene-no">Scene Five &middot; The Reckoning</div>
+      <h2>Did you follow the voyage?</h2>
+      <p class="hint" style="margin-bottom:1.6rem">Five questions from the court of Nestor. Answer to see where each one leads.</p>
+      <div class="device">
+        <div class="quiz" id="quiz"></div>
+        <div class="score" id="score" role="status"></div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <figure class="tondo amph-wrap">
+        <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="A Greek amphora with a meander band">
+          <defs>
+            <clipPath id="cF"><circle cx="100" cy="100" r="92"/></clipPath>
+            <radialGradient id="gF" cx="50%" cy="34%" r="72%">
+              <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="92" fill="url(#gF)"/>
+          <g clip-path="url(#cF)" fill="var(--figure)">
+            <path d="M100,42 c-11,0 -15,7 -15,13 c0,6 4,8 4,12 c-17,11 -25,31 -25,52 c0,27 17,41 36,41 c19,0 36,-14 36,-41 c0,-21 -8,-41 -25,-52 c0,-4 4,-6 4,-12 c0,-6 -4,-13 -15,-13 z"/>
+            <path d="M85,68 c-19,2 -23,19 -14,32 l6,-3 c-7,-11 -3,-21 11,-23 z"/>
+            <path d="M115,68 c19,2 23,19 14,32 l-6,-3 c7,-11 3,-21 -11,-23 z"/>
+            <rect x="87" y="158" width="26" height="6"/>
+          </g>
+          <g clip-path="url(#cF)" stroke="var(--incise)" stroke-width="2" fill="none" opacity="0.7">
+            <line x1="72" y1="100" x2="128" y2="100"/><line x1="72" y1="124" x2="128" y2="124"/>
+            <path d="M76,118 v-12 h9 v9 h-4 M92,106 v12 h9 v-9 h-4 M108,118 v-12 h9 v9 h-4"/>
+          </g>
+          <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+          <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+        </svg>
+      </figure>
+      <div class="voyage" id="voyage"></div>
+      <p class="line">The old king has told his tale. Athena has shown her hand. Now the chariot carries Telemachus to Sparta, to the halls of <b style="color:var(--bronze-bright)"><span class="char" data-char="menelaus" tabindex="0">Menelaus</span> and <span class="char" data-char="helen" tabindex="0">Helen</span> &mdash; who remember Troy, and who last saw Odysseus alive.</b></p>
+      <small>Retold &middot; Book III</small>
+      <a class="glossary-link" href="index.html">Glossary of Characters</a>
+    </footer>
+  </div>
+</main>
+
+<nav class="chapter-nav">
+  <a href="book-2.html">&#9664; Book II</a>
+  <span class="chapter-label">Book III of XXIV</span>
+  <a href="book-4.html">Book IV &#9654;</a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var interacted = false;
+
+  var Sound = (function(){
+    var ctx=null, master=null, on=true;
+    function ensure(){
+      if(ctx) return ctx;
+      try{
+        var AC = window.AudioContext||window.webkitAudioContext; if(!AC) return null;
+        ctx = new AC();
+        master = ctx.createGain(); master.gain.value=0.85; master.connect(ctx.destination);
+      }catch(e){ ctx=null; }
+      return ctx;
+    }
+    function voice(freq,opt){
+      if(!on || !ensure()) return;
+      if(ctx.state==="suspended") ctx.resume();
+      opt = opt||{};
+      var t = ctx.currentTime, a = opt.attack==null?0.005:opt.attack,
+          d = opt.dur==null?0.5:opt.dur, peak = opt.gain==null?0.12:opt.gain;
+      var o=ctx.createOscillator(), g=ctx.createGain();
+      o.type = opt.type||"triangle"; o.frequency.value=freq; if(opt.detune)o.detune.value=opt.detune;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(peak,t+a);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+a+d);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t+a+d+0.03);
+    }
+    function pluck(freq,gain,dur){
+      voice(freq,{type:"triangle",gain:gain||0.12,dur:dur||0.5,attack:0.004});
+      voice(freq*2,{type:"sine",gain:(gain||0.12)*0.32,dur:(dur||0.5)*0.7,attack:0.004});
+    }
+    function thud(){
+      if(!on || !ensure()) return;
+      if(ctx.state==="suspended") ctx.resume();
+      var t=ctx.currentTime, dur=0.16, b=ctx.createBuffer(1,Math.floor(ctx.sampleRate*dur),ctx.sampleRate), dt=b.getChannelData(0);
+      for(var i=0;i<dt.length;i++){ dt[i]=(Math.random()*2-1)*Math.pow(1-i/dt.length,3); }
+      var s=ctx.createBufferSource(); s.buffer=b;
+      var f=ctx.createBiquadFilter(); f.type="lowpass"; f.frequency.value=430;
+      var g=ctx.createGain(); g.gain.value=0.16;
+      s.connect(f); f.connect(g); g.connect(master); s.start(t);
+    }
+    function arp(freqs,gap,gain,dur){ freqs.forEach(function(f,k){ setTimeout(function(){ pluck(f,gain,dur); }, k*(gap||85)); }); }
+    return {
+      pickup:function(){ pluck(392.00,0.085,0.34); },
+      drop:function(){ pluck(196.00,0.10,0.42); thud(); },
+      tick:function(){ voice(880,{type:"sine",gain:0.045,dur:0.06,attack:0.002}); },
+      win:function(){ arp([196.00,261.63,329.63,392.00,523.25],80,0.11,0.6); },
+      fail:function(){ voice(130.81,{type:"sine",gain:0.13,dur:0.5}); voice(138.59,{type:"triangle",gain:0.06,dur:0.5}); },
+      clever:function(){ arp([293.66,392.00,523.25],80,0.10,0.5); },
+      ominous:function(){ voice(110.00,{type:"triangle",gain:0.07,dur:0.9}); voice(116.54,{type:"sine",gain:0.05,dur:0.9}); },
+      correct:function(){ pluck(523.25,0.10,0.42); setTimeout(function(){ pluck(659.25,0.09,0.5); },80); },
+      wrong:function(){ thud(); voice(146.83,{type:"sine",gain:0.09,dur:0.4}); },
+      flourish:function(){ arp([261.63,329.63,392.00,523.25,659.25],90,0.11,0.6); },
+      swell:function(){ voice(98.00,{type:"sine",gain:0.05,dur:0.7,attack:0.16}); voice(146.83,{type:"sine",gain:0.03,dur:0.7,attack:0.22}); },
+      unlock:function(){ if(ensure() && ctx.state==="suspended") ctx.resume(); },
+      setOn:function(v){ on=v; if(on) this.unlock(); },
+      isOn:function(){ return on; }
+    };
+  })();
+
+  (function(){
+    var ON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.6a4 4 0 0 1 0 6.8"/><path d="M18.7 6a7 7 0 0 1 0 12"/></svg>';
+    var OFF='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9.5l4.5 5M21.5 9.5l-4.5 5"/></svg>';
+    var btn=document.createElement("button");
+    btn.id="soundToggle"; btn.type="button"; btn.setAttribute("aria-pressed","true"); btn.title="Sound on"; btn.innerHTML=ON;
+    btn.addEventListener("click",function(){
+      var next=!Sound.isOn(); Sound.setOn(next);
+      btn.setAttribute("aria-pressed",String(next)); btn.title=next?"Sound on":"Sound off";
+      btn.classList.toggle("off",!next); btn.innerHTML=next?ON:OFF;
+      if(next) Sound.pickup();
+    });
+    document.body.appendChild(btn);
+    document.addEventListener("pointerdown",function(){ interacted=true; Sound.unlock(); },{once:true});
+  })();
+
+  /* ---------------- ambient music: Nestor's hearth ---------------- */
+  var Music = (function(){
+    var ctx=null,master=null,playing=false,lyreTimer=null;
+    var LYRE=[196,220,246.94,261.63,293.66,329.63,349.23,392];
+
+    function init(){
+      try{
+        var AC=window.AudioContext||window.webkitAudioContext; if(!AC)return false;
+        ctx=new AC(); if(ctx.state==="suspended")ctx.resume();
+        master=ctx.createGain(); master.gain.value=0.0001;
+        master.connect(ctx.destination);
+
+        var d1=ctx.createOscillator(); d1.type="sine"; d1.frequency.value=98;
+        var g1=ctx.createGain(); g1.gain.value=0.06;
+        var lfo1=ctx.createOscillator(); lfo1.type="sine"; lfo1.frequency.value=0.05;
+        var lg1=ctx.createGain(); lg1.gain.value=0.011;
+        lfo1.connect(lg1); lg1.connect(g1.gain);
+        d1.connect(g1); g1.connect(master); d1.start(); lfo1.start();
+
+        var d2=ctx.createOscillator(); d2.type="sine"; d2.frequency.value=146.83; d2.detune.value=-5;
+        var g2=ctx.createGain(); g2.gain.value=0.04;
+        d2.connect(g2); g2.connect(master); d2.start();
+
+        var d3=ctx.createOscillator(); d3.type="sine"; d3.frequency.value=196;
+        var g3=ctx.createGain(); g3.gain.value=0.02;
+        var lfo2=ctx.createOscillator(); lfo2.type="sine"; lfo2.frequency.value=0.08;
+        var lg2=ctx.createGain(); lg2.gain.value=0.006;
+        lfo2.connect(lg2); lg2.connect(g3.gain);
+        d3.connect(g3); g3.connect(master); d3.start(); lfo2.start();
+
+        var pad=ctx.createOscillator(); pad.type="sawtooth"; pad.frequency.value=196;
+        var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=550; lp.Q.value=0.5;
+        var gp=ctx.createGain(); gp.gain.value=0.011;
+        var lfo4=ctx.createOscillator(); lfo4.type="sine"; lfo4.frequency.value=0.065;
+        var lg4=ctx.createGain(); lg4.gain.value=80;
+        lfo4.connect(lg4); lg4.connect(lp.frequency);
+        pad.connect(lp); lp.connect(gp); gp.connect(master); pad.start(); lfo4.start();
+
+        var len=ctx.sampleRate*4,buf=ctx.createBuffer(1,len,ctx.sampleRate),dd=buf.getChannelData(0);
+        for(var i=0;i<len;i++)dd[i]=Math.random()*2-1;
+        var ns=ctx.createBufferSource(); ns.buffer=buf; ns.loop=true;
+        var bp=ctx.createBiquadFilter(); bp.type="bandpass"; bp.frequency.value=420; bp.Q.value=0.5;
+        var lfo3=ctx.createOscillator(); lfo3.type="sine"; lfo3.frequency.value=0.035;
+        var lg3=ctx.createGain(); lg3.gain.value=160;
+        lfo3.connect(lg3); lg3.connect(bp.frequency);
+        var gn=ctx.createGain(); gn.gain.value=0.018;
+        ns.connect(bp); bp.connect(gn); gn.connect(master); ns.start(); lfo3.start();
+
+        playing=true;
+        master.gain.exponentialRampToValueAtTime(0.27,ctx.currentTime+4);
+        scheduleLyre();
+        return true;
+      }catch(e){return false;}
+    }
+
+    function lyreNote(){
+      if(!playing||!ctx)return;
+      var freq=LYRE[Math.floor(Math.random()*LYRE.length)];
+      var t=ctx.currentTime,dur=1.3+Math.random()*2.5,peak=0.026+Math.random()*0.02;
+      var o=ctx.createOscillator(); o.type="triangle"; o.frequency.value=freq;
+      var g=ctx.createGain();
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(peak,t+0.015);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t+dur+0.05);
+      var o2=ctx.createOscillator(); o2.type="sine"; o2.frequency.value=freq*2;
+      var g2=ctx.createGain();
+      g2.gain.setValueAtTime(0.0001,t);
+      g2.gain.exponentialRampToValueAtTime(peak*0.22,t+0.015);
+      g2.gain.exponentialRampToValueAtTime(0.0001,t+dur*0.5);
+      o2.connect(g2); g2.connect(master); o2.start(t); o2.stop(t+dur*0.5+0.05);
+    }
+
+    function scheduleLyre(){
+      if(!playing)return;
+      lyreNote();
+      lyreTimer=setTimeout(scheduleLyre,1800+Math.random()*3200);
+    }
+
+    return {
+      start:function(){
+        if(ctx){
+          if(ctx.state==="suspended")ctx.resume();
+          playing=true;
+          master.gain.cancelScheduledValues(ctx.currentTime);
+          master.gain.setValueAtTime(Math.max(master.gain.value,0.0001),ctx.currentTime);
+          master.gain.exponentialRampToValueAtTime(0.27,ctx.currentTime+2);
+          scheduleLyre();
+          return true;
+        }
+        return init();
+      },
+      stop:function(){
+        if(!ctx||!playing)return;
+        playing=false; clearTimeout(lyreTimer);
+        master.gain.cancelScheduledValues(ctx.currentTime);
+        master.gain.setValueAtTime(Math.max(master.gain.value,0.0001),ctx.currentTime);
+        master.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+2);
+        setTimeout(function(){if(!playing&&ctx)ctx.suspend();},2200);
+      },
+      isPlaying:function(){return playing;}
+    };
+  })();
+
+  (function(){
+    var ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>';
+    var btn=document.createElement("button");
+    btn.id="musicToggle"; btn.type="button"; btn.title="Pause ambient music";
+    btn.setAttribute("aria-pressed","true"); btn.classList.add("on"); btn.innerHTML=ICON;
+    function syncOff(){btn.classList.remove("on");btn.setAttribute("aria-pressed","false");btn.title="Play ambient music";}
+    function syncOn(){btn.classList.add("on");btn.setAttribute("aria-pressed","true");btn.title="Pause ambient music";}
+    btn.addEventListener("click",function(){
+      if(Music.isPlaying()){ Music.stop(); syncOff(); }
+      else if(Music.start()){ syncOn(); }
+    });
+    document.body.appendChild(btn);
+    function autoStart(){
+      if(Music.start()) syncOn(); else syncOff();
+      document.removeEventListener("pointerdown",autoStart);
+      document.removeEventListener("scroll",autoStart);
+      document.removeEventListener("keydown",autoStart);
+    }
+    document.addEventListener("pointerdown",autoStart,{once:false});
+    document.addEventListener("scroll",autoStart,{once:false,passive:true});
+    document.addEventListener("keydown",autoStart,{once:false});
+  })();
+
+  /* ---------------- sea canvas with Pylos beach at dawn ---------------- */
+  (function sea(){
+    var c = document.getElementById("sea"), x = c.getContext("2d"), W,H,DPR,stars,t=0;
+    function size(){
+      DPR = Math.min(devicePixelRatio||1, 2);
+      W = c.width = innerWidth*DPR; H = c.height = innerHeight*DPR;
+      c.style.width = innerWidth+"px"; c.style.height = innerHeight+"px";
+      stars = [];
+      var n = Math.round(innerWidth*innerHeight/12000);
+      for(var i=0;i<n;i++) stars.push({
+        x:Math.random()*W, y:Math.random()*H*0.42,
+        r:(Math.random()*1.1+0.2)*DPR, p:Math.random()*6.28, s:Math.random()*0.5+0.2
+      });
+    }
+    function drawPylos(horizon){
+      /* sandy beach below horizon */
+      var beachGrad = x.createLinearGradient(0,horizon,0,H);
+      beachGrad.addColorStop(0,"#1a1408");
+      beachGrad.addColorStop(0.3,"#1e180c");
+      beachGrad.addColorStop(1,"#100c06");
+      x.fillStyle = beachGrad;
+      x.fillRect(0,horizon,W,H-horizon);
+
+      /* gentle hills behind beach */
+      x.fillStyle = "#0c100a";
+      x.beginPath();
+      x.moveTo(0, horizon);
+      x.quadraticCurveTo(W*0.15, horizon - 40*DPR, W*0.3, horizon - 15*DPR);
+      x.quadraticCurveTo(W*0.45, horizon - 5*DPR, W*0.55, horizon - 20*DPR);
+      x.quadraticCurveTo(W*0.7, horizon - 45*DPR, W*0.85, horizon - 18*DPR);
+      x.lineTo(W, horizon - 8*DPR);
+      x.lineTo(W, horizon + 10*DPR);
+      x.lineTo(0, horizon + 10*DPR);
+      x.closePath();
+      x.fill();
+
+      /* sacrificial fire glow */
+      var glow = x.createRadialGradient(W*0.5,horizon+20*DPR,0,W*0.5,horizon+20*DPR,80*DPR);
+      glow.addColorStop(0,"rgba(224,150,95,0.06)");
+      glow.addColorStop(1,"transparent");
+      x.fillStyle = glow;
+      x.fillRect(0,0,W,H);
+
+      /* second smaller fire */
+      var glow2 = x.createRadialGradient(W*0.25,horizon+30*DPR,0,W*0.25,horizon+30*DPR,50*DPR);
+      glow2.addColorStop(0,"rgba(224,150,95,0.035)");
+      glow2.addColorStop(1,"transparent");
+      x.fillStyle = glow2;
+      x.fillRect(0,0,W,H);
+
+      /* smoke columns (subtle) */
+      x.strokeStyle = "rgba(201,154,75,0.04)";
+      x.lineWidth = 3*DPR;
+      x.beginPath();
+      x.moveTo(W*0.5, horizon+10*DPR);
+      x.quadraticCurveTo(W*0.5 + Math.sin(t*0.3)*10*DPR, horizon - 40*DPR, W*0.5 + Math.sin(t*0.2)*20*DPR, horizon - 100*DPR);
+      x.stroke();
+      x.beginPath();
+      x.moveTo(W*0.25, horizon+15*DPR);
+      x.quadraticCurveTo(W*0.25 + Math.sin(t*0.25+1)*8*DPR, horizon - 30*DPR, W*0.25 + Math.sin(t*0.18+1)*15*DPR, horizon - 80*DPR);
+      x.stroke();
+    }
+    function draw(){
+      /* dawn sky gradient - warmer than other chapters */
+      var g = x.createLinearGradient(0,0,0,H);
+      g.addColorStop(0,"#040810");
+      g.addColorStop(0.3,"#0a1420");
+      g.addColorStop(0.5,"#12202e");
+      g.addColorStop(0.65,"#1c1818");
+      g.addColorStop(0.75,"#2a1a14");
+      g.addColorStop(1,"#1a1408");
+      x.fillStyle=g; x.fillRect(0,0,W,H);
+
+      /* dawn glow on horizon */
+      var horizon = H*0.62;
+      var dawn = x.createRadialGradient(W*0.7,horizon,0,W*0.7,horizon,W*0.5);
+      dawn.addColorStop(0,"rgba(200,97,58,0.08)");
+      dawn.addColorStop(0.5,"rgba(200,97,58,0.03)");
+      dawn.addColorStop(1,"transparent");
+      x.fillStyle = dawn;
+      x.fillRect(0,0,W,H);
+
+      /* stars (fewer, dawn is coming) */
+      for(var i=0;i<stars.length;i++){var s=stars[i];
+        var a = 0.5 + 0.5*Math.sin(t*s.s + s.p);
+        var fade = 1 - (s.y / (H*0.5));
+        if(fade<0) fade=0;
+        x.globalAlpha = a*0.5*fade; x.fillStyle="#ede3cf";
+        x.beginPath(); x.arc(s.x,s.y,s.r,0,6.29); x.fill();
+      }
+      x.globalAlpha=1;
+
+      drawPylos(horizon);
+
+      /* sea (to the left, narrower) */
+      x.fillStyle = "rgba(10,28,43,0.3)";
+      x.beginPath();
+      x.moveTo(0, horizon+10*DPR);
+      x.lineTo(W*0.35, horizon+10*DPR);
+      for(var k=0;k<16;k++){
+        var yy = horizon+10*DPR + (H-horizon-10*DPR)*(k/16);
+        x.strokeStyle = "rgba(201,154,75,"+(0.03*(k/16))+")";
+        x.lineWidth = DPR;
+        x.beginPath();
+        for(var px=0; px<=W*0.35; px+=24*DPR){
+          var yv = yy + Math.sin(px*0.01 + t*0.7 + k)*3*DPR*(k/16);
+          px===0? x.moveTo(px,yv): x.lineTo(px,yv);
+        }
+        x.stroke();
+      }
+
+      t += reduce?0:0.006;
+      if(!reduce) requestAnimationFrame(draw);
+    }
+    addEventListener("resize", function(){size();if(reduce)draw();});
+    size(); draw();
+  })();
+
+  /* ---------------- scroll reveals ---------------- */
+  (function(){
+    var els = document.querySelectorAll(".reveal");
+    if(!("IntersectionObserver" in window) || reduce){els.forEach(function(e){e.classList.add("in")});return;}
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target); if(interacted)Sound.swell();} });
+    },{threshold:.14});
+    els.forEach(function(e){io.observe(e)});
+  })();
+
+  /* ---------------- sequence puzzle: Fates of the Greeks ---------------- */
+  (function(){
+    var STEPS = [
+      "Agamemnon and Menelaus quarrel &mdash; half the army stays, half sails",
+      "Nestor and Menelaus sail together, but part ways at Lesbos",
+      "Little Ajax drowns at sea &mdash; Athena&rsquo;s punishment for defiling her temple",
+      "Nestor reaches Pylos safely and makes his sacrifices",
+      "Agamemnon returns home &mdash; and is murdered at his own table by Aegisthus",
+      "Orestes, Agamemnon&rsquo;s son, avenges his father and kills Aegisthus"
+    ];
+    var list = document.getElementById("seq"),
+        verdict = document.getElementById("seqVerdict"),
+        order = [0,1,2,3,4,5];
+
+    function shuffle(a){
+      var s;
+      do{ s=a.slice(); for(var i=s.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=s[i];s[i]=s[j];s[j]=tmp;} }
+      while(s.join()===a.slice().sort(function(p,q){return p-q}).join());
+      return s;
+    }
+    function render(){
+      list.innerHTML="";
+      order.forEach(function(idx,pos){
+        var li=document.createElement("li");
+        li.className="step"; li.tabIndex=0; li.dataset.idx=idx; li.draggable=false;
+        li.innerHTML='<span class="grip" aria-hidden="true">&#x2833;</span>'+
+                     '<span class="num">'+(pos+1)+'</span>'+
+                     '<span class="txt">'+STEPS[idx]+'</span>';
+        list.appendChild(li);
+      });
+    }
+    function renumber(){
+      [].forEach.call(list.children,function(li,i){li.querySelector(".num").textContent=i+1;});
+      order = [].map.call(list.children,function(li){return +li.dataset.idx;});
+    }
+
+    var drag=null;
+    list.addEventListener("pointerdown",function(e){
+      var li=e.target.closest(".step"); if(!li)return;
+      li.setPointerCapture(e.pointerId);
+      drag={li:li,startY:e.clientY};
+      li.classList.add("lift");
+      clearMarks();
+      Sound.pickup();
+    });
+    list.addEventListener("pointermove",function(e){
+      if(!drag)return;
+      var after=null;
+      [].forEach.call(list.querySelectorAll(".step:not(.lift)"),function(el){
+        var b=el.getBoundingClientRect();
+        if(e.clientY > b.top + b.height/2) after=el;
+      });
+      if(after && after.nextSibling!==drag.li) list.insertBefore(drag.li, after.nextSibling);
+      else if(!after && list.firstChild!==drag.li) list.insertBefore(drag.li, list.firstChild);
+      renumber();
+    });
+    function endDrag(){ if(!drag)return; drag.li.classList.remove("lift"); drag=null; Sound.drop(); }
+    list.addEventListener("pointerup",endDrag);
+    list.addEventListener("pointercancel",endDrag);
+
+    list.addEventListener("keydown",function(e){
+      var li=e.target.closest(".step"); if(!li)return;
+      if(e.key==="ArrowUp" && li.previousElementSibling){e.preventDefault();list.insertBefore(li,li.previousElementSibling);renumber();li.focus();clearMarks();Sound.tick();}
+      if(e.key==="ArrowDown" && li.nextElementSibling){e.preventDefault();list.insertBefore(li,li.nextElementSibling.nextElementSibling);renumber();li.focus();clearMarks();Sound.tick();}
+    });
+
+    function clearMarks(){ verdict.textContent=""; [].forEach.call(list.children,function(li){li.classList.remove("correct","wrong");}); }
+
+    var seqAttempts = 0, seqSolved = false;
+    document.getElementById("seqCheck").addEventListener("click",function(){
+      seqAttempts++;
+      var ok=0;
+      [].forEach.call(list.children,function(li,i){
+        var right = (+li.dataset.idx===i);
+        li.classList.toggle("correct",right);
+        li.classList.toggle("wrong",!right);
+        if(right)ok++;
+      });
+      if(ok===6){verdict.className="verdict good";verdict.textContent="The old king nods. You have his tale by heart.";Sound.win();if(!seqSolved){seqSolved=true;var device=document.getElementById("seqCheck").closest(".device");Share.puzzleCard(device,"The Fates of the Greeks",seqAttempts);Progress.mark("puzzle");}}
+      else{verdict.className="verdict bad";verdict.textContent=ok+" of 6 in place. Nestor is patient &mdash; he will tell it again.";Sound.fail();}
+    });
+    document.getElementById("seqReset").addEventListener("click",function(){order=shuffle([0,1,2,3,4,5]);render();clearMarks();});
+
+    order=shuffle([0,1,2,3,4,5]); render();
+  })();
+
+  /* ---------------- hawk choice ---------------- */
+  (function(){
+    var says=document.getElementById("hawkSays"),
+        after=document.getElementById("hawkAftermath"),
+        box=document.getElementById("hawkChoices");
+    var copy={
+      sacrifice:{
+        line:"You kneel beside Nestor and pray. The heifer is brought, her horns shining with gold.",
+        after:"This is exactly what Nestor does &mdash; and it is exactly right. In Homer&rsquo;s world, when a god reveals themselves, you answer immediately with sacrifice and prayer. Nestor&rsquo;s instinct is perfect: <b>the gods reward those who honour them, and punish those who hesitate.</b> Athena hears the prayer. She is pleased."
+      },
+      doubt:{
+        line:"You shake your head. A bird is a bird. The old man is seeing things.",
+        after:"This is the suitors&rsquo; mistake, and it echoes across the poem. Eurymachus mocked the eagle omen in Book II. The Cyclops laughed at Zeus in Book IX. Every character who dismisses the gods pays for it. Nestor has survived Troy, survived the voyage home, and ruled Pylos for decades &mdash; <b>because he never makes this mistake.</b> When a god speaks, you listen."
+      }
+    };
+    box.addEventListener("click",function(e){
+      var b=e.target.closest("button"); if(!b || !b.dataset.choice)return;
+      var c=copy[b.dataset.choice];
+      Sound[b.dataset.choice==="sacrifice"?"clever":"ominous"]();
+      says.textContent=c.line;
+      after.innerHTML=c.after; after.classList.add("show");
+      var choiceLabel = b.dataset.choice==="sacrifice" ? "Sacrifice at once" : "Wait and doubt";
+      Share.choiceCard(after, "nestor_iii", b.dataset.choice, choiceLabel);
+      Progress.mark("choice");
+      [].forEach.call(box.children,function(x){x.disabled=true;});
+      if(!box.dataset.done){box.dataset.done="1";
+        var retry=document.createElement("button");
+        retry.innerHTML="&#x21ba; answer again"; retry.style.opacity=".7";
+        retry.addEventListener("click",function(){
+          [].forEach.call(box.children,function(x){if(x!==retry)x.disabled=false;});
+          says.innerHTML="“That was Athena, daughter of Zeus! Come — we must honour her at once. Bring a heifer and lay gold on its horns!”";
+          after.classList.remove("show"); retry.remove(); box.dataset.done="";
+        });
+        box.appendChild(retry);
+      }
+    });
+  })();
+
+  /* ---------------- quiz ---------------- */
+  (function(){
+    var QS=[
+      {q:"How many bulls are the men of Pylos sacrificing when Telemachus arrives?",
+       a:["Nine","Twelve","Eighty-one","One hundred"],c:2,
+       why:"<b>Eighty-one</b> &mdash; nine companies of five hundred men, each offering nine bulls to Poseidon. Homer loves these precise, ritual numbers. The sheer scale tells us Nestor is pious, wealthy, and doing everything correctly."},
+      {q:"What does Nestor do before asking Telemachus his name?",
+       a:["Tests him with a riddle","Feeds him and offers wine","Asks his crew to identify him","Sends for a prophet"],c:1,
+       why:"<b>Feeds him and offers wine.</b> This is <em>xenia</em> &mdash; the sacred law of hospitality. A good host feeds a stranger first and asks questions later. Homer repeats this pattern throughout the poem to show who is civilised and who is not."},
+      {q:"How did Agamemnon die, according to Nestor?",
+       a:["In battle against the Trojans","Drowned at sea in a storm","Murdered at his own table by Aegisthus","Killed by his own soldiers in a mutiny"],c:2,
+       why:"<b>Murdered by Aegisthus at his own table.</b> Aegisthus seduced Clytemnestra while Agamemnon was at Troy, then ambushed the king at a welcome-home feast. It is the darkest homecoming in Greek myth &mdash; and a warning of what could happen to Odysseus."},
+      {q:"How does Athena reveal her true identity at Pylos?",
+       a:["She removes her disguise and stands in divine armour","She speaks with a thundering voice","She transforms into a sea-eagle and flies away","She vanishes in a flash of light"],c:2,
+       why:"<b>She transforms into a sea-eagle.</b> Homer&rsquo;s gods don&rsquo;t announce themselves with speeches. They <em>change form</em>. The hawk rising from where Mentor stood is one of the most vivid divine reveals in the poem. Even old Nestor is shaken."},
+      {q:"Who does Nestor send with Telemachus to Sparta?",
+       a:["Mentor, the old family friend","His youngest son, Peisistratus","A company of fifty warriors","His chief herald and a guard"],c:1,
+       why:"<b>Peisistratus</b>, Nestor&rsquo;s youngest son. He is the same age as Telemachus and serves as both guide and companion. For the first time, Telemachus has a peer &mdash; someone his own age to travel with. It is a small, generous gift from a shrewd old king."}
+    ];
+    var root=document.getElementById("quiz"), scoreEl=document.getElementById("score"), answered=0, correct=0;
+    QS.forEach(function(item,qi){
+      var wrap=document.createElement("div"); wrap.className="q";
+      var stem=document.createElement("div"); stem.className="stem";
+      stem.innerHTML='<span class="qn">'+(qi+1)+'.</span>'+item.q; wrap.appendChild(stem);
+      var opts=document.createElement("div"); opts.className="opts";
+      item.a.forEach(function(txt,oi){
+        var b=document.createElement("button"); b.className="opt";
+        b.innerHTML='<span class="mark">'+String.fromCharCode(65+oi)+'</span><span>'+txt+'</span>';
+        b.addEventListener("click",function(){
+          if(wrap.dataset.done)return; wrap.dataset.done="1"; answered++;
+          var right = oi===item.c;
+          if(right){b.classList.add("right");correct++;}
+          else{b.classList.add("chosen-wrong"); opts.children[item.c].classList.add("right");}
+          Sound[right?"correct":"wrong"]();
+          [].forEach.call(opts.children,function(o){o.disabled=true;});
+          why.classList.add("show");
+          if(answered===QS.length) tally();
+        });
+        opts.appendChild(b);
+      });
+      wrap.appendChild(opts);
+      var why=document.createElement("div"); why.className="why"; why.innerHTML=item.why; wrap.appendChild(why);
+      root.appendChild(wrap);
+    });
+    function tally(){
+      setTimeout(function(){ Sound.flourish(); }, 260);
+      var msg;
+      if(correct===5) msg="Five of five &mdash; Nestor would seat you at his right hand. You know the tale.";
+      else if(correct>=3) msg=correct+" of 5. A worthy guest. The wine flows and the fire burns well.";
+      else msg=correct+" of 5. Sit a while longer &mdash; the old king has more to tell.";
+      scoreEl.innerHTML="&mdash;  "+msg+"  &mdash;";
+      scoreEl.classList.add("show");
+      var quizDevice = scoreEl.closest(".device");
+      Share.quizCard(quizDevice, correct, 5);
+      Progress.mark("quiz");
+      scoreEl.scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});
+    }
+  })();
+
+  /* ---------------- reading progress ---------------- */
+  var Progress = (function(){
+    var BOOK_KEY = "book3";
+    var STORAGE = "retold_progress";
+    function load(){ try { return JSON.parse(localStorage.getItem(STORAGE)) || {}; } catch(e){ return {}; } }
+    function save(data){ try { localStorage.setItem(STORAGE, JSON.stringify(data)); } catch(e){} }
+    var data = load();
+    if(!data[BOOK_KEY]) data[BOOK_KEY] = {};
+    data[BOOK_KEY].lastVisit = Date.now();
+    save(data);
+    var nav = document.querySelector(".chapter-nav");
+    if(nav){
+      var readObs = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){ var d = load(); if(!d[BOOK_KEY]) d[BOOK_KEY] = {}; d[BOOK_KEY].read = true; save(d); readObs.disconnect(); }
+      }, {threshold: 0.5});
+      readObs.observe(nav);
+    }
+    return {
+      mark: function(type){ var d = load(); if(!d[BOOK_KEY]) d[BOOK_KEY] = {}; d[BOOK_KEY][type] = true; save(d); }
+    };
+  })();
+
+  /* ---------------- share card system ---------------- */
+  var Share = (function(){
+    var BOOK = "Book III";
+    var TITLE = "The Odyssey";
+    var BRAND = "Retold";
+    var W = 600, H = 315;
+    function drawCard(lines, opts){
+      opts = opts || {};
+      var c = document.createElement("canvas"); c.width = W; c.height = H;
+      var x = c.getContext("2d");
+      var bg = x.createLinearGradient(0,0,0,H);
+      bg.addColorStop(0,"#060f18"); bg.addColorStop(0.5,"#0a1c2b"); bg.addColorStop(1,"#0f2a3d");
+      x.fillStyle = bg; x.fillRect(0,0,W,H);
+      x.strokeStyle = "rgba(201,154,75,0.25)"; x.lineWidth = 1; x.strokeRect(20,20,W-40,H-40);
+      [[20,20,1,1],[W-20,20,-1,1],[20,H-20,1,-1],[W-20,H-20,-1,-1]].forEach(function(p){
+        x.strokeStyle = "#c99a4b"; x.lineWidth = 1.5;
+        x.beginPath(); x.moveTo(p[0],p[1]+16*p[2]); x.lineTo(p[0],p[1]); x.lineTo(p[0]+16*p[2],p[1]); x.stroke();
+      });
+      x.font = "10px ui-monospace, monospace"; x.fillStyle = "#c99a4b"; x.letterSpacing = "3px"; x.textAlign = "left";
+      x.fillText(BRAND.toUpperCase(), 40, 52); x.letterSpacing = "0px";
+      x.font = "italic 13px 'Palatino Linotype', Georgia, serif"; x.fillStyle = "#6f7c83"; x.textAlign = "right";
+      x.fillText(TITLE + " · " + BOOK, W-40, 52);
+      var startY = opts.centerY || Math.floor(H*0.42);
+      lines.forEach(function(ln, i){
+        x.textAlign = "center";
+        if(ln.type==="headline"){x.font="600 "+(ln.size||26)+"px 'Palatino Linotype', Georgia, serif";x.fillStyle="#ede3cf";}
+        else if(ln.type==="stat"){x.font="italic "+(ln.size||20)+"px 'Palatino Linotype', Georgia, serif";x.fillStyle="#e6c073";}
+        else if(ln.type==="sub"){x.font=(ln.size||13)+"px 'Palatino Linotype', Georgia, serif";x.fillStyle="#b6ab97";}
+        else{x.font="13px ui-monospace, monospace";x.fillStyle="#6f7c83";}
+        x.fillText(ln.text, W/2, startY + i*32);
+      });
+      x.beginPath(); x.moveTo(W/2-40,H-48); x.lineTo(W/2+40,H-48);
+      x.strokeStyle="rgba(201,154,75,0.3)"; x.lineWidth=1; x.stroke();
+      x.font="9px ui-monospace, monospace"; x.fillStyle="#6f7c83"; x.textAlign="center";
+      x.letterSpacing="2px"; x.fillText("RETOLD",W/2,H-30); x.letterSpacing="0px";
+      return c;
+    }
+    function makeStrip(canvas, text, shareText){
+      var strip=document.createElement("div"); strip.className="share-strip";
+      canvas.style.width="200px"; canvas.style.height="auto"; strip.appendChild(canvas);
+      var actions=document.createElement("div"); actions.className="share-actions";
+      if(text){var stat=document.createElement("div"); stat.className="share-stat"; stat.textContent=text; actions.appendChild(stat);}
+      var shareRow=document.createElement("div"); shareRow.style.cssText="display:flex;gap:8px;flex-wrap:wrap";
+      if(navigator.share){var nativeBtn=document.createElement("button"); nativeBtn.className="share-btn"; nativeBtn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>Share'; nativeBtn.addEventListener("click",function(){canvas.toBlob(function(blob){var file=new File([blob],"retold-odyssey.png",{type:"image/png"}); navigator.share({text:shareText,files:[file]}).catch(function(){});});}); shareRow.appendChild(nativeBtn);}
+      var dlBtn=document.createElement("button"); dlBtn.className="share-btn"; dlBtn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Save image';
+      dlBtn.addEventListener("click",function(){var a=document.createElement("a"); a.download="retold-odyssey-book3.png"; a.href=canvas.toDataURL("image/png"); a.click();}); shareRow.appendChild(dlBtn);
+      var copyBtn=document.createElement("button"); copyBtn.className="share-btn"; copyBtn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy';
+      var copied=document.createElement("div"); copied.className="share-copied"; copied.textContent="Copied to clipboard";
+      copyBtn.addEventListener("click",function(){canvas.toBlob(function(blob){try{navigator.clipboard.write([new ClipboardItem({"image/png":blob})]).then(function(){copied.classList.add("show"); setTimeout(function(){copied.classList.remove("show");},2000);});}catch(e){var a=document.createElement("a"); a.download="retold-odyssey-book3.png"; a.href=canvas.toDataURL("image/png"); a.click();}});});
+      shareRow.appendChild(copyBtn); actions.appendChild(shareRow); actions.appendChild(copied); strip.appendChild(actions);
+      return strip;
+    }
+    function getChoicePct(key, choice){
+      var storageKey="retold_choice_"+key; var data;
+      try{data=JSON.parse(localStorage.getItem(storageKey))||{};}catch(e){data={};}
+      if(!data[choice]){data[choice]=(data[choice]||0)+1; data._total=(data._total||0)+1; try{localStorage.setItem(storageKey,JSON.stringify(data));}catch(e){}}
+      return Math.round((data[choice]/(data._total||1))*100);
+    }
+    return {
+      choiceCard: function(container, choiceKey, choiceVal, label){
+        var pct=getChoicePct(choiceKey,choiceVal);
+        var canvas=drawCard([{type:"headline",text:label,size:22},{type:"stat",text:pct+"% of readers made this choice"},{type:"sub",text:"What would you choose?"}],{centerY:120});
+        var strip=makeStrip(canvas,pct+"% of readers chose the same.","I chose “"+label+"” in The Odyssey, Book III. "+pct+"% of readers agreed.");
+        container.appendChild(strip); setTimeout(function(){strip.classList.add("show");},100);
+      },
+      puzzleCard: function(container, puzzleName, attempts){
+        var msg=attempts===1?"Solved in 1 attempt":"Solved in "+attempts+" attempts";
+        var canvas=drawCard([{type:"headline",text:puzzleName,size:22},{type:"stat",text:msg},{type:"sub",text:"Can you get the order right?"}],{centerY:120});
+        var strip=makeStrip(canvas,msg+".","I solved “"+puzzleName+"” in The Odyssey, Book III — "+msg.toLowerCase()+".");
+        container.appendChild(strip); setTimeout(function(){strip.classList.add("show");},100);
+      },
+      quizCard: function(container, correct, total){
+        var canvas=drawCard([{type:"headline",text:correct+" of "+total,size:36},{type:"stat",text:"The Odyssey · Book III Quiz"},{type:"sub",text:correct===total?"A perfect reading.":"How well do you know Pylos?"}],{centerY:110});
+        var strip=makeStrip(canvas,null,"I scored "+correct+"/"+total+" on The Odyssey Book III quiz.");
+        container.appendChild(strip); setTimeout(function(){strip.classList.add("show");},100);
+      }
+    };
+  })();
+
+  /* ---------------- voyage strip ---------------- */
+  (function(){
+    var stops=["Ithaca","Pylos","Sparta","Calypso","Phaeacia","Troy & the Cyclops","Aeolus & Circe","The Underworld","Sirens & Scylla","The Return"];
+    var v=document.getElementById("voyage");
+    stops.forEach(function(name,i){
+      var s=document.createElement("span");
+      s.className="isle"+(i===1?" here":"")+(i===0?" done":"");
+      s.textContent=(i===1?"◉ ":"")+name;
+      v.appendChild(s);
+    });
+  })();
+
+  /* ---------------- character cards ---------------- */
+  (function(){
+    var CHARS={
+      telemachus:{name:"Telemachus",greek:"Τηλέμαχος",role:"Prince of Ithaca",
+        desc:"Son of <b>Odysseus</b> and <b>Penelope</b>. About twenty years old, he has grown up without a father and surrounded by the suitors who infest his house. Books I–IV follow his journey from uncertain boy to young man of action."},
+      athena:{name:"Athena",greek:"Αθηνά",role:"Goddess of Wisdom & War",
+        desc:"Daughter of <b>Zeus</b>. She is Odysseus’s divine patron and protector, and now extends that protection to his son. She appears in disguise throughout the poem — as Mentes, as Mentor, as a young girl, as a swallow — nudging events from behind mortal faces."},
+      mentor:{name:"Mentor",greek:"Μέντωρ",role:"Old friend of Odysseus",
+        desc:"A nobleman of Ithaca whom Odysseus trusted to watch over his household. <b>Athena</b> frequently borrows his appearance. His name has become the English word “mentor” — an older guide — because of this poem."},
+      nestor:{name:"Nestor",greek:"Νέστωρ",role:"King of Pylos",
+        desc:"The oldest and wisest of the Greek warriors at Troy. He fought alongside <b>Odysseus</b> and survived the war and the voyage home. Famous for his long, digressive speeches and his unfailing piety toward the gods. He rules Pylos with his many sons around him."},
+      poseidon:{name:"Poseidon",greek:"Ποσειδών",role:"God of the Sea",
+        desc:"Brother of <b>Zeus</b> and lord of the oceans. He is <b>Odysseus’s</b> great enemy — furious that the hero blinded his son, the Cyclops Polyphemus. It is Poseidon’s anger that keeps Odysseus wandering for ten years after the war."},
+      menelaus:{name:"Menelaus",greek:"Μενέλαος",role:"King of Sparta",
+        desc:"Brother of <b>Agamemnon</b> and husband of <b>Helen</b>, whose abduction by Paris caused the Trojan War. After Troy, he wandered for eight years before reaching home. He is the last Greek to have news of <b>Odysseus</b>."},
+      agamemnon:{name:"Agamemnon",greek:"Αγαμέμνων",role:"King of Mycenae (deceased)",
+        desc:"Commander of the Greek army at Troy and brother of <b>Menelaus</b>. He returned home victorious — only to be murdered at his own feast by his wife <b>Clytemnestra</b> and her lover <b>Aegisthus</b>. His fate is the poem’s dark mirror for Odysseus’s homecoming."},
+      aegisthus:{name:"Aegisthus",greek:"Αἴγισθος",role:"Usurper & murderer",
+        desc:"Cousin of <b>Agamemnon</b>. While the king was at Troy, Aegisthus seduced his wife <b>Clytemnestra</b> and together they plotted his murder. He ruled Mycenae for seven years before <b>Orestes</b>, Agamemnon’s son, returned and killed him."},
+      ajax:{name:"Ajax the Lesser",greek:"Αἴας",role:"Greek warrior (deceased)",
+        desc:"Not the famous Ajax son of Telamon, but the smaller Ajax, son of Oileus. After Troy fell, he dragged the prophetess <b>Cassandra</b> from <b>Athena’s</b> temple — an act of sacrilege. Athena destroyed his ship with a storm, and Poseidon drowned him at sea."},
+      odysseus:{name:"Odysseus",greek:"Οδυσσεύς",role:"King of Ithaca (missing)",
+        desc:"The hero of the poem. He fought at Troy for ten years and has been missing for ten more. He is famed for his cunning, his eloquence, and his endurance. Everyone in the story is either looking for him, waiting for him, or trying to become him."},
+      zeus:{name:"Zeus",greek:"Ζεύς",role:"King of the Gods",
+        desc:"Ruler of Olympus, god of the sky and thunder. Father of <b>Athena</b>. He oversees the fates of mortals and sends omens — the two eagles in Book II were his message. He has decreed that Odysseus will return home, but the journey will not be easy."},
+      peisistratus:{name:"Peisistratus",greek:"Πεισίστρατος",role:"Son of Nestor",
+        desc:"<b>Nestor’s</b> youngest son, about the same age as Telemachus. Steady, tactful, and brave, he drives the chariot to Sparta and becomes Telemachus’s first real companion. He is named after Nestor’s brother who died at Troy."},
+      helen:{name:"Helen",greek:"Ελένη",role:"Queen of Sparta",
+        desc:"Wife of <b>Menelaus</b> and the most beautiful woman in the Greek world. Her departure with Paris of Troy caused the war. Now restored to Sparta, she is wise, perceptive, and slightly dangerous — she recognises Telemachus on sight by his resemblance to his father."}
+    };
+
+    var overlay=document.createElement("div");
+    overlay.className="char-overlay";
+    overlay.innerHTML='<div class="char-card"><button class="char-close" aria-label="Close">×</button><div class="char-role"></div><div class="char-name"></div><div class="char-greek"></div><div class="char-desc"></div></div>';
+    document.body.appendChild(overlay);
+
+    var card=overlay.querySelector(".char-card"),
+        elRole=card.querySelector(".char-role"),
+        elName=card.querySelector(".char-name"),
+        elGreek=card.querySelector(".char-greek"),
+        elDesc=card.querySelector(".char-desc");
+
+    function open(key){
+      var ch=CHARS[key]; if(!ch)return;
+      elRole.textContent=ch.role;
+      elName.textContent=ch.name;
+      elGreek.textContent=ch.greek;
+      elDesc.innerHTML=ch.desc;
+      overlay.classList.add("open");
+      Sound.tick();
+    }
+    function close(){overlay.classList.remove("open");}
+
+    overlay.addEventListener("click",function(e){
+      if(e.target===overlay || e.target.closest(".char-close")) close();
+    });
+    document.addEventListener("keydown",function(e){
+      if(e.key==="Escape" && overlay.classList.contains("open")) close();
+    });
+
+    document.addEventListener("click",function(e){
+      var span=e.target.closest(".char");
+      if(span && span.dataset.char) open(span.dataset.char);
+    });
+    document.addEventListener("keydown",function(e){
+      if(e.key==="Enter"){
+        var span=e.target.closest(".char");
+        if(span && span.dataset.char) open(span.dataset.char);
+      }
+    });
+  })();
+})();
+</script>

@@ -1,0 +1,394 @@
+<title>Retold &middot; Glossary of Characters</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sea-abyss:#060f18;--sea-deep:#0a1c2b;--sea-mid:#0f2a3d;
+  --wine:#3a1526;--wine-glow:#5c1f34;
+  --bronze:#c99a4b;--bronze-bright:#e6c073;
+  --terra:#c8613a;--bone:#ede3cf;--bone-dim:#b6ab97;--ash:#6f7c83;
+  --line:rgba(201,154,75,.22);--line-soft:rgba(237,227,207,.10);
+  --clay:#c26a3d;--clay-lo:#7c3820;--figure:#100a10;--incise:#e0965f;
+  --serif:"Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style",Georgia,serif;
+  --body:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,monospace;
+  --wrap:50rem;
+}
+html{background:var(--sea-abyss);color:var(--bone-dim);font-family:var(--body);line-height:1.7;scroll-behavior:smooth}
+body{min-height:100vh;position:relative}
+canvas{position:fixed;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
+
+.page{position:relative;z-index:1;max-width:var(--wrap);margin:0 auto;padding:3.5rem 1.4rem 4rem}
+
+header{text-align:center;margin-bottom:3.2rem}
+.brand{font-family:var(--mono);font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--bronze);margin-bottom:.8rem}
+h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:600;color:var(--bone);line-height:1.2;margin-bottom:.5rem}
+.subtitle{font-family:var(--body);font-size:1.05rem;color:var(--ash);max-width:34rem;margin:0 auto}
+.back-link{display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .2s,border-color .2s}
+.back-link:hover{color:var(--bronze-bright);border-color:var(--bronze-bright)}
+
+.group{margin-bottom:2.8rem}
+.group-title{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--bronze);padding-bottom:.55rem;border-bottom:1px solid var(--line);margin-bottom:1.1rem;
+}
+
+.card{
+  background:linear-gradient(170deg,rgba(15,42,61,.35),rgba(6,15,24,.45));
+  border:1px solid var(--line);padding:1.3rem 1.4rem 1.2rem;margin-bottom:.75rem;
+  transition:border-color .25s,background .25s;
+}
+.card:hover{border-color:rgba(201,154,75,.42);background:linear-gradient(170deg,rgba(15,42,61,.5),rgba(6,15,24,.55))}
+.card-top{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin-bottom:.15rem}
+.card-name{font-family:var(--serif);font-size:1.28rem;font-weight:600;color:var(--bone);line-height:1.25}
+.card-greek{font-family:var(--serif);font-size:.88rem;color:var(--bronze);letter-spacing:.03em}
+.card-role{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ash);margin-bottom:.55rem}
+.card-desc{font-size:.92rem;line-height:1.65;color:var(--bone-dim)}
+.card-desc b{color:var(--bronze-bright);font-weight:600}
+.card-books{margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.card-books span{
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;
+  background:rgba(201,154,75,.1);border:1px solid var(--line);
+  padding:2px 7px;color:var(--bronze);
+}
+
+.divider{
+  text-align:center;padding:1rem 0;color:var(--line);font-family:var(--serif);
+  font-size:1.1rem;letter-spacing:.4em;margin:1rem 0;
+}
+
+footer{text-align:center;padding:2.5rem 0 1rem;color:var(--ash);font-size:.82rem}
+footer small{display:block;margin-top:.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:600px){
+  .page{padding:2.5rem 1rem 3rem}
+  .card{padding:1.1rem 1rem 1rem}
+  .card-name{font-size:1.15rem}
+}
+</style>
+
+<canvas id="sea"></canvas>
+
+<div class="page">
+  <header class="reveal">
+    <div class="brand">Retold</div>
+    <h1>Glossary of Characters</h1>
+    <p class="subtitle">Every mortal and immortal who has appeared so far, from Book I through Book VI.</p>
+    <a class="back-link" href="#">&larr; Back to The Odyssey</a>
+  </header>
+
+  <div class="group reveal">
+    <div class="group-title">The Olympians</div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Athena</span><span class="card-greek">&Alpha;&theta;&eta;&nu;&alpha;</span></div>
+      <div class="card-role">Goddess of Wisdom &amp; War</div>
+      <div class="card-desc">Daughter of <b>Zeus</b>. She is <b>Odysseus&rsquo;s</b> divine patron and protector, and now extends that protection to his son. She appears in disguise throughout the poem &mdash; as <b>Mentes</b>, as <b>Mentor</b>, as a dream-friend &mdash; nudging events from behind mortal faces. In Book VI she sends <b>Nausica&auml;</b> to the river, puts courage in the girl&rsquo;s heart, and transforms Odysseus&rsquo;s appearance after he bathes &mdash; thickening his hair like hyacinth clusters.</div>
+      <div class="card-books"><span>Book I</span><span>Book II</span><span>Book III</span><span>Book IV</span><span>Book V</span><span>Book VI</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Zeus</span><span class="card-greek">&Zeta;&epsilon;&upsilon;&sigmaf;</span></div>
+      <div class="card-role">King of the Gods</div>
+      <div class="card-desc">Ruler of Olympus, god of the sky and thunder. Father of <b>Athena</b>. He oversees the fates of mortals and sends omens &mdash; the two eagles in Book II were his message. He decrees that <b>Odysseus</b> must be released from <b>Calypso&rsquo;s</b> island and sends <b>Hermes</b> to deliver the command.</div>
+      <div class="card-books"><span>Book I</span><span>Book II</span><span>Book III</span><span>Book IV</span><span>Book V</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Poseidon</span><span class="card-greek">&Pi;&omicron;&sigma;&epsilon;&iota;&delta;&omega;&nu;</span></div>
+      <div class="card-role">God of the Sea</div>
+      <div class="card-desc">Brother of <b>Zeus</b> and lord of the oceans. He is <b>Odysseus&rsquo;s</b> great enemy &mdash; furious that the hero blinded his son, the Cyclops Polyphemus. He drowned <b>Ajax the Lesser</b> for his boasting, and in Book V unleashes a storm that nearly kills Odysseus when he finally sails from <b>Calypso&rsquo;s</b> island.</div>
+      <div class="card-books"><span>Book III</span><span>Book IV</span><span>Book V</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Hermes</span><span class="card-greek">&Epsilon;&rho;&mu;&eta;&sigmaf;</span></div>
+      <div class="card-role">Messenger of the Gods</div>
+      <div class="card-desc">The swift messenger who carries the will of <b>Zeus</b> to gods and mortals alike. In Book V he flies on golden sandals to <b>Calypso&rsquo;s</b> island and delivers the command to release <b>Odysseus</b>. Even he pauses to admire the beauty of Ogygia before speaking.</div>
+      <div class="card-books"><span>Book I</span><span>Book V</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Calypso</span><span class="card-greek">&Kappa;&alpha;&lambda;&upsilon;&psi;&omega;</span></div>
+      <div class="card-role">Nymph of Ogygia</div>
+      <div class="card-desc">A divine nymph, daughter of Atlas, who holds <b>Odysseus</b> captive on her hidden island for seven years. She loves him genuinely and offers him immortality. When <b>Hermes</b> delivers Zeus&rsquo;s command, she protests the gods&rsquo; hypocrisy &mdash; male gods take mortal lovers freely, but goddesses are punished. She obeys, but lets them know what she thinks.</div>
+      <div class="card-books"><span>Book I</span><span>Book IV</span><span>Book V</span></div>
+    </div>
+  </div>
+
+  <div class="divider">&middot; &middot; &middot;</div>
+
+  <div class="group reveal">
+    <div class="group-title">The House of Odysseus</div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Odysseus</span><span class="card-greek">&Omicron;&delta;&upsilon;&sigma;&sigma;&epsilon;&upsilon;&sigmaf;</span></div>
+      <div class="card-role">King of Ithaca (missing)</div>
+      <div class="card-desc">The hero of the poem. After four books heard only in other people&rsquo;s mouths, we finally see him in Book V &mdash; weeping on a rock, staring at a sea he cannot cross. He refuses immortality, survives <b>Poseidon&rsquo;s</b> storm, and washes up naked on Phaeacia. In Book VI he emerges from the bushes like a mountain lion, terrifies a group of girls, and wins help from <b>Nausica&auml;</b> with nothing but the most beautiful speech in the poem.</div>
+      <div class="card-books"><span>Book I</span><span>Book II</span><span>Book III</span><span>Book IV</span><span>Book V</span><span>Book VI</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Penelope</span><span class="card-greek">&Pi;&eta;&nu;&epsilon;&lambda;&omicron;&pi;&eta;</span></div>
+      <div class="card-role">Queen of Ithaca</div>
+      <div class="card-desc">Wife of <b>Odysseus</b>, mother of <b>Telemachus</b>. Famous for her loyalty and cunning &mdash; she kept the suitors at bay for three years by weaving a shroud by day and unravelling it by night. In Book IV she learns her son sailed without telling her and that the suitors plan to kill him. <b>Athena</b> sends a dream-phantom to comfort her. In Book V, she is the reason Odysseus refuses immortality.</div>
+      <div class="card-books"><span>Book I</span><span>Book II</span><span>Book IV</span><span>Book V</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Telemachus</span><span class="card-greek">&Tau;&eta;&lambda;&epsilon;&mu;&alpha;&chi;&omicron;&sigmaf;</span></div>
+      <div class="card-role">Prince of Ithaca</div>
+      <div class="card-desc">Son of <b>Odysseus</b> and <b>Penelope</b>. About twenty years old, he has grown up without a father and surrounded by the suitors who infest his house. Books I&ndash;IV follow his journey from uncertain boy to young man of action. In Sparta, his resemblance to his father moves <b>Menelaus</b> to tears and confirms his identity to <b>Helen</b>.</div>
+      <div class="card-books"><span>Book I</span><span>Book II</span><span>Book III</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Laertes</span><span class="card-greek">&Lambda;&alpha;&epsilon;&rho;&tau;&eta;&sigmaf;</span></div>
+      <div class="card-role">Father of Odysseus</div>
+      <div class="card-desc">The old king, <b>Odysseus&rsquo;s</b> father. Once a great warrior, he has withdrawn from the palace to work his farm in grief. <b>Penelope&rsquo;s</b> shroud ruse used him as its pretext &mdash; she told the suitors she must finish weaving his burial shroud before choosing a new husband.</div>
+      <div class="card-books"><span>Book I</span><span>Book II</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Eurycleia</span><span class="card-greek">&Epsilon;&upsilon;&rho;&upsilon;&kappa;&lambda;&epsilon;&iota;&alpha;</span></div>
+      <div class="card-role">Nurse to the Royal Household</div>
+      <div class="card-desc">The old nurse who raised both <b>Odysseus</b> and <b>Telemachus</b>. She is the only mortal Telemachus trusts with his departure plan. When <b>Penelope</b> confronts her in Book IV, she confesses &mdash; she swore an oath to the boy. Her loyalty is always to the family, even when it means keeping secrets from its queen.</div>
+      <div class="card-books"><span>Book II</span><span>Book IV</span></div>
+    </div>
+  </div>
+
+  <div class="divider">&middot; &middot; &middot;</div>
+
+  <div class="group reveal">
+    <div class="group-title">The Suitors</div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Antinous</span><span class="card-greek">&Alpha;&nu;&tau;&iota;&nu;&omicron;&omicron;&sigmaf;</span></div>
+      <div class="card-role">Leader of the Suitors</div>
+      <div class="card-desc">The most arrogant and dangerous of <b>Penelope&rsquo;s</b> suitors. In Book IV he proposes murdering <b>Telemachus</b> on his way home from Sparta: <em>give me a ship and twenty men.</em> He is not bluffing. The ambush ship is readied and waits in the strait.</div>
+      <div class="card-books"><span>Book I</span><span>Book II</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Eurymachus</span><span class="card-greek">&Epsilon;&upsilon;&rho;&upsilon;&mu;&alpha;&chi;&omicron;&sigmaf;</span></div>
+      <div class="card-role">Suitor</div>
+      <div class="card-desc">The smoothest-spoken of the suitors &mdash; where <b>Antinous</b> uses force, Eurymachus uses charm. He mocks <b>Halitherses</b> after the eagle omen, dismissing prophecy entirely. He is the second suitor <b>Odysseus</b> kills in Book XXII, moments after Antinous falls.</div>
+      <div class="card-books"><span>Book II</span></div>
+    </div>
+  </div>
+
+  <div class="divider">&middot; &middot; &middot;</div>
+
+  <div class="group reveal">
+    <div class="group-title">Ithacans</div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Mentor</span><span class="card-greek">&Mu;&epsilon;&nu;&tau;&omega;&rho;</span></div>
+      <div class="card-role">Old Friend of Odysseus</div>
+      <div class="card-desc">A nobleman of Ithaca whom <b>Odysseus</b> trusted to watch over his household. <b>Athena</b> frequently borrows his appearance. His name has become the English word &ldquo;mentor&rdquo; &mdash; an older guide &mdash; because of this poem.</div>
+      <div class="card-books"><span>Book II</span><span>Book III</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Mentes</span><span class="card-greek">&Mu;&epsilon;&nu;&tau;&eta;&sigmaf;</span></div>
+      <div class="card-role">Taphian Lord (Athena in disguise)</div>
+      <div class="card-desc"><b>Athena&rsquo;s</b> first disguise in the poem. She appears as Mentes, a foreign trader and old friend of <b>Odysseus</b>, to plant the idea of the voyage in <b>Telemachus&rsquo;s</b> mind. The boy recognises a guest, not a god.</div>
+      <div class="card-books"><span>Book I</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Halitherses</span><span class="card-greek">&Alpha;&lambda;&iota;&theta;&epsilon;&rho;&sigma;&eta;&sigmaf;</span></div>
+      <div class="card-role">Prophet &amp; Bird-Reader</div>
+      <div class="card-desc">An old man renowned as the finest reader of birds on Ithaca. He saw <b>Odysseus</b> off to Troy twenty years ago and predicted his long absence. Now he reads <b>Zeus&rsquo;s</b> eagle omen and warns the suitors that Odysseus is near and their deaths are certain. They laugh at him.</div>
+      <div class="card-books"><span>Book II</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Aegyptius</span><span class="card-greek">&Alpha;&iota;&gamma;&upsilon;&pi;&tau;&iota;&omicron;&sigmaf;</span></div>
+      <div class="card-role">Elder of Ithaca</div>
+      <div class="card-desc">A bent old man who opens the assembly. He has four sons &mdash; one sailed with <b>Odysseus</b> and was eaten by the Cyclops, though he does not know this. He blesses whoever called this meeting, hoping it means news of the fleet.</div>
+      <div class="card-books"><span>Book II</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Phemius</span><span class="card-greek">&Phi;&eta;&mu;&iota;&omicron;&sigmaf;</span></div>
+      <div class="card-role">Court Bard of Ithaca</div>
+      <div class="card-desc">The singer in <b>Odysseus&rsquo;s</b> palace, forced to perform for the suitors. When he sings of the Greeks&rsquo; return from Troy, <b>Penelope</b> weeps and begs him to stop. <b>Telemachus</b> defends the bard&rsquo;s right to sing what the Muse gives him &mdash; one of his first acts of authority.</div>
+      <div class="card-books"><span>Book I</span></div>
+    </div>
+  </div>
+
+  <div class="divider">&middot; &middot; &middot;</div>
+
+  <div class="group reveal">
+    <div class="group-title">Kings &amp; Legends</div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Nestor</span><span class="card-greek">&Nu;&epsilon;&sigma;&tau;&omega;&rho;</span></div>
+      <div class="card-role">King of Pylos</div>
+      <div class="card-desc">The oldest and wisest of the Greek warriors at Troy. He fought alongside <b>Odysseus</b> and survived the war and the voyage home. Famous for his long, digressive speeches and his unfailing piety toward the gods. He rules Pylos with his many sons around him.</div>
+      <div class="card-books"><span>Book I</span><span>Book III</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Peisistratus</span><span class="card-greek">&Pi;&epsilon;&iota;&sigma;&iota;&sigma;&tau;&rho;&alpha;&tau;&omicron;&sigmaf;</span></div>
+      <div class="card-role">Son of Nestor</div>
+      <div class="card-desc"><b>Nestor&rsquo;s</b> youngest son, about the same age as <b>Telemachus</b>. Steady, tactful, and brave, he drives the chariot to Sparta and becomes Telemachus&rsquo;s first real companion. At Menelaus&rsquo;s table, when the weeping starts, his grief for his own dead brother Antilochus is as real as anyone&rsquo;s.</div>
+      <div class="card-books"><span>Book III</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Menelaus</span><span class="card-greek">&Mu;&epsilon;&nu;&epsilon;&lambda;&alpha;&omicron;&sigmaf;</span></div>
+      <div class="card-role">King of Sparta</div>
+      <div class="card-desc">Brother of <b>Agamemnon</b> and husband of <b>Helen</b>. Rich beyond measure after his long voyage home from Troy, but haunted &mdash; he would trade it all to have the dead alive. He wrestled the shape-shifting <b>Proteus</b> on the beach of Pharos and learned that <b>Odysseus</b> is alive but trapped on <b>Calypso&rsquo;s</b> island.</div>
+      <div class="card-books"><span>Book I</span><span>Book III</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Helen</span><span class="card-greek">&Epsilon;&lambda;&epsilon;&nu;&eta;</span></div>
+      <div class="card-role">Queen of Sparta</div>
+      <div class="card-desc">Wife of <b>Menelaus</b> and the most beautiful woman in the Greek world. Now restored to Sparta, she controls the room &mdash; she drops the drug nepenthe into the wine, tells the first war story, and identifies <b>Telemachus</b> before anyone else by his resemblance to <b>Odysseus</b>. Homer never condemns her. He lets you decide.</div>
+      <div class="card-books"><span>Book III</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Agamemnon</span><span class="card-greek">&Alpha;&gamma;&alpha;&mu;&epsilon;&mu;&nu;&omega;&nu;</span></div>
+      <div class="card-role">King of Mycenae (deceased)</div>
+      <div class="card-desc">Commander of the Greek army at Troy and brother of <b>Menelaus</b>. He returned home victorious &mdash; only to be murdered at his own feast by his wife Clytemnestra and her lover <b>Aegisthus</b>. <b>Proteus</b> reveals his fate in Book IV. His story is the poem&rsquo;s dark mirror for Odysseus&rsquo;s homecoming.</div>
+      <div class="card-books"><span>Book III</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Aegisthus</span><span class="card-greek">&Alpha;&iota;&gamma;&iota;&sigma;&theta;&omicron;&sigmaf;</span></div>
+      <div class="card-role">Usurper &amp; Murderer</div>
+      <div class="card-desc">Cousin of <b>Agamemnon</b>. While the king was at Troy, Aegisthus seduced his wife Clytemnestra and together they plotted his murder. Named by <b>Proteus</b> as the killer. He ruled Mycenae for seven years before Orestes, Agamemnon&rsquo;s son, returned and killed him.</div>
+      <div class="card-books"><span>Book III</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Ajax the Lesser</span><span class="card-greek">&Alpha;&iota;&alpha;&sigmaf;</span></div>
+      <div class="card-role">Greek Warrior (deceased)</div>
+      <div class="card-desc">Not the famous Ajax son of Telamon, but the smaller Ajax, son of Oileus. <b>Proteus</b> tells <b>Menelaus</b> that <b>Poseidon</b> drowned him after Ajax boasted he had survived the sea against the gods&rsquo; will.</div>
+      <div class="card-books"><span>Book III</span><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Proteus</span><span class="card-greek">&Pi;&rho;&omega;&tau;&epsilon;&upsilon;&sigmaf;</span></div>
+      <div class="card-role">The Old Man of the Sea</div>
+      <div class="card-desc">A shape-shifting sea god who tends his flock of seals on the island of Pharos. To get answers from him, <b>Menelaus</b> must catch him asleep and hold on through every transformation &mdash; lion, serpent, panther, boar, running water, and tree. He reveals the fates of <b>Ajax</b>, <b>Agamemnon</b>, and <b>Odysseus</b>.</div>
+      <div class="card-books"><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Eidothea</span><span class="card-greek">&Epsilon;&iota;&delta;&omicron;&theta;&epsilon;&alpha;</span></div>
+      <div class="card-role">Sea-nymph, daughter of Proteus</div>
+      <div class="card-desc">She takes pity on <b>Menelaus</b> starving on the beach of Pharos and teaches him how to ambush her own father. She provides the sealskins and the ambrosia to mask the stench. Without her betrayal, Menelaus would never have learned the truth about <b>Odysseus</b>.</div>
+      <div class="card-books"><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Hermione</span><span class="card-greek">&Epsilon;&rho;&mu;&iota;&omicron;&nu;&eta;</span></div>
+      <div class="card-role">Daughter of Menelaus &amp; Helen</div>
+      <div class="card-desc">Being sent to marry Neoptolemus, son of Achilles &mdash; a match promised during the war. She appears at the double wedding feast that is underway when <b>Telemachus</b> arrives in Sparta. A reminder that the war&rsquo;s consequences are still unfolding a generation later.</div>
+      <div class="card-books"><span>Book IV</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Ino (Leucothea)</span><span class="card-greek">&Iota;&nu;&omega; / &Lambda;&epsilon;&upsilon;&kappa;&omicron;&theta;&epsilon;&alpha;</span></div>
+      <div class="card-role">Sea-nymph, once mortal</div>
+      <div class="card-desc">A woman of Thebes who became a sea-goddess. She surfaces during <b>Poseidon&rsquo;s</b> storm in Book V and gives <b>Odysseus</b> her immortal veil &mdash; the only thing that keeps him from drowning. She understands mortal suffering because she lived it.</div>
+      <div class="card-books"><span>Book V</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Eteoneus</span><span class="card-greek">&Epsilon;&tau;&epsilon;&omega;&nu;&epsilon;&upsilon;&sigmaf;</span></div>
+      <div class="card-role">Herald of Menelaus</div>
+      <div class="card-desc">The man at the gate who hesitates when <b>Telemachus</b> arrives. Should he turn the strangers away? <b>Menelaus</b> rebukes him sharply: <em>we have eaten other men&rsquo;s bread.</em> A small character, but he triggers one of the poem&rsquo;s key statements on hospitality.</div>
+      <div class="card-books"><span>Book IV</span></div>
+    </div>
+  </div>
+
+  <div class="divider">&middot; &middot; &middot;</div>
+
+  <div class="group reveal">
+    <div class="group-title">The Phaeacians</div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Nausica&auml;</span><span class="card-greek">&Nu;&alpha;&upsilon;&sigma;&iota;&kappa;&alpha;&alpha;</span></div>
+      <div class="card-role">Princess of Phaeacia</div>
+      <div class="card-desc">Daughter of <b>Alcinous</b> and <b>Arete</b>. Young, brave, practical, and perceptive. <b>Athena</b> sends her to the river mouth in a dream. When <b>Odysseus</b> emerges from the bushes, naked and terrifying, every other girl runs. Nausica&auml; stands her ground. She feeds and clothes him, then gives him precise instructions for entering the city &mdash; while being careful about her own reputation. Homer compares her to Artemis among her nymphs.</div>
+      <div class="card-books"><span>Book VI</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Alcinous</span><span class="card-greek">&Alpha;&lambda;&kappa;&iota;&nu;&omicron;&omicron;&sigmaf;</span></div>
+      <div class="card-role">King of the Phaeacians</div>
+      <div class="card-desc">King of Scheria and father of <b>Nausica&auml;</b>. When she asks for a wagon to wash clothes, he smiles &mdash; he understands what she is really thinking about. He will play a larger role in the books to come: it is in his palace that <b>Odysseus</b> will finally tell his whole story.</div>
+      <div class="card-books"><span>Book VI</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-name">Arete</span><span class="card-greek">&Alpha;&rho;&eta;&tau;&eta;</span></div>
+      <div class="card-role">Queen of the Phaeacians</div>
+      <div class="card-desc">Queen of Scheria, wife of <b>Alcinous</b>. <b>Nausica&auml;</b> tells <b>Odysseus</b> to go straight to her &mdash; not the king &mdash; and clasp her knees. If the queen looks on him with favour, he will get home. In Phaeacia, the queen&rsquo;s judgement carries the real weight.</div>
+      <div class="card-books"><span>Book VI</span></div>
+    </div>
+  </div>
+
+  <footer class="reveal">
+    <p>33 characters across Books I&ndash;VI. More will appear as the voyage continues.</p>
+    <small>Retold &middot; The Odyssey</small>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  /* ---------------- sea canvas ---------------- */
+  (function(){
+    var c=document.getElementById("sea"),x=c.getContext("2d"),W,H,DPR,stars,t=0;
+    function size(){
+      DPR=Math.min(devicePixelRatio||1,2);
+      W=c.width=innerWidth*DPR; H=c.height=innerHeight*DPR;
+      c.style.width=innerWidth+"px"; c.style.height=innerHeight+"px";
+      stars=[];
+      var n=Math.round(innerWidth*innerHeight/12000);
+      for(var i=0;i<n;i++) stars.push({
+        x:Math.random()*W, y:Math.random()*H*0.5,
+        r:(Math.random()*1.2+0.2)*DPR, p:Math.random()*6.28, s:Math.random()*0.4+0.2
+      });
+    }
+    function draw(){
+      var g=x.createLinearGradient(0,0,0,H);
+      g.addColorStop(0,"#040810"); g.addColorStop(0.5,"#081420");
+      g.addColorStop(0.75,"#0e2030"); g.addColorStop(1,"#0a1c2b");
+      x.fillStyle=g; x.fillRect(0,0,W,H);
+      for(var i=0;i<stars.length;i++){var s=stars[i];
+        var a=0.4+0.4*Math.sin(t*s.s+s.p);
+        x.globalAlpha=a*0.7; x.fillStyle="#ede3cf";
+        x.beginPath(); x.arc(s.x,s.y,s.r,0,6.29); x.fill();
+      }
+      x.globalAlpha=1;
+      t+=reduce?0:0.005;
+      if(!reduce) requestAnimationFrame(draw);
+    }
+    addEventListener("resize",function(){size();if(reduce)draw();});
+    size(); draw();
+  })();
+
+  /* ---------------- scroll reveals ---------------- */
+  (function(){
+    var els=document.querySelectorAll(".reveal");
+    if(!("IntersectionObserver" in window)||reduce){els.forEach(function(e){e.classList.add("in")});return;}
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+    },{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+})();
+</script>

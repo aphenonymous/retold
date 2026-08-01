@@ -1,0 +1,1340 @@
+<meta charset="utf-8">
+<title>The Odyssey &middot; Book VIII &mdash; The Songs and Games</title>
+<style>
+  :root{
+    --sea-abyss:#060f18;--sea-deep:#0a1c2b;--sea-mid:#0f2a3d;
+    --wine:#3a1526;--wine-glow:#5c1f34;
+    --bronze:#c99a4b;--bronze-bright:#e6c073;
+    --terra:#c8613a;--bone:#ede3cf;--bone-dim:#b6ab97;--ash:#6f7c83;
+    --line:rgba(201,154,75,.22);--line-soft:rgba(237,227,207,.10);
+    --clay:#c26a3d;--clay-lo:#7c3820;--figure:#100a10;--incise:#e0965f;
+    --serif:"Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style",Georgia,serif;
+    --body:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,monospace;
+    --wrap:44rem;
+  }
+  *{box-sizing:border-box}
+  html{color-scheme:dark}
+  body{
+    margin:0;background:var(--sea-abyss);color:var(--bone);font-family:var(--body);
+    font-size:19px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  #sea{position:fixed;inset:0;z-index:0;display:block}
+  .vignette{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% -10%,transparent 40%,rgba(3,8,13,.55) 100%);}
+  main{position:relative;z-index:2}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+  .meander{height:14px;width:100%;
+    background-image:repeating-linear-gradient(90deg,var(--bronze) 0 2px,transparent 2px 6px,var(--bronze) 6px 8px,transparent 8px 8px,var(--bronze) 8px 10px,transparent 10px 16px);
+    -webkit-mask:repeating-linear-gradient(90deg,#000 0 1px,transparent 1px 2px);opacity:.5}
+
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px;position:relative}
+  .hero .key-frame{border:1px solid var(--line);padding:56px 40px 48px;max-width:40rem;position:relative;
+    background:radial-gradient(120% 140% at 50% 0%,rgba(58,21,38,.35),transparent 60%);backdrop-filter:blur(1.5px)}
+  .hero .key-frame::before,.hero .key-frame::after{content:"";position:absolute;width:26px;height:26px;border:1px solid var(--bronze);opacity:.7}
+  .hero .key-frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .hero .key-frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.9rem,9vw,5.4rem);line-height:.98;letter-spacing:.02em;margin:.5rem 0 .2rem;text-wrap:balance;color:var(--bone);text-shadow:0 2px 30px rgba(0,0,0,.5)}
+  .hero h1 .the{display:block;font-size:.26em;letter-spacing:.5em;text-transform:uppercase;color:var(--bronze);margin-bottom:.35em;padding-left:.5em}
+  .hero .booktag{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--bone-dim);margin-top:1.4rem}
+  .hero .booktag b{color:var(--bronze-bright);font-style:normal;font-weight:600}
+  .greek{font-family:var(--serif);color:var(--bronze);letter-spacing:.05em}
+  .scroll-cue{margin-top:3rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);display:flex;flex-direction:column;align-items:center;gap:.7rem}
+  .scroll-cue span.arrow{width:1px;height:34px;background:linear-gradient(var(--bronze),transparent);animation:drift 2.4s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(8px);opacity:1}}
+
+  section{padding:72px 0;position:relative}
+  .scene-no{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;color:var(--bronze);text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:14px}
+  .scene-no::after{content:"";flex:1;height:1px;background:var(--line)}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,4.5vw,2.5rem);line-height:1.1;margin:0 0 1.1rem;letter-spacing:.01em;text-wrap:balance}
+  p{margin:0 0 1.25rem}
+  p.lead::first-letter{font-family:var(--serif);float:left;font-size:3.9rem;line-height:.72;padding:.16em .12em 0 0;color:var(--terra);font-weight:600}
+  .pull{font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.5;color:var(--bronze-bright);border-left:2px solid var(--bronze);padding:.2rem 0 .2rem 1.4rem;margin:2rem 0;text-wrap:balance}
+
+  .device{border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,42,61,.5),rgba(6,15,24,.5));padding:30px clamp(20px,4vw,34px) 34px;margin:8px 0;box-shadow:0 24px 60px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(237,227,207,.05)}
+  .device .kicker{display:flex;align-items:center;gap:12px;margin-bottom:.6rem}
+  .device .kicker svg{width:22px;height:22px;flex:none}
+  .device h3{font-family:var(--serif);font-size:1.28rem;font-weight:600;margin:0;letter-spacing:.01em}
+  .device .hint{color:var(--bone-dim);font-size:.95rem;margin:.2rem 0 1.4rem}
+
+  ol.seq{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  li.step{display:flex;align-items:center;gap:14px;background:rgba(6,15,24,.7);border:1px solid var(--line-soft);padding:14px 16px;cursor:grab;user-select:none;touch-action:none;transition:border-color .2s,background .2s,transform .06s}
+  li.step:focus-visible{outline:2px solid var(--bronze-bright);outline-offset:2px}
+  li.step .grip{color:var(--ash);font-size:1.1rem;line-height:1;letter-spacing:-2px;flex:none}
+  li.step .txt{flex:1}
+  li.step .num{font-family:var(--mono);font-size:.75rem;color:var(--bronze);border:1px solid var(--line);width:26px;height:26px;flex:none;display:grid;place-items:center;border-radius:50%}
+  li.step.lift{transform:scale(1.015);border-color:var(--bronze);background:rgba(15,42,61,.9);box-shadow:0 16px 34px -18px rgba(0,0,0,.9);cursor:grabbing}
+  li.step.correct{border-color:rgba(201,154,75,.6);background:rgba(58,21,38,.35)}
+  li.step.wrong{border-color:rgba(200,97,58,.6)}
+  li.step.correct .num{background:var(--bronze);color:var(--sea-abyss);border-color:var(--bronze)}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+  button.btn{font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sea-abyss);background:var(--bronze);border:0;padding:12px 20px;cursor:pointer;font-weight:700;transition:background .2s,transform .1s}
+  button.btn:hover{background:var(--bronze-bright)}
+  button.btn:active{transform:translateY(1px)}
+  button.btn.ghost{background:transparent;color:var(--bronze);border:1px solid var(--line)}
+  button.btn.ghost:hover{background:rgba(201,154,75,.1);color:var(--bronze-bright)}
+  .verdict{font-family:var(--serif);font-style:italic;font-size:1.05rem;min-height:1.4em;margin-left:4px}
+  .verdict.good{color:var(--bronze-bright)}
+  .verdict.bad{color:var(--terra)}
+
+  .trick{display:grid;gap:16px}
+  .hall-scene{border:1px solid var(--line-soft);background:rgba(6,15,24,.6);padding:22px;display:flex;gap:20px;align-items:center}
+  .hall-scene svg{width:96px;height:96px;flex:none}
+  .speech{flex:1}
+  .speech .who{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin-bottom:.35rem}
+  .speech .said{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--bone);min-height:1.5em;text-wrap:balance}
+  .choices{display:flex;gap:12px;flex-wrap:wrap}
+  .choices button{font-family:var(--serif);font-size:1.05rem;font-style:italic;background:rgba(15,42,61,.6);border:1px solid var(--line);color:var(--bone);padding:12px 18px;cursor:pointer;transition:.2s;text-align:left}
+  .choices button:hover{border-color:var(--bronze);color:var(--bronze-bright);background:rgba(15,42,61,.95)}
+  .choices button:disabled{opacity:.4;cursor:default}
+  .aftermath{font-family:var(--body);color:var(--bone-dim);font-size:1rem;line-height:1.6;border-left:2px solid var(--line);padding-left:16px;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+  .aftermath.show{opacity:1;transform:none}
+  .aftermath b{color:var(--bronze-bright);font-weight:600}
+
+  .quiz{display:grid;gap:26px}
+  .q .stem{font-family:var(--serif);font-size:1.18rem;margin-bottom:.9rem;line-height:1.4}
+  .q .stem .qn{color:var(--bronze);font-family:var(--mono);font-size:.8rem;margin-right:.6rem}
+  .opts{display:grid;gap:9px}
+  .opt{display:flex;align-items:center;gap:12px;text-align:left;background:rgba(6,15,24,.6);border:1px solid var(--line-soft);color:var(--bone);font-family:var(--body);font-size:1.02rem;padding:13px 15px;cursor:pointer;transition:.18s}
+  .opt:hover:not(:disabled){border-color:var(--bronze);background:rgba(15,42,61,.7)}
+  .opt .mark{width:24px;height:24px;border:1px solid var(--line);border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--mono);font-size:.75rem;color:var(--bronze)}
+  .opt.right{border-color:rgba(201,154,75,.7);background:rgba(58,21,38,.4)}
+  .opt.right .mark{background:var(--bronze);color:var(--sea-abyss);border-color:var(--bronze)}
+  .opt.chosen-wrong{border-color:var(--terra);background:rgba(200,97,58,.14)}
+  .opt.chosen-wrong .mark{border-color:var(--terra);color:var(--terra)}
+  .opt:disabled{cursor:default}
+  .why{font-size:.95rem;color:var(--bone-dim);margin-top:.7rem;line-height:1.55;opacity:0;height:0;overflow:hidden;transition:opacity .4s}
+  .why.show{opacity:1;height:auto;margin-top:.7rem}
+  .why b{color:var(--bronze-bright);font-weight:600}
+  .score{text-align:center;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--bronze-bright);padding:20px;border:1px dashed var(--line);margin-top:6px;opacity:0;transition:opacity .5s}
+  .score.show{opacity:1}
+
+  .voyage{display:flex;flex-wrap:wrap;gap:6px 4px;justify-content:center;margin:24px 0 8px}
+  .isle{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);border:1px solid var(--line-soft);padding:6px 10px}
+  .isle.here{color:var(--sea-abyss);background:var(--bronze);border-color:var(--bronze);font-weight:700}
+  .isle.done{color:var(--bronze);border-color:var(--line)}
+
+  .scene-head{display:grid;gap:20px 32px;align-items:center;margin-bottom:1.6rem}
+  .tondo{margin:0;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+  .tondo-svg{width:190px;height:190px;filter:drop-shadow(0 16px 34px rgba(0,0,0,.6))}
+  .tondo figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;line-height:1.45;color:var(--bone-dim);text-align:center;max-width:15rem;text-wrap:balance}
+  .tondo.amph-wrap{margin:0 auto 6px}
+  .tondo.amph-wrap .tondo-svg{width:118px;height:118px}
+  @media(min-width:720px){
+    .scene-head{grid-template-columns:200px 1fr}
+    .scene-head.flip{grid-template-columns:1fr 200px}
+    .scene-head.flip .tondo{order:2}
+    .scene-head.flip .scene-head-text{order:1}
+  }
+
+  footer{padding:70px 24px 90px;text-align:center}
+  footer .line{max-width:34rem;margin:0 auto 1.5rem;color:var(--bone-dim);font-family:var(--serif);font-style:italic;font-size:1.15rem;text-wrap:balance}
+  footer small{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ash)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .char{border-bottom:1.5px dotted var(--bronze);cursor:pointer;color:inherit;transition:color .2s,border-color .2s;padding-bottom:1px}
+  .char:hover,.char:focus{color:var(--bronze-bright);border-color:var(--bronze-bright);outline:none}
+  .char-overlay{position:fixed;inset:0;z-index:50;background:rgba(3,8,13,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;pointer-events:none}
+  .char-overlay.open{opacity:1;pointer-events:auto}
+  .char-card{background:linear-gradient(170deg,rgba(15,42,61,.95),rgba(6,15,24,.97));border:1px solid var(--line);max-width:22rem;width:calc(100% - 40px);padding:28px 26px 24px;box-shadow:0 30px 80px -20px rgba(0,0,0,.9);transform:translateY(12px) scale(.97);transition:transform .25s ease;position:relative}
+  .char-overlay.open .char-card{transform:none}
+  .char-card .char-role{font-family:var(--mono);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);margin-bottom:.45rem}
+  .char-card .char-name{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--bone);margin:0 0 .15rem;line-height:1.2}
+  .char-card .char-greek{font-family:var(--serif);font-size:.88rem;color:var(--bronze);letter-spacing:.04em;margin-bottom:.8rem}
+  .char-card .char-desc{font-family:var(--body);font-size:.95rem;line-height:1.6;color:var(--bone-dim)}
+  .char-card .char-desc b{color:var(--bronze-bright);font-weight:600}
+  .char-card .char-close{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--ash);font-size:1.2rem;cursor:pointer;padding:4px;line-height:1;transition:color .2s}
+  .char-card .char-close:hover{color:var(--bone)}
+
+  #soundToggle{position:fixed;top:16px;right:16px;z-index:20;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:rgba(6,15,24,.55);backdrop-filter:blur(5px);color:var(--bronze);cursor:pointer;transition:border-color .2s,color .2s,background .2s,transform .1s}
+  #soundToggle:hover{border-color:var(--bronze);color:var(--bronze-bright);background:rgba(15,42,61,.8)}
+  #soundToggle:active{transform:scale(.94)}
+  #soundToggle.off{color:var(--ash)}
+  #soundToggle svg{width:20px;height:20px}
+  #soundToggle:focus-visible{outline:2px solid var(--bronze-bright);outline-offset:3px}
+  @media(max-width:560px){#soundToggle{top:12px;right:12px;width:38px;height:38px}}
+  #musicToggle{position:fixed;top:66px;right:16px;z-index:20;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:rgba(6,15,24,.55);backdrop-filter:blur(5px);color:var(--ash);cursor:pointer;transition:border-color .2s,color .2s,background .2s,transform .1s,box-shadow .4s}
+  #musicToggle:hover{border-color:var(--bronze);color:var(--bronze-bright);background:rgba(15,42,61,.8)}
+  #musicToggle:active{transform:scale(.94)}
+  #musicToggle.on{color:var(--bronze);border-color:rgba(201,154,75,.35);box-shadow:0 0 12px rgba(201,154,75,.08)}
+  #musicToggle svg{width:18px;height:18px}
+  #musicToggle:focus-visible{outline:2px solid var(--bronze-bright);outline-offset:3px}
+  @media(max-width:560px){#musicToggle{top:56px;right:12px;width:38px;height:38px}}
+
+  .glossary-link{display:inline-block;margin-top:.9rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);text-decoration:none;border:1px solid var(--line);padding:6px 14px;transition:.2s}
+  .glossary-link:hover{border-color:var(--bronze);background:rgba(201,154,75,.08);color:var(--bronze-bright)}
+
+  .chapter-nav{position:fixed;bottom:0;left:0;right:0;z-index:20;background:rgba(6,15,24,.85);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 24px;display:flex;justify-content:space-between;align-items:center}
+  .chapter-nav a{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--bronze);text-decoration:none;padding:8px 14px;border:1px solid var(--line);transition:.2s;display:flex;align-items:center;gap:8px}
+  .chapter-nav a:hover{border-color:var(--bronze);background:rgba(201,154,75,.08)}
+  .chapter-nav a.disabled{opacity:.3;pointer-events:none}
+  .chapter-nav .chapter-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+
+  .share-strip{display:flex;align-items:center;gap:14px;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line-soft);opacity:0;transform:translateY(6px);transition:opacity .6s .3s,transform .6s .3s}
+  .share-strip.show{opacity:1;transform:none}
+  .share-strip canvas{border:1px solid var(--line);cursor:pointer;transition:border-color .2s;max-width:200px;height:auto}
+  .share-strip canvas:hover{border-color:var(--bronze)}
+  .share-strip .share-actions{display:flex;flex-direction:column;gap:8px}
+  .share-strip .share-btn{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);background:none;border:1px solid var(--line);padding:7px 14px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:7px;white-space:nowrap}
+  .share-strip .share-btn:hover{border-color:var(--bronze);background:rgba(201,154,75,.08);color:var(--bronze-bright)}
+  .share-strip .share-btn svg{width:14px;height:14px;flex:none}
+  .share-strip .share-stat{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--bone-dim);line-height:1.4}
+  .share-strip .share-copied{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--bronze-bright);opacity:0;transition:opacity .3s;margin-top:2px}
+  .share-strip .share-copied.show{opacity:1}
+  @media(max-width:560px){.share-strip{flex-direction:column;align-items:flex-start}.share-strip canvas{max-width:160px}}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  @media(max-width:560px){body{font-size:17px}.hall-scene{flex-direction:column;text-align:center}.chapter-nav{padding:8px 12px}.chapter-nav a{font-size:.6rem;padding:6px 10px}}
+</style>
+
+<canvas id="sea" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<main>
+  <header class="hero">
+    <div class="key-frame">
+      <div class="meander" aria-hidden="true"></div>
+      <h1><span class="the">Homer&rsquo;s</span>The&nbsp;Odyssey</h1>
+      <p class="booktag">Book VIII &middot; <b>The Songs and Games</b><br>
+        <span class="greek">&#932;&#8048; &#960;&#945;&#961;&#8125; &#7944;&#955;&#954;&#953;&#957;&#972;&#8179;</span></p>
+      <div class="meander" aria-hidden="true" style="margin-top:20px"></div>
+    </div>
+    <div class="scroll-cue">Read &amp; play<span class="arrow"></span></div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- SCENE 1 -->
+    <section class="reveal">
+      <div class="scene-head">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="A blind bard seated with a lyre, singing to a hall of listeners; one listener sits with his head covered">
+            <defs>
+              <clipPath id="c1"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g1" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g1)"/>
+            <g clip-path="url(#c1)" fill="var(--figure)">
+              <!-- hall floor -->
+              <rect x="8" y="150" width="184" height="42" opacity="0.18"/>
+              <!-- bard's chair -->
+              <rect x="46" y="96" width="4" height="46"/>
+              <rect x="78" y="96" width="4" height="46"/>
+              <rect x="44" y="92" width="38" height="8" opacity="0.5"/>
+              <!-- bard seated -->
+              <circle cx="63" cy="78" r="9"/>
+              <path d="M53,88 L53,132 L74,132 L74,88 Z"/>
+              <!-- blind eyes mark -->
+              <line x1="58" y1="77" x2="63" y2="78" stroke="var(--clay-lo)" stroke-width="1.4"/>
+              <!-- lyre -->
+              <path d="M76,96 Q90,84 96,100" stroke="var(--figure)" stroke-width="3" fill="none"/>
+              <path d="M76,120 Q90,132 96,116" stroke="var(--figure)" stroke-width="3" fill="none"/>
+              <line x1="80" y1="98" x2="80" y2="118" stroke="var(--incise)" stroke-width="1" opacity="0.5"/>
+              <line x1="85" y1="94" x2="86" y2="122" stroke="var(--incise)" stroke-width="1" opacity="0.5"/>
+              <line x1="90" y1="92" x2="92" y2="124" stroke="var(--incise)" stroke-width="1" opacity="0.4"/>
+              <!-- listeners -->
+              <circle cx="128" cy="86" r="8"/>
+              <rect x="121" y="94" width="14" height="30"/>
+              <circle cx="156" cy="90" r="7"/>
+              <rect x="150" y="97" width="12" height="26"/>
+              <!-- the covered-head listener (Odysseus) -->
+              <path d="M170,84 Q184,76 181,98 Q178,112 166,113 L163,100 Q164,88 170,84 Z" opacity="0.88"/>
+              <rect x="163" y="106" width="14" height="24"/>
+              <!-- song lines from the bard -->
+              <path d="M96,100 Q108,94 116,98" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.3"/>
+              <path d="M96,108 Q110,104 118,108" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.2"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Demodocus, blind and gifted by the Muse, sings of the quarrel at Troy</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene One &middot; The First Song</div>
+          <h2>The blind bard sings of Troy</h2>
+        </div>
+      </div>
+      <p class="lead">Morning breaks bright over Scheria. King <span class="char" data-char="alcinous" tabindex="0">Alcinous</span> calls an assembly of the Phaeacian lords and announces it plainly: the stranger who washed ashore will be sent home. A ship will be made ready, a crew chosen, oars fitted to the benches. But first &mdash; a feast, to send him off in style.</p>
+      <p>A herald leads in <span class="char" data-char="demodocus" tabindex="0">Demodocus</span>, the singer of the Phaeacian court. He is blind. The Muse loved him greatly, Homer says, and gave him a double gift: she took away his eyes, but she gave him the sweetness of song. They seat him in a silver-studded chair set against a pillar, hang his lyre on a peg within easy reach of his hand, and set bread and wine at his elbow.</p>
+      <p class="pull">The Muse loved him greatly, and gave him a double gift &mdash; she took away his eyes, but gave him the sweetness of song.</p>
+      <p>Demodocus lifts the lyre and begins to sing of the quarrel between <span class="char" data-char="odysseus" tabindex="0">Odysseus</span> and Achilles at Troy &mdash; how the two greatest of the Greeks once clashed bitterly at a victory feast, and how Agamemnon secretly rejoiced to hear the two men trading insults, because an oracle had told him that discord among his best fighters would mark the beginning of Troy&rsquo;s fall.</p>
+      <p>Odysseus listens. Then, quietly, without a word, he draws his purple cloak up over his head and weeps into it. Around him the hall is loud with wine and laughter. No one notices &mdash; no one except Alcinous, who is watching his guest closely, and who sees the cloak tremble.</p>
+    </section>
+
+    <!-- SCENE 2 -->
+    <section class="reveal">
+      <div class="scene-head flip">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="A muscular figure mid-throw with a discus, arm extended, other figures watching from behind">
+            <defs>
+              <clipPath id="c2"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g2" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g2)"/>
+            <g clip-path="url(#c2)" fill="var(--figure)">
+              <!-- ground -->
+              <rect x="8" y="150" width="184" height="42" opacity="0.18"/>
+              <!-- watchers, left cluster -->
+              <circle cx="30" cy="100" r="6" opacity="0.5"/>
+              <rect x="25" y="106" width="10" height="20" opacity="0.5"/>
+              <circle cx="46" cy="96" r="6" opacity="0.4"/>
+              <rect x="41" y="102" width="10" height="22" opacity="0.4"/>
+              <!-- thrower, lunging body -->
+              <circle cx="104" cy="94" r="10"/>
+              <path d="M96,104 L88,140 L100,140 L108,110 L118,140 L128,140 L112,102 Z"/>
+              <!-- extended arm holding the discus -->
+              <path d="M112,98 L142,84" stroke="var(--figure)" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="148" cy="80" r="9"/>
+              <circle cx="148" cy="80" r="5" fill="var(--clay)" opacity="0.4"/>
+              <!-- flight path of the throw -->
+              <path d="M148,80 Q170,58 184,36" fill="none" stroke="var(--incise)" stroke-width="1" opacity="0.35" stroke-dasharray="3,3"/>
+              <!-- watchers, right cluster, further off -->
+              <circle cx="168" cy="112" r="5" opacity="0.35"/>
+              <rect x="163" y="117" width="10" height="18" opacity="0.35"/>
+              <circle cx="180" cy="106" r="4" opacity="0.3"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Odysseus answers the insult with the heaviest discus on the field</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene Two &middot; The Challenge</div>
+          <h2>A merchant, he says. Watch this.</h2>
+        </div>
+      </div>
+      <p class="lead">After the song, Alcinous senses something is wrong with his guest and calls for a change of mood. Games, he decides &mdash; that will honour the stranger properly. The young Phaeacians go down to the field by the harbour and compete: running, wrestling, jumping, boxing, and the discus. They are famous sailors, not famous soldiers, but on this field they move like gods.</p>
+      <p>Odysseus watches from the sidelines and says nothing. He has just endured his own war sung back to him at a feast; games are the last thing on his mind. But a young noble named <span class="char" data-char="euryalus" tabindex="0">Euryalus</span> &mdash; some call him Broadsea &mdash; decides the stranger&rsquo;s silence looks like weakness, and says so in front of everyone.</p>
+      <p><em>&ldquo;You don&rsquo;t look like an athlete,&rdquo;</em> he says. <em>&ldquo;You look like a merchant captain who counts his cargo and worries about his profits &mdash; not like a man who competes.&rdquo;</em></p>
+      <p>It is a deliberate insult, aimed straight at a guest who cannot yet say who he is.</p>
+
+      <div class="device">
+        <div class="kicker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--bronze)" stroke-width="1.4"><ellipse cx="12" cy="15" rx="8" ry="3"/><circle cx="12" cy="8" r="4" fill="var(--terra)" stroke="none"/></svg>
+          <h3>The Discus Ground</h3>
+        </div>
+        <div class="trick">
+          <div class="hall-scene">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" fill="#0a1c2b" stroke="var(--line)"/>
+              <!-- Euryalus gesturing -->
+              <circle cx="38" cy="52" r="6" fill="var(--figure)"/>
+              <rect x="33" y="58" width="10" height="20" fill="var(--figure)"/>
+              <path d="M43,60 L58,52" stroke="var(--figure)" stroke-width="3"/>
+              <!-- Odysseus, standing still -->
+              <circle cx="82" cy="50" r="7" fill="var(--figure)"/>
+              <rect x="76" y="57" width="12" height="22" fill="var(--figure)"/>
+              <text x="60" y="100" text-anchor="middle" fill="var(--bronze)" font-family="var(--serif)" font-size="10" font-style="italic">How do you answer?</text>
+            </svg>
+            <div class="speech">
+              <div class="who">You are Odysseus</div>
+              <div class="said" id="choiceSays">Euryalus says you look like a merchant, not an athlete. The young Phaeacians are watching. How do you respond?</div>
+            </div>
+          </div>
+          <div class="choices" id="choiceBox">
+            <button data-choice="silent">&ldquo;Ignore the insult. You are a guest here and should not cause trouble.&rdquo;</button>
+            <button data-choice="discus">&ldquo;Speak your anger, then prove him wrong with the discus.&rdquo;</button>
+          </div>
+          <div class="aftermath" id="choiceAftermath"></div>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem">Odysseus rebukes Euryalus first &mdash; that speech was ugly, he says, the words of a fool &mdash; then walks onto the field still wearing his cloak. He passes over the discuses the young men have been using and picks up the heaviest one on the ground, thick and weighty, far bigger than what a Phaeacian would throw. He whirls once and lets it go.</p>
+      <p>It flies. It flies past every mark already scratched into the sand. <span class="char" data-char="athena" tabindex="0">Athena</span>, disguised as a spectator in the crowd, calls out the distance in a mortal&rsquo;s voice so no one suspects a goddess is speaking:</p>
+      <p class="pull">&ldquo;Even a blind man could find your mark, stranger &mdash; it is far beyond the rest!&rdquo;</p>
+      <p>The field goes quiet. Odysseus, his blood up now, throws open a challenge to the whole court: box him, wrestle him, race him &mdash; he will take on any man there, any two men, gladly. Only running and archery does he concede, and only because his legs are still stiff from days adrift at sea. No one steps forward.</p>
+    </section>
+
+    <!-- SCENE 3 -->
+    <section class="reveal">
+      <div class="scene-head">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="Two figures caught in a net on a bed, with other figures watching and laughing">
+            <defs>
+              <clipPath id="c3"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g3" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g3)"/>
+            <g clip-path="url(#c3)" fill="var(--figure)">
+              <!-- bed -->
+              <rect x="56" y="112" width="88" height="14" rx="2"/>
+              <rect x="50" y="104" width="8" height="30" rx="1"/>
+              <rect x="142" y="104" width="8" height="30" rx="1"/>
+              <!-- two reclining figures, Ares and Aphrodite -->
+              <circle cx="82" cy="100" r="8"/>
+              <path d="M74,108 L74,120 L108,120 L108,108 Z" opacity="0.7"/>
+              <circle cx="112" cy="98" r="7"/>
+              <path d="M106,106 L106,118 L134,118 L134,106 Z" opacity="0.6"/>
+              <!-- Hephaestus's net, crosshatched -->
+              <g stroke="var(--incise)" stroke-width="0.8" opacity="0.5">
+                <line x1="66" y1="92" x2="66" y2="124"/>
+                <line x1="78" y1="88" x2="78" y2="126"/>
+                <line x1="90" y1="86" x2="90" y2="126"/>
+                <line x1="102" y1="86" x2="102" y2="126"/>
+                <line x1="114" y1="88" x2="114" y2="124"/>
+                <line x1="126" y1="92" x2="126" y2="122"/>
+                <line x1="60" y1="96" x2="132" y2="96"/>
+                <line x1="60" y1="106" x2="132" y2="106"/>
+                <line x1="60" y1="116" x2="132" y2="116"/>
+              </g>
+              <!-- gods watching and laughing, arms raised -->
+              <circle cx="30" cy="80" r="6" opacity="0.5"/>
+              <path d="M24,88 L24,110 L36,110 L36,88 Z" opacity="0.5"/>
+              <path d="M25,90 L15,78" stroke="var(--figure)" stroke-width="3" opacity="0.5"/>
+              <circle cx="168" cy="76" r="6" opacity="0.45"/>
+              <path d="M162,84 L162,106 L174,106 L174,84 Z" opacity="0.45"/>
+              <path d="M173,86 L183,72" stroke="var(--figure)" stroke-width="3" opacity="0.45"/>
+              <circle cx="150" cy="58" r="5" opacity="0.35"/>
+              <path d="M145,65 L145,82 L155,82 L155,65 Z" opacity="0.35"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Hephaestus's net catches Ares and Aphrodite, and all Olympus comes to look</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene Three &middot; The Song of Ares and Aphrodite</div>
+          <h2>The gods cannot stop laughing</h2>
+        </div>
+      </div>
+      <p class="lead">To smooth over the tension Euryalus caused, Alcinous calls Demodocus back for another song &mdash; and this time asks for something lighter. What the bard sings is the most purely comic scene in the entire poem.</p>
+      <p>He sings of the love affair between Ares, god of war, and Aphrodite, goddess of love &mdash; and how her husband, the smith-god Hephaestus, found out. Hephaestus is no fighter; he is a craftsman, lame from birth, mocked by the other gods for his limp. But he is also the finest metalworker in creation, and he takes his revenge with his hands rather than his fists.</p>
+      <p>He forges chains so fine they are invisible &mdash; a net that cannot be seen or broken &mdash; and rigs it above his own marriage bed. When Ares and Aphrodite next lie down together, the net drops and holds them fast, tangled and exposed. Then Hephaestus flings open the doors of the house and shouts for every god on Olympus to come and see.</p>
+      <p>They come. And they laugh &mdash; not cruelly, but helplessly, the way gods laugh when a joke is too good to resist. Hermes leans over to Apollo and jokes that he would happily trade places with Ares, nets and all, for one night beside golden Aphrodite.</p>
+      <p class="pull">Hermes only laughed, and said he would gladly trade places with Ares &mdash; nets and all &mdash; for a single night beside golden Aphrodite.</p>
+      <p>It is bawdy, funny, and deeply human &mdash; a moment of pure comic relief dropped into the middle of a poem about grief, war, and the long road home. Even the gods, Homer seems to say, are not above being caught.</p>
+    </section>
+
+    <!-- SCENE 4 -->
+    <section class="reveal">
+      <div class="scene-head flip">
+        <figure class="tondo">
+          <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="A wooden horse before a gate, and a figure with his head bowed, weeping">
+            <defs>
+              <clipPath id="c4"><circle cx="100" cy="100" r="92"/></clipPath>
+              <radialGradient id="g4" cx="50%" cy="34%" r="72%">
+                <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#g4)"/>
+            <g clip-path="url(#c4)" fill="var(--figure)">
+              <!-- wall and gate of Troy, behind -->
+              <rect x="120" y="60" width="72" height="100" opacity="0.22"/>
+              <rect x="120" y="50" width="14" height="112"/>
+              <rect x="170" y="46" width="16" height="116"/>
+              <path d="M138,120 Q148,100 158,120 L158,160 L138,160 Z" fill="var(--incise)" opacity="0.15"/>
+              <!-- the wooden horse -->
+              <path d="M56,120 Q60,96 84,92 Q100,90 108,104 L120,100 L122,108 L110,112 Q112,124 104,132 L60,132 Q52,128 52,120 Z"/>
+              <rect x="60" y="130" width="6" height="20"/>
+              <rect x="78" y="130" width="6" height="20"/>
+              <rect x="94" y="130" width="6" height="20"/>
+              <rect x="108" y="130" width="6" height="20"/>
+              <path d="M96,92 q2,-8 8,-4" stroke="var(--incise)" stroke-width="1" fill="none" opacity="0.35"/>
+              <!-- Odysseus, head bowed, weeping again -->
+              <circle cx="30" cy="112" r="8"/>
+              <path d="M22,120 L22,150 L40,150 L40,120 Z"/>
+              <path d="M32,116 L23,110" stroke="var(--figure)" stroke-width="3" opacity="0.8"/>
+              <line x1="27" y1="118" x2="26" y2="124" stroke="var(--incise)" stroke-width="1" opacity="0.4"/>
+              <!-- ground -->
+              <rect x="8" y="150" width="184" height="42" opacity="0.15"/>
+            </g>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+          </svg>
+          <figcaption>Demodocus sings of the wooden horse, and the conqueror weeps like the conquered</figcaption>
+        </figure>
+        <div class="scene-head-text">
+          <div class="scene-no">Scene Four &middot; The Third Song</div>
+          <h2>&ldquo;Tell us who you are&rdquo;</h2>
+        </div>
+      </div>
+      <p class="lead">Evening falls. Gifts have already been promised &mdash; bronze, gold, fine cloth &mdash; to send the stranger home in honour. Before the feast ends, Odysseus asks Demodocus for one more song, and this time he names it himself: the story of the wooden horse at Troy.</p>
+      <p><b>Before the final song, look back over the whole feast day at Scheria and put it in order.</b></p>
+
+      <div class="device">
+        <div class="kicker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--bronze)" stroke-width="1.4"><path d="M5 4v16M5 4l14 5-14 5"/></svg>
+          <h3>The Three Songs of Demodocus</h3>
+        </div>
+        <p class="hint">Drag the events into the order they happened. Or focus a step and press &#8593; / &#8595;.</p>
+        <ol class="seq" id="seq"></ol>
+        <div class="row">
+          <button class="btn" id="seqCheck">Check the order</button>
+          <button class="btn ghost" id="seqReset">Shuffle</button>
+          <span class="verdict" id="seqVerdict" role="status"></span>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem">Demodocus sings it exactly as it happened &mdash; how Odysseus himself devised the plan, how the bravest Greeks hid inside its wooden belly while the rest sailed off to fake a retreat, how the Trojans argued over the strange offering at their gates and finally, fatally, dragged it inside their own walls.</p>
+      <p>Odysseus weeps again. Not quietly this time. Homer compares his weeping to a woman who falls across the body of her husband, killed defending his city, as the spearmen close in and the city burns behind her &mdash; and the captors drag her off into slavery even as she grieves. The man who built the horse weeps like the people it destroyed. The conqueror weeps like the conquered.</p>
+      <p class="pull">He wept as a woman weeps, fallen across the body of the husband she has lost, while her city burns behind her and the captors drag her away.</p>
+      <p>This time, Alcinous stops the song. He has watched this stranger weep twice now, always at the mention of Troy, always hiding it under his cloak. He turns to Odysseus and finally asks the question that has been waiting since the stranger first washed up naked on the beach:</p>
+      <p class="pull">&ldquo;Stranger, tell us your name. No one is truly nameless &mdash; tell us who you are, so we can send you home.&rdquo;</p>
+      <p>The book ends there, on the question. In the hall of <span class="char" data-char="arete" tabindex="0">Arete</span> and Alcinous, with <span class="char" data-char="demodocus" tabindex="0">Demodocus</span>&rsquo;s lyre finally silent and <span class="char" data-char="euryalus" tabindex="0">Euryalus</span>&rsquo;s silver-studded sword already given as an apology gift, Odysseus has been the stranger, the castaway, the unnamed man for eight books. Now he must answer.</p>
+    </section>
+
+    <!-- SCENE 5 -->
+    <section class="reveal">
+      <div class="scene-no">Scene Five &middot; The Reckoning</div>
+      <h2>Did you follow the feast day?</h2>
+      <p class="hint" style="margin-bottom:1.6rem">Five questions from the songs, the discus ground, and the question that ends the book.</p>
+      <div class="device">
+        <div class="quiz" id="quiz"></div>
+        <div class="score" id="score" role="status"></div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <figure class="tondo amph-wrap">
+        <svg class="tondo-svg" viewBox="0 0 200 200" role="img" aria-label="A Greek amphora">
+          <defs>
+            <clipPath id="cF"><circle cx="100" cy="100" r="92"/></clipPath>
+            <radialGradient id="gF" cx="50%" cy="34%" r="72%">
+              <stop offset="0" stop-color="var(--clay)"/><stop offset="1" stop-color="var(--clay-lo)"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="92" fill="url(#gF)"/>
+          <g clip-path="url(#cF)" fill="var(--figure)">
+            <path d="M100,42 c-11,0 -15,7 -15,13 c0,6 4,8 4,12 c-17,11 -25,31 -25,52 c0,27 17,41 36,41 c19,0 36,-14 36,-41 c0,-21 -8,-41 -25,-52 c0,-4 4,-6 4,-12 c0,-6 -4,-13 -15,-13 z"/>
+            <path d="M85,68 c-19,2 -23,19 -14,32 l6,-3 c-7,-11 -3,-21 11,-23 z"/>
+            <path d="M115,68 c19,2 23,19 14,32 l-6,-3 c7,-11 3,-21 -11,-23 z"/>
+            <rect x="87" y="158" width="26" height="6"/>
+          </g>
+          <g clip-path="url(#cF)" stroke="var(--incise)" stroke-width="2" fill="none" opacity="0.7">
+            <line x1="72" y1="100" x2="128" y2="100"/><line x1="72" y1="124" x2="128" y2="124"/>
+            <path d="M76,118 v-12 h9 v9 h-4 M92,106 v12 h9 v-9 h-4 M108,118 v-12 h9 v9 h-4"/>
+          </g>
+          <circle cx="100" cy="100" r="92" fill="none" stroke="var(--bronze)" stroke-width="2.5"/>
+          <circle cx="100" cy="100" r="85" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.45"/>
+        </svg>
+      </figure>
+      <div class="voyage" id="voyage"></div>
+      <p class="line">&ldquo;Who are you?&rdquo; The question has been asked. For eight books he has been the stranger, the castaway, the unnamed. In the next book, Odysseus will finally say his name &mdash; <b style="color:var(--bronze-bright)">and tell the greatest story within a story ever told.</b></p>
+      <small>Retold &middot; Book VIII</small>
+      <a class="glossary-link" href="#">Glossary of Characters</a>
+    </footer>
+  </div>
+</main>
+
+<nav class="chapter-nav">
+  <a href="book-7.html">&#9664; Book VII</a>
+  <span class="chapter-label">Book VIII of XXIV</span>
+  <a href="#">Book IX &#9654;</a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var interacted = false;
+
+  var Sound = (function(){
+    var ctx=null, master=null, on=true;
+    function ensure(){
+      if(ctx) return ctx;
+      try{
+        var AC = window.AudioContext||window.webkitAudioContext; if(!AC) return null;
+        ctx = new AC();
+        master = ctx.createGain(); master.gain.value=0.85; master.connect(ctx.destination);
+      }catch(e){ ctx=null; }
+      return ctx;
+    }
+    function voice(freq,opt){
+      if(!on || !ensure()) return;
+      if(ctx.state==="suspended") ctx.resume();
+      opt = opt||{};
+      var t = ctx.currentTime, a = opt.attack==null?0.005:opt.attack,
+          d = opt.dur==null?0.5:opt.dur, peak = opt.gain==null?0.12:opt.gain;
+      var o=ctx.createOscillator(), g=ctx.createGain();
+      o.type = opt.type||"triangle"; o.frequency.value=freq; if(opt.detune)o.detune.value=opt.detune;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(peak,t+a);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+a+d);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t+a+d+0.03);
+    }
+    function pluck(freq,gain,dur){
+      voice(freq,{type:"triangle",gain:gain||0.12,dur:dur||0.5,attack:0.004});
+      voice(freq*2,{type:"sine",gain:(gain||0.12)*0.32,dur:(dur||0.5)*0.7,attack:0.004});
+    }
+    function thud(){
+      if(!on || !ensure()) return;
+      if(ctx.state==="suspended") ctx.resume();
+      var t=ctx.currentTime, dur=0.16, b=ctx.createBuffer(1,Math.floor(ctx.sampleRate*dur),ctx.sampleRate), dt=b.getChannelData(0);
+      for(var i=0;i<dt.length;i++){ dt[i]=(Math.random()*2-1)*Math.pow(1-i/dt.length,3); }
+      var s=ctx.createBufferSource(); s.buffer=b;
+      var f=ctx.createBiquadFilter(); f.type="lowpass"; f.frequency.value=430;
+      var g=ctx.createGain(); g.gain.value=0.16;
+      s.connect(f); f.connect(g); g.connect(master); s.start(t);
+    }
+    function arp(freqs,gap,gain,dur){ freqs.forEach(function(f,k){ setTimeout(function(){ pluck(f,gain,dur); }, k*(gap||85)); }); }
+    return {
+      pickup:function(){ pluck(392.00,0.085,0.34); },
+      drop:function(){ pluck(196.00,0.10,0.42); thud(); },
+      tick:function(){ voice(880,{type:"sine",gain:0.045,dur:0.06,attack:0.002}); },
+      win:function(){ arp([196.00,261.63,329.63,392.00,523.25],80,0.11,0.6); },
+      fail:function(){ voice(130.81,{type:"sine",gain:0.13,dur:0.5}); voice(138.59,{type:"triangle",gain:0.06,dur:0.5}); },
+      clever:function(){ arp([293.66,392.00,523.25],80,0.10,0.5); },
+      ominous:function(){ voice(110.00,{type:"triangle",gain:0.07,dur:0.9}); voice(116.54,{type:"sine",gain:0.05,dur:0.9}); },
+      correct:function(){ pluck(523.25,0.10,0.42); setTimeout(function(){ pluck(659.25,0.09,0.5); },80); },
+      wrong:function(){ thud(); voice(146.83,{type:"sine",gain:0.09,dur:0.4}); },
+      flourish:function(){ arp([261.63,329.63,392.00,523.25,659.25],90,0.11,0.6); },
+      swell:function(){ voice(98.00,{type:"sine",gain:0.05,dur:0.7,attack:0.16}); voice(146.83,{type:"sine",gain:0.03,dur:0.7,attack:0.22}); },
+      unlock:function(){ if(ensure() && ctx.state==="suspended") ctx.resume(); },
+      setOn:function(v){ on=v; if(on) this.unlock(); },
+      isOn:function(){ return on; }
+    };
+  })();
+
+  (function(){
+    var ON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.6a4 4 0 0 1 0 6.8"/><path d="M18.7 6a7 7 0 0 1 0 12"/></svg>';
+    var OFF='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9.5l4.5 5M21.5 9.5l-4.5 5"/></svg>';
+    var btn=document.createElement("button");
+    btn.id="soundToggle"; btn.type="button"; btn.setAttribute("aria-pressed","true"); btn.title="Sound on"; btn.innerHTML=ON;
+    btn.addEventListener("click",function(){
+      var next=!Sound.isOn(); Sound.setOn(next);
+      btn.setAttribute("aria-pressed",String(next)); btn.title=next?"Sound on":"Sound off";
+      btn.classList.toggle("off",!next); btn.innerHTML=next?ON:OFF;
+      if(next) Sound.pickup();
+    });
+    document.body.appendChild(btn);
+    document.addEventListener("pointerdown",function(){ interacted=true; Sound.unlock(); },{once:true});
+  })();
+
+  /* ---------------- ambient music: Demodocus's song ---------------- */
+  var Music = (function(){
+    var ctx=null,master=null,playing=false,lyreTimer=null;
+    var LYRE=[146.83,164.81,196,220,261.63,293.66,392,440];
+
+    function init(){
+      try{
+        var AC=window.AudioContext||window.webkitAudioContext; if(!AC)return false;
+        ctx=new AC(); if(ctx.state==="suspended")ctx.resume();
+        master=ctx.createGain(); master.gain.value=0.0001;
+        master.connect(ctx.destination);
+
+        var d1=ctx.createOscillator(); d1.type="sine"; d1.frequency.value=73.42;
+        var g1=ctx.createGain(); g1.gain.value=0.065;
+        var lfo1=ctx.createOscillator(); lfo1.type="sine"; lfo1.frequency.value=0.06;
+        var lg1=ctx.createGain(); lg1.gain.value=0.015;
+        lfo1.connect(lg1); lg1.connect(g1.gain);
+        d1.connect(g1); g1.connect(master); d1.start(); lfo1.start();
+
+        var d2=ctx.createOscillator(); d2.type="sine"; d2.frequency.value=110; d2.detune.value=5;
+        var g2=ctx.createGain(); g2.gain.value=0.045;
+        d2.connect(g2); g2.connect(master); d2.start();
+
+        var d3=ctx.createOscillator(); d3.type="sine"; d3.frequency.value=146.83;
+        var g3=ctx.createGain(); g3.gain.value=0.02;
+        var lfo2=ctx.createOscillator(); lfo2.type="sine"; lfo2.frequency.value=0.1;
+        var lg2=ctx.createGain(); lg2.gain.value=0.006;
+        lfo2.connect(lg2); lg2.connect(g3.gain);
+        d3.connect(g3); g3.connect(master); d3.start(); lfo2.start();
+
+        var pad=ctx.createOscillator(); pad.type="sawtooth"; pad.frequency.value=146.83;
+        var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=500; lp.Q.value=0.5;
+        var gp=ctx.createGain(); gp.gain.value=0.011;
+        var lfo4=ctx.createOscillator(); lfo4.type="sine"; lfo4.frequency.value=0.07;
+        var lg4=ctx.createGain(); lg4.gain.value=70;
+        lfo4.connect(lg4); lg4.connect(lp.frequency);
+        pad.connect(lp); lp.connect(gp); gp.connect(master); pad.start(); lfo4.start();
+
+        var len=ctx.sampleRate*4,buf=ctx.createBuffer(1,len,ctx.sampleRate),dd=buf.getChannelData(0);
+        for(var i=0;i<len;i++)dd[i]=Math.random()*2-1;
+        var ns=ctx.createBufferSource(); ns.buffer=buf; ns.loop=true;
+        var bp=ctx.createBiquadFilter(); bp.type="bandpass"; bp.frequency.value=320; bp.Q.value=0.6;
+        var lfo3=ctx.createOscillator(); lfo3.type="sine"; lfo3.frequency.value=0.045;
+        var lg3=ctx.createGain(); lg3.gain.value=140;
+        lfo3.connect(lg3); lg3.connect(bp.frequency);
+        var gn=ctx.createGain(); gn.gain.value=0.018;
+        ns.connect(bp); bp.connect(gn); gn.connect(master); ns.start(); lfo3.start();
+
+        var pulse=ctx.createOscillator(); pulse.type="sine"; pulse.frequency.value=55;
+        var pulseG=ctx.createGain(); pulseG.gain.value=0.015;
+        var pulseLfo=ctx.createOscillator(); pulseLfo.type="sine"; pulseLfo.frequency.value=0.6;
+        var pulseLG=ctx.createGain(); pulseLG.gain.value=0.012;
+        pulseLfo.connect(pulseLG); pulseLG.connect(pulseG.gain);
+        pulse.connect(pulseG); pulseG.connect(master); pulse.start(); pulseLfo.start();
+
+        playing=true;
+        master.gain.exponentialRampToValueAtTime(0.27,ctx.currentTime+4);
+        scheduleLyre();
+        return true;
+      }catch(e){return false;}
+    }
+
+    function lyreNote(){
+      if(!playing||!ctx)return;
+      var freq=LYRE[Math.floor(Math.random()*LYRE.length)];
+      var t=ctx.currentTime,dur=1.0+Math.random()*2.0,peak=0.03+Math.random()*0.022;
+      var o=ctx.createOscillator(); o.type="triangle"; o.frequency.value=freq;
+      var g=ctx.createGain();
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(peak,t+0.015);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t+dur+0.05);
+      var o2=ctx.createOscillator(); o2.type="sine"; o2.frequency.value=freq*2;
+      var g2=ctx.createGain();
+      g2.gain.setValueAtTime(0.0001,t);
+      g2.gain.exponentialRampToValueAtTime(peak*0.22,t+0.015);
+      g2.gain.exponentialRampToValueAtTime(0.0001,t+dur*0.5);
+      o2.connect(g2); g2.connect(master); o2.start(t); o2.stop(t+dur*0.5+0.05);
+    }
+
+    function scheduleLyre(){
+      if(!playing)return;
+      lyreNote();
+      lyreTimer=setTimeout(scheduleLyre,1200+Math.random()*2800);
+    }
+
+    return {
+      start:function(){
+        if(ctx){
+          if(ctx.state==="suspended")ctx.resume();
+          playing=true;
+          master.gain.cancelScheduledValues(ctx.currentTime);
+          master.gain.setValueAtTime(Math.max(master.gain.value,0.0001),ctx.currentTime);
+          master.gain.exponentialRampToValueAtTime(0.27,ctx.currentTime+2);
+          scheduleLyre();
+          return true;
+        }
+        return init();
+      },
+      stop:function(){
+        if(!ctx||!playing)return;
+        playing=false; clearTimeout(lyreTimer);
+        master.gain.cancelScheduledValues(ctx.currentTime);
+        master.gain.setValueAtTime(Math.max(master.gain.value,0.0001),ctx.currentTime);
+        master.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+2);
+        setTimeout(function(){if(!playing&&ctx)ctx.suspend();},2200);
+      },
+      isPlaying:function(){return playing;}
+    };
+  })();
+
+  (function(){
+    var ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>';
+    var btn=document.createElement("button");
+    btn.id="musicToggle"; btn.type="button"; btn.title="Pause ambient music";
+    btn.setAttribute("aria-pressed","true"); btn.classList.add("on"); btn.innerHTML=ICON;
+    function syncOff(){btn.classList.remove("on");btn.setAttribute("aria-pressed","false");btn.title="Play ambient music";}
+    function syncOn(){btn.classList.add("on");btn.setAttribute("aria-pressed","true");btn.title="Pause ambient music";}
+    btn.addEventListener("click",function(){
+      if(Music.isPlaying()){ Music.stop(); syncOff(); }
+      else if(Music.start()){ syncOn(); }
+    });
+    document.body.appendChild(btn);
+    function autoStart(){
+      if(Music.start()) syncOn(); else syncOff();
+      document.removeEventListener("pointerdown",autoStart);
+      document.removeEventListener("scroll",autoStart);
+      document.removeEventListener("keydown",autoStart);
+    }
+    document.addEventListener("pointerdown",autoStart,{once:false});
+    document.addEventListener("scroll",autoStart,{once:false,passive:true});
+    document.addEventListener("keydown",autoStart,{once:false});
+  })();
+
+  /* ---------------- sea canvas: bright Phaeacian day, harbour and shore ---------------- */
+  (function sea(){
+    var c = document.getElementById("sea"), x = c.getContext("2d"), W,H,DPR,t=0;
+    function size(){
+      DPR = Math.min(devicePixelRatio||1, 2);
+      W = c.width = innerWidth*DPR; H = c.height = innerHeight*DPR;
+      c.style.width = innerWidth+"px"; c.style.height = innerHeight+"px";
+    }
+    function ship(cx,baseY,w,alpha){
+      x.fillStyle = "rgba(20,16,14,"+alpha+")";
+      x.beginPath();
+      x.moveTo(cx-w/2, baseY);
+      x.quadraticCurveTo(cx-w/2-6*DPR, baseY-8*DPR, cx-w/3, baseY-12*DPR);
+      x.lineTo(cx+w/3, baseY-12*DPR);
+      x.quadraticCurveTo(cx+w/2+6*DPR, baseY-8*DPR, cx+w/2, baseY);
+      x.closePath();
+      x.fill();
+      x.fillRect(cx-1.2*DPR, baseY-46*DPR, 2.4*DPR, 40*DPR);
+      x.beginPath();
+      x.moveTo(cx, baseY-44*DPR);
+      x.lineTo(cx+16*DPR, baseY-26*DPR);
+      x.lineTo(cx, baseY-14*DPR);
+      x.closePath();
+      x.fillStyle = "rgba(214,196,150,"+(alpha*0.7)+")";
+      x.fill();
+    }
+    function draw(){
+      var horizon = H*0.52;
+
+      /* muted warm daylight sky — still dark enough for readability */
+      var sky = x.createLinearGradient(0,0,0,horizon);
+      sky.addColorStop(0,"#0e1e2e");
+      sky.addColorStop(0.3,"#142838");
+      sky.addColorStop(0.55,"#1a3040");
+      sky.addColorStop(0.75,"#1e2a30");
+      sky.addColorStop(1,"#2a2218");
+      x.fillStyle = sky; x.fillRect(0,0,W,horizon);
+
+      /* warm sun glow low on the horizon — subtle, not blinding */
+      var sun = x.createRadialGradient(W*0.74,horizon*0.95,0,W*0.74,horizon*0.95,W*0.4);
+      sun.addColorStop(0,"rgba(230,192,115,0.22)");
+      sun.addColorStop(0.3,"rgba(201,154,75,0.12)");
+      sun.addColorStop(0.6,"rgba(140,90,40,0.05)");
+      sun.addColorStop(1,"transparent");
+      x.fillStyle = sun; x.fillRect(0,0,W,horizon);
+
+      /* faint high clouds — barely visible wisps */
+      x.globalAlpha = 0.12;
+      x.fillStyle = "#b6ab97";
+      [[0.18,0.2,60],[0.45,0.12,50],[0.68,0.24,65]].forEach(function(cl){
+        x.beginPath();
+        x.ellipse(W*cl[0], horizon*cl[1]+40*DPR, cl[2]*DPR, cl[2]*0.25*DPR, 0, 0, 6.29);
+        x.fill();
+      });
+      x.globalAlpha = 1;
+
+      /* deep teal sea — warmer than nighttime chapters but still dark */
+      var sea = x.createLinearGradient(0,horizon,0,H);
+      sea.addColorStop(0,"#12384a");
+      sea.addColorStop(0.3,"#0f3040");
+      sea.addColorStop(0.65,"#0c2835");
+      sea.addColorStop(1,"#091e28");
+      x.fillStyle = sea; x.fillRect(0,horizon,W,H-horizon);
+
+      /* rippling light bands across the water — subtle bronze highlights */
+      for(var k=0;k<16;k++){
+        var yy = horizon + 10*DPR + (H-horizon-10*DPR)*(k/16);
+        var amp = (yy-horizon)/(H-horizon);
+        x.strokeStyle = "rgba(201,154,75,"+(0.06*amp)+")";
+        x.lineWidth = DPR;
+        x.beginPath();
+        for(var px=0; px<=W; px+=18*DPR){
+          var yv = yy + Math.sin(px*0.008 + t*0.5 + k*0.8)*3*DPR*amp;
+          px===0? x.moveTo(px,yv): x.lineTo(px,yv);
+        }
+        x.stroke();
+      }
+
+      /* sun glitter path on the water — bronze, not white */
+      var glitterX = W*0.74;
+      for(var i=0;i<18;i++){
+        var gy = horizon + 6*DPR + i*11*DPR;
+        var gx = glitterX + Math.sin(t*1.4+i*1.3)*16*DPR;
+        var gw = 6*DPR + Math.sin(t*2.2+i)*3*DPR;
+        x.fillStyle = "rgba(201,154,75,"+(0.18*(1-i/20))+")";
+        x.fillRect(gx-gw/2, gy, Math.max(gw,2), 1.5*DPR);
+      }
+
+      /* dark sand strip along the shore */
+      var sandH = H*0.055;
+      var sand = x.createLinearGradient(0,H-sandH,0,H);
+      sand.addColorStop(0,"#1e1a12");
+      sand.addColorStop(1,"#161210");
+      x.fillStyle = sand; x.fillRect(0,H-sandH,W,sandH);
+
+      /* ships drawn up on the shore — dark silhouettes */
+      ship(W*0.14, H-sandH+4*DPR, 62*DPR, 0.5);
+      ship(W*0.24, H-sandH+2*DPR, 46*DPR, 0.35);
+      ship(W*0.88, H-sandH+4*DPR, 58*DPR, 0.45);
+
+      t += reduce?0:0.008;
+      if(!reduce) requestAnimationFrame(draw);
+    }
+    addEventListener("resize", function(){size();if(reduce)draw();});
+    size(); draw();
+  })();
+
+  /* ---------------- scroll reveals ---------------- */
+  (function(){
+    var els = document.querySelectorAll(".reveal");
+    if(!("IntersectionObserver" in window) || reduce){els.forEach(function(e){e.classList.add("in")});return;}
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target); if(interacted)Sound.swell();} });
+    },{threshold:.14});
+    els.forEach(function(e){io.observe(e)});
+  })();
+
+  /* ---------------- the discus ground choice ---------------- */
+  (function(){
+    var says=document.getElementById("choiceSays"),
+        after=document.getElementById("choiceAftermath"),
+        box=document.getElementById("choiceBox");
+    var copy={
+      silent:{
+        line:"You say nothing. You turn back to the wine cup. The young men go back to their games, and the insult sits there, unanswered, in front of the whole court.",
+        after:"Restraint is wise &mdash; but this is not that moment. Euryalus has questioned Odysseus&rsquo;s identity in front of the entire court. Among the Greeks, an unanswered insult is an accepted truth. If Odysseus stays silent, he is the merchant captain Euryalus named. <b>Sometimes dignity requires action.</b> Try the other answer."
+      },
+      discus:{
+        line:"You tell Euryalus exactly what you think of his speech. Then you walk onto the field and pick up the heaviest discus there.",
+        after:"This is exactly what Odysseus does. He speaks first &mdash; <em>that was an ugly thing to say, stranger; you have the looks of a god but the mind of a fool</em> &mdash; and then acts. He picks up the heaviest discus and throws it further than any Phaeacian mark. <b>Words and deeds together.</b> The insult is answered, the court is silenced, and Odysseus has revealed his nature without ever revealing his name."
+      }
+    };
+    box.addEventListener("click",function(e){
+      var b=e.target.closest("button"); if(!b || !b.dataset.choice)return;
+      var c=copy[b.dataset.choice];
+      Sound[b.dataset.choice==="discus"?"clever":"ominous"]();
+      says.textContent=c.line;
+      after.innerHTML=c.after; after.classList.add("show");
+      [].forEach.call(box.children,function(x){x.disabled=true;});
+      var choiceLabel = b.dataset.choice==="discus" ? "Words, then the discus" : "Stay silent";
+      Share.choiceCard(after, "insult_viii", b.dataset.choice, choiceLabel);
+      Progress.mark("choice");
+      if(!box.dataset.done){box.dataset.done="1";
+        var retry=document.createElement("button");
+        retry.innerHTML="&#x21ba; answer again"; retry.style.opacity=".7";
+        retry.addEventListener("click",function(){
+          [].forEach.call(box.children,function(x){if(x!==retry)x.disabled=false;});
+          says.textContent="Euryalus says you look like a merchant, not an athlete. The young Phaeacians are watching. How do you respond?";
+          after.classList.remove("show"); retry.remove(); box.dataset.done="";
+        });
+        box.appendChild(retry);
+      }
+    });
+  })();
+
+  /* ---------------- sequence puzzle: the feast day at Scheria ---------------- */
+  (function(){
+    var STEPS = [
+      "Demodocus sings of the quarrel of Odysseus and Achilles",
+      "Odysseus weeps and covers his head with his cloak",
+      "Athletic games — running, wrestling, discus",
+      "Euryalus insults Odysseus; Odysseus throws the great discus",
+      "Demodocus sings of Ares and Aphrodite caught in Hephaestus’s net",
+      "Odysseus asks Demodocus to sing of the wooden horse — and weeps again"
+    ];
+    var list = document.getElementById("seq"),
+        verdict = document.getElementById("seqVerdict"),
+        order = [0,1,2,3,4,5],
+        seqAttempts = 0, seqSolved = false;
+
+    function shuffle(a){
+      var s;
+      do{ s=a.slice(); for(var i=s.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=s[i];s[i]=s[j];s[j]=tmp;} }
+      while(s.join()===a.slice().sort(function(p,q){return p-q}).join());
+      return s;
+    }
+    function render(){
+      list.innerHTML="";
+      order.forEach(function(idx,pos){
+        var li=document.createElement("li");
+        li.className="step"; li.tabIndex=0; li.dataset.idx=idx; li.draggable=false;
+        li.innerHTML='<span class="grip" aria-hidden="true">&#x2833;</span>'+
+                     '<span class="num">'+(pos+1)+'</span>'+
+                     '<span class="txt">'+STEPS[idx]+'</span>';
+        list.appendChild(li);
+      });
+    }
+    function renumber(){
+      [].forEach.call(list.children,function(li,i){li.querySelector(".num").textContent=i+1;});
+      order = [].map.call(list.children,function(li){return +li.dataset.idx;});
+    }
+
+    var drag=null;
+    list.addEventListener("pointerdown",function(e){
+      var li=e.target.closest(".step"); if(!li)return;
+      li.setPointerCapture(e.pointerId);
+      drag={li:li,startY:e.clientY};
+      li.classList.add("lift");
+      clearMarks();
+      Sound.pickup();
+    });
+    list.addEventListener("pointermove",function(e){
+      if(!drag)return;
+      var after=null;
+      [].forEach.call(list.querySelectorAll(".step:not(.lift)"),function(el){
+        var b=el.getBoundingClientRect();
+        if(e.clientY > b.top + b.height/2) after=el;
+      });
+      if(after && after.nextSibling!==drag.li) list.insertBefore(drag.li, after.nextSibling);
+      else if(!after && list.firstChild!==drag.li) list.insertBefore(drag.li, list.firstChild);
+      renumber();
+    });
+    function endDrag(){ if(!drag)return; drag.li.classList.remove("lift"); drag=null; Sound.drop(); }
+    list.addEventListener("pointerup",endDrag);
+    list.addEventListener("pointercancel",endDrag);
+
+    list.addEventListener("keydown",function(e){
+      var li=e.target.closest(".step"); if(!li)return;
+      if(e.key==="ArrowUp" && li.previousElementSibling){e.preventDefault();list.insertBefore(li,li.previousElementSibling);renumber();li.focus();clearMarks();Sound.tick();}
+      if(e.key==="ArrowDown" && li.nextElementSibling){e.preventDefault();list.insertBefore(li,li.nextElementSibling.nextElementSibling);renumber();li.focus();clearMarks();Sound.tick();}
+    });
+
+    function clearMarks(){ verdict.textContent=""; [].forEach.call(list.children,function(li){li.classList.remove("correct","wrong");}); }
+
+    document.getElementById("seqCheck").addEventListener("click",function(){
+      seqAttempts++;
+      var ok=0;
+      [].forEach.call(list.children,function(li,i){
+        var right = (+li.dataset.idx===i);
+        li.classList.toggle("correct",right);
+        li.classList.toggle("wrong",!right);
+        if(right)ok++;
+      });
+      if(ok===6){
+        verdict.className="verdict good";verdict.textContent="Every song and every step in place. Alcinous is ready to ask his question.";Sound.win();
+        if(!seqSolved){
+          seqSolved=true;
+          var device=list.closest(".device");
+          Share.puzzleCard(device, "The Three Songs of Demodocus", seqAttempts);
+          Progress.mark("puzzle");
+        }
+      }
+      else{verdict.className="verdict bad";verdict.textContent=ok+" of 6 correct. The feast day had a very particular order — try again.";Sound.fail();}
+    });
+    document.getElementById("seqReset").addEventListener("click",function(){order=shuffle([0,1,2,3,4,5]);render();clearMarks();});
+
+    order=shuffle([0,1,2,3,4,5]); render();
+  })();
+
+  /* ---------------- quiz ---------------- */
+  (function(){
+    var QS=[
+      {q:"What has the Muse taken from Demodocus, and what has she given him?",
+       a:["His youth, and given him wisdom","His sight, and given him the gift of song","His memory, and given him prophecy","His voice, and given him the lyre"],c:1,
+       why:"<b>His sight, and the gift of song.</b> Demodocus is blind. Homer says the Muse loved him and gave him both good and evil — she took his eyes but gave him sweet song in return. Many scholars note the parallel with Homer himself, who tradition also says was blind."},
+      {q:"Why does Odysseus weep when Demodocus sings?",
+       a:["The songs remind him of his dead comrades and his own suffering at Troy","The music is so beautiful it overwhelms him","He is homesick for Ithaca","He recognizes Demodocus as a friend from Troy"],c:0,
+       why:"<b>The songs bring the war back.</b> Demodocus sings about events Odysseus lived through — the quarrel with Achilles, and later the Trojan Horse he built himself. The songs bring back the war, the dead, the cost. He covers his head with his cloak so no one will see him grieve."},
+      {q:"How does Odysseus respond to Euryalus&rsquo;s insult?",
+       a:["He challenges Euryalus to a duel","He ignores it and asks to leave","He rebukes Euryalus with words, then throws the heaviest discus further than all the marks","He asks Alcinous to punish the young man"],c:2,
+       why:"<b>Words first, then deeds.</b> He tells Euryalus his speech was ugly and foolish. Then he picks up a heavier discus than any of the young men used and throws it past every mark. Athena, disguised in the crowd, calls out that even a blind man could see his throw was best."},
+      {q:"What happens in the song of Ares and Aphrodite?",
+       a:["Ares defeats Hephaestus in combat","Hephaestus catches Ares and Aphrodite in an unbreakable net and summons the gods to look","Aphrodite leaves Olympus forever","Zeus punishes Ares with exile"],c:1,
+       why:"<b>The comic centrepiece of the Odyssey.</b> Hephaestus, the lame smith-god, forges chains so fine they are invisible and traps his wife and her lover in bed. He calls the gods. They come and laugh. Hermes jokes he would happily take Ares&rsquo;s place, nets and all."},
+      {q:"What does Homer compare Odysseus&rsquo;s weeping to?",
+       a:["A river flooding its banks","A woman falling across her dead husband&rsquo;s body as her city burns","A child lost in a storm","Rain falling on the sea"],c:1,
+       why:"<b>The conqueror weeps like the conquered.</b> Homer compares Odysseus — the man who devised the Trojan Horse — to a Trojan woman whose husband has been killed and whose city is burning. The captors drag her away. It is one of the most radical acts of empathy in ancient literature."}
+    ];
+    var root=document.getElementById("quiz"), scoreEl=document.getElementById("score"), answered=0, correct=0;
+    QS.forEach(function(item,qi){
+      var wrap=document.createElement("div"); wrap.className="q";
+      var stem=document.createElement("div"); stem.className="stem";
+      stem.innerHTML='<span class="qn">'+(qi+1)+'.</span>'+item.q; wrap.appendChild(stem);
+      var opts=document.createElement("div"); opts.className="opts";
+      item.a.forEach(function(txt,oi){
+        var b=document.createElement("button"); b.className="opt";
+        b.innerHTML='<span class="mark">'+String.fromCharCode(65+oi)+'</span><span>'+txt+'</span>';
+        b.addEventListener("click",function(){
+          if(wrap.dataset.done)return; wrap.dataset.done="1"; answered++;
+          var right = oi===item.c;
+          if(right){b.classList.add("right");correct++;}
+          else{b.classList.add("chosen-wrong"); opts.children[item.c].classList.add("right");}
+          Sound[right?"correct":"wrong"]();
+          [].forEach.call(opts.children,function(o){o.disabled=true;});
+          why.classList.add("show");
+          if(answered===QS.length) tally();
+        });
+        opts.appendChild(b);
+      });
+      wrap.appendChild(opts);
+      var why=document.createElement("div"); why.className="why"; why.innerHTML=item.why; wrap.appendChild(why);
+      root.appendChild(wrap);
+    });
+    function tally(){
+      setTimeout(function(){ Sound.flourish(); }, 260);
+      var msg;
+      if(correct===5) msg="Five of five — you know the songs as well as Demodocus himself.";
+      else if(correct>=3) msg=correct+" of 5. A strong reading. The name is close now.";
+      else msg=correct+" of 5. The court is still waiting for your answer. Try again.";
+      scoreEl.innerHTML="&mdash;  "+msg+"  &mdash;";
+      scoreEl.classList.add("show");
+      scoreEl.scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});
+      var device=root.closest(".device");
+      Share.quizCard(device, correct, 5);
+      Progress.mark("quiz");
+      setTimeout(function(){
+        var strips = device.querySelectorAll(".share-strip");
+        var strip = strips[strips.length-1];
+        if(strip) strip.scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});
+      }, 180);
+    }
+  })();
+
+  /* ---------------- reading progress ---------------- */
+  var Progress = (function(){
+    var BOOK_KEY = "book8";
+    var STORAGE = "retold_progress";
+    function load(){ try { return JSON.parse(localStorage.getItem(STORAGE)) || {}; } catch(e){ return {}; } }
+    function save(data){ try { localStorage.setItem(STORAGE, JSON.stringify(data)); } catch(e){} }
+    var data = load();
+    if(!data[BOOK_KEY]) data[BOOK_KEY] = {};
+    data[BOOK_KEY].lastVisit = Date.now();
+    save(data);
+    var nav = document.querySelector(".chapter-nav");
+    if(nav){
+      var readObs = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){ var d = load(); if(!d[BOOK_KEY]) d[BOOK_KEY] = {}; d[BOOK_KEY].read = true; save(d); readObs.disconnect(); }
+      }, {threshold: 0.5});
+      readObs.observe(nav);
+    }
+    return {
+      mark: function(type){ var d = load(); if(!d[BOOK_KEY]) d[BOOK_KEY] = {}; d[BOOK_KEY][type] = true; save(d); }
+    };
+  })();
+
+  /* ---------------- share card system ---------------- */
+  var Share = (function(){
+    var BOOK = "Book VIII";
+    var TITLE = "The Odyssey";
+    var BRAND = "Retold";
+    var W = 600, H = 315;
+
+    function drawCard(lines, opts){
+      opts = opts || {};
+      var c = document.createElement("canvas");
+      c.width = W; c.height = H;
+      var x = c.getContext("2d");
+
+      var bg = x.createLinearGradient(0,0,0,H);
+      bg.addColorStop(0,"#060f18"); bg.addColorStop(0.5,"#0a1c2b"); bg.addColorStop(1,"#0f2a3d");
+      x.fillStyle = bg; x.fillRect(0,0,W,H);
+
+      x.strokeStyle = "rgba(201,154,75,0.25)"; x.lineWidth = 1;
+      x.strokeRect(20,20,W-40,H-40);
+
+      var corners = [[20,20,1,1],[W-20,20,-1,1],[20,H-20,1,-1],[W-20,H-20,-1,-1]];
+      corners.forEach(function(p){
+        x.strokeStyle = "#c99a4b"; x.lineWidth = 1.5;
+        x.beginPath(); x.moveTo(p[0],p[1]+16*p[2]); x.lineTo(p[0],p[1]); x.lineTo(p[0]+16*p[2],p[1]); x.stroke();
+      });
+
+      x.font = "10px ui-monospace, monospace";
+      x.fillStyle = "#c99a4b"; x.letterSpacing = "3px";
+      x.textAlign = "left";
+      x.fillText(BRAND.toUpperCase(), 40, 52);
+      x.letterSpacing = "0px";
+
+      x.font = "italic 13px 'Palatino Linotype', Georgia, serif";
+      x.fillStyle = "#6f7c83";
+      x.textAlign = "right";
+      x.fillText(TITLE + " · " + BOOK, W-40, 52);
+
+      var startY = opts.centerY || Math.floor(H*0.42);
+      lines.forEach(function(ln, i){
+        x.textAlign = "center";
+        if(ln.type === "headline"){
+          x.font = "600 " + (ln.size||26) + "px 'Palatino Linotype', Georgia, serif";
+          x.fillStyle = "#ede3cf";
+        } else if(ln.type === "stat"){
+          x.font = "italic " + (ln.size||20) + "px 'Palatino Linotype', Georgia, serif";
+          x.fillStyle = "#e6c073";
+        } else if(ln.type === "sub"){
+          x.font = (ln.size||13) + "px 'Palatino Linotype', Georgia, serif";
+          x.fillStyle = "#b6ab97";
+        } else {
+          x.font = "13px ui-monospace, monospace";
+          x.fillStyle = "#6f7c83";
+        }
+        x.fillText(ln.text, W/2, startY + i*32);
+      });
+
+      x.beginPath();
+      x.moveTo(W/2 - 40, H - 48); x.lineTo(W/2 + 40, H - 48);
+      x.strokeStyle = "rgba(201,154,75,0.3)"; x.lineWidth = 1; x.stroke();
+
+      x.font = "9px ui-monospace, monospace";
+      x.fillStyle = "#6f7c83"; x.textAlign = "center";
+      x.letterSpacing = "2px";
+      x.fillText("RETOLD · RETOLD.APP", W/2, H - 30);
+      x.letterSpacing = "0px";
+
+      return c;
+    }
+
+    function makeStrip(canvas, text, shareText){
+      var strip = document.createElement("div");
+      strip.className = "share-strip";
+
+      canvas.style.width = "200px";
+      canvas.style.height = "auto";
+      strip.appendChild(canvas);
+
+      var actions = document.createElement("div");
+      actions.className = "share-actions";
+
+      if(text){
+        var stat = document.createElement("div");
+        stat.className = "share-stat";
+        stat.textContent = text;
+        actions.appendChild(stat);
+      }
+
+      var shareRow = document.createElement("div");
+      shareRow.style.cssText = "display:flex;gap:8px;flex-wrap:wrap";
+
+      if(navigator.share){
+        var nativeBtn = document.createElement("button");
+        nativeBtn.className = "share-btn";
+        nativeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>Share';
+        nativeBtn.addEventListener("click", function(){
+          canvas.toBlob(function(blob){
+            var file = new File([blob], "retold-odyssey.png", {type:"image/png"});
+            navigator.share({text: shareText, files: [file]}).catch(function(){});
+          });
+        });
+        shareRow.appendChild(nativeBtn);
+      }
+
+      var dlBtn = document.createElement("button");
+      dlBtn.className = "share-btn";
+      dlBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Save image';
+      dlBtn.addEventListener("click", function(){
+        var a = document.createElement("a");
+        a.download = "retold-odyssey-book8.png";
+        a.href = canvas.toDataURL("image/png");
+        a.click();
+      });
+      shareRow.appendChild(dlBtn);
+
+      var copyBtn = document.createElement("button");
+      copyBtn.className = "share-btn";
+      copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy';
+      var copied = document.createElement("div");
+      copied.className = "share-copied";
+      copied.textContent = "Copied to clipboard";
+
+      copyBtn.addEventListener("click", function(){
+        canvas.toBlob(function(blob){
+          try{
+            navigator.clipboard.write([new ClipboardItem({"image/png": blob})]).then(function(){
+              copied.classList.add("show");
+              setTimeout(function(){ copied.classList.remove("show"); }, 2000);
+            });
+          }catch(e){
+            var a = document.createElement("a");
+            a.download = "retold-odyssey-book8.png";
+            a.href = canvas.toDataURL("image/png");
+            a.click();
+          }
+        });
+      });
+      shareRow.appendChild(copyBtn);
+
+      actions.appendChild(shareRow);
+      actions.appendChild(copied);
+      strip.appendChild(actions);
+
+      return strip;
+    }
+
+    function getChoicePct(key, choice){
+      var storageKey = "retold_choice_" + key;
+      var data;
+      try { data = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch(e){ data = {}; }
+      if(!data[choice]){
+        data[choice] = (data[choice]||0) + 1;
+        data._total = (data._total||0) + 1;
+        try { localStorage.setItem(storageKey, JSON.stringify(data)); } catch(e){}
+      }
+      var total = data._total || 1;
+      return Math.round((data[choice] / total) * 100);
+    }
+
+    return {
+      choiceCard: function(container, choiceKey, choiceVal, label){
+        var pct = getChoicePct(choiceKey, choiceVal);
+        var canvas = drawCard([
+          {type:"headline", text: label, size: 22},
+          {type:"stat", text: pct + "% of readers made this choice"},
+          {type:"sub", text: "What would you choose?"}
+        ], {centerY: 120});
+        var strip = makeStrip(canvas, pct + "% of readers chose the same.",
+          "I chose “" + label + "” in The Odyssey, Book VIII. " + pct + "% of readers agreed.");
+        container.appendChild(strip);
+        setTimeout(function(){ strip.classList.add("show"); }, 100);
+      },
+      puzzleCard: function(container, puzzleName, attempts){
+        var msg = attempts === 1 ? "Solved in 1 attempt" : "Solved in " + attempts + " attempts";
+        var canvas = drawCard([
+          {type:"headline", text: puzzleName, size: 22},
+          {type:"stat", text: msg},
+          {type:"sub", text: "Can you get the order right?"}
+        ], {centerY: 120});
+        var strip = makeStrip(canvas, msg + ".",
+          "I solved “" + puzzleName + "” in The Odyssey, Book VIII — " + msg.toLowerCase() + ".");
+        container.appendChild(strip);
+        setTimeout(function(){ strip.classList.add("show"); }, 100);
+      },
+      quizCard: function(container, correct, total){
+        var canvas = drawCard([
+          {type:"headline", text: correct + " of " + total, size: 36},
+          {type:"stat", text: "The Odyssey · Book VIII Quiz"},
+          {type:"sub", text: correct === total ? "A perfect reading." : "How well do you know the songs and games?"}
+        ], {centerY: 110});
+        var strip = makeStrip(canvas, null,
+          "I scored " + correct + "/" + total + " on The Odyssey Book VIII quiz.");
+        container.appendChild(strip);
+        setTimeout(function(){ strip.classList.add("show"); }, 100);
+      }
+    };
+  })();
+
+  /* ---------------- voyage strip ---------------- */
+  (function(){
+    var stops=["Ithaca","Pylos","Sparta","Calypso","Phaeacia","Troy & the Cyclops","Aeolus & Circe","The Underworld","Sirens & Scylla","The Return"];
+    var v=document.getElementById("voyage");
+    stops.forEach(function(name,i){
+      var s=document.createElement("span");
+      s.className="isle"+(i===4?" here":"")+(i<4?" done":"");
+      s.textContent=(i===4?"◉ ":"")+name;
+      v.appendChild(s);
+    });
+  })();
+
+  /* ---------------- character cards ---------------- */
+  (function(){
+    var CHARS={
+      odysseus:{name:"Odysseus",greek:"Οδυσσεύς",role:"King of Ithaca",
+        desc:"He weeps twice in this book: once for his quarrel with <b>Achilles</b>, once for the wooden horse. He covers his head with his cloak both times. When <b>Euryalus</b> insults him, he answers with the heaviest discus on the field. When <b>Alcinous</b> finally asks his name, the book ends &mdash; the answer comes in Book IX."},
+      alcinous:{name:"Alcinous",greek:"Αλκίνοος",role:"King of the Phaeacians",
+        desc:"The only one who notices <b>Odysseus</b> weeping. He stops the first song by calling for games, and stops the third by asking the question everyone has been waiting for. Perceptive, generous, and patient &mdash; he lets his guest keep his secret exactly as long as he needs to."},
+      demodocus:{name:"Demodocus",greek:"Δημόδοκος",role:"The Blind Bard",
+        desc:"The Muse took his eyes and gave him song. He sings three songs at the feast: the quarrel of <b>Odysseus</b> and Achilles, the love of Ares and Aphrodite, and the wooden horse. He has no idea that the weeping stranger in his audience is the hero of his own songs."},
+      euryalus:{name:"Euryalus",greek:"Ευρύαλος",role:"Young Phaeacian Noble",
+        desc:"Also called Broadsea. He insults <b>Odysseus</b> by calling him a merchant, not an athlete &mdash; a challenge that backfires spectacularly. After the discus throw, he apologises and gives Odysseus a silver-studded sword as a gift."},
+      athena:{name:"Athena",greek:"Αθηνά",role:"Goddess of Wisdom & War",
+        desc:"Disguised as a spectator in the crowd at the discus ground. She calls out that <b>Odysseus&rsquo;s</b> throw is the best &mdash; &ldquo;even a blind man could find your mark, stranger.&rdquo; She continues to manage his reputation from the shadows, never once revealing herself."},
+      arete:{name:"Arete",greek:"Αρήτη",role:"Queen of the Phaeacians",
+        desc:"Present at every scene of the feast, but watchful rather than active. She listens to the songs, watches the games, and says nothing while <b>Alcinous</b> and <b>Odysseus</b> circle the question of his name. She waits."}
+    };
+    var overlay=document.createElement("div");
+    overlay.className="char-overlay";
+    overlay.innerHTML='<div class="char-card"><button class="char-close" aria-label="Close">&times;</button><div class="char-role"></div><div class="char-name"></div><div class="char-greek"></div><div class="char-desc"></div></div>';
+    document.body.appendChild(overlay);
+    var card=overlay.querySelector(".char-card"),
+        elRole=card.querySelector(".char-role"),
+        elName=card.querySelector(".char-name"),
+        elGreek=card.querySelector(".char-greek"),
+        elDesc=card.querySelector(".char-desc");
+    function open(key){
+      var ch=CHARS[key]; if(!ch)return;
+      elRole.textContent=ch.role; elName.textContent=ch.name;
+      elGreek.textContent=ch.greek; elDesc.innerHTML=ch.desc;
+      overlay.classList.add("open"); Sound.tick();
+    }
+    function close(){overlay.classList.remove("open");}
+    overlay.addEventListener("click",function(e){
+      if(e.target===overlay || e.target.closest(".char-close")) close();
+    });
+    document.addEventListener("keydown",function(e){
+      if(e.key==="Escape" && overlay.classList.contains("open")) close();
+    });
+    document.addEventListener("click",function(e){
+      var span=e.target.closest(".char");
+      if(span && span.dataset.char) open(span.dataset.char);
+    });
+    document.addEventListener("keydown",function(e){
+      if(e.key==="Enter"){
+        var span=e.target.closest(".char");
+        if(span && span.dataset.char) open(span.dataset.char);
+      }
+    });
+  })();
+})();
+</script>
