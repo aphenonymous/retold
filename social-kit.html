@@ -1,0 +1,513 @@
+<title>Retold — Social Media Kit</title>
+<style>
+:root {
+  --abyss: #060f18;
+  --deep: #0a1c2b;
+  --mid: #0f2a3d;
+  --bronze: #c99a4b;
+  --bronze-bright: #e6c073;
+  --bone: #ede3cf;
+  --bone-dim: #b6ab97;
+  --ash: #6f7c83;
+  --wine: #3a1526;
+  --serif: "Palatino Linotype", "Book Antiqua", Palatino, "Iowan Old Style", Georgia, serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0b0f14;
+  color: var(--bone);
+  font-family: var(--serif);
+  padding: 3rem 2rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  color: var(--bone);
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 3rem;
+}
+
+.section {
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 1.2rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid rgba(201,154,75,.2);
+}
+
+.asset-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.asset-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+}
+
+.asset-item canvas {
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.5);
+}
+
+.asset-item .dims {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  color: var(--ash);
+}
+
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--abyss);
+  background: var(--bronze);
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.dl-btn:hover { background: var(--bronze-bright); }
+
+.banner-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+.banner-wrap canvas {
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.5);
+}
+
+.bio-section {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.bio-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(201,154,75,.12);
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.bio-platform {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: .6rem;
+}
+
+.bio-handle {
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--bone);
+  margin-bottom: .5rem;
+}
+
+.bio-text {
+  font-size: 1rem;
+  color: var(--bone-dim);
+  line-height: 1.6;
+}
+
+.bio-text .copy-btn {
+  display: inline-block;
+  margin-left: .5rem;
+  font-family: var(--mono);
+  font-size: .55rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  background: none;
+  border: 1px solid rgba(201,154,75,.3);
+  border-radius: 3px;
+  padding: 2px 6px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all .2s;
+}
+.bio-text .copy-btn:hover {
+  background: rgba(201,154,75,.1);
+}
+
+.note {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .08em;
+  color: var(--ash);
+  line-height: 1.6;
+  margin-top: .6rem;
+}
+</style>
+
+<h1>Social Media Kit</h1>
+<p class="subtitle">Retold — The Odyssey</p>
+
+<!-- Profile Picture -->
+<div class="section">
+  <div class="section-label">Profile Picture</div>
+  <div class="asset-row">
+    <div class="asset-item">
+      <canvas id="pfp" width="400" height="400"></canvas>
+      <span class="dims">400 × 400 px</span>
+      <button class="dl-btn" onclick="dl('pfp','retold-profile-picture.png')">↓ Download PNG</button>
+    </div>
+    <div class="asset-item">
+      <canvas id="pfp-round" width="400" height="400"></canvas>
+      <span class="dims">400 × 400 px · circular</span>
+      <button class="dl-btn" onclick="dl('pfp-round','retold-profile-picture-round.png')">↓ Download PNG</button>
+    </div>
+  </div>
+</div>
+
+<!-- Twitter/X Banner -->
+<div class="section">
+  <div class="section-label">Twitter / X Banner</div>
+  <div class="banner-wrap">
+    <canvas id="banner-x" width="1500" height="500" style="max-width:100%;height:auto"></canvas>
+  </div>
+  <div style="display:flex;align-items:center;gap:1rem;margin-top:.8rem">
+    <span class="dims" style="font-family:var(--mono);font-size:.6rem;color:var(--ash)">1500 × 500 px</span>
+    <button class="dl-btn" onclick="dl('banner-x','retold-twitter-banner.png')">↓ Download PNG</button>
+  </div>
+</div>
+
+<!-- TikTok / IG Banner (wider use) -->
+<div class="section">
+  <div class="section-label">Instagram / TikTok Pinned Post</div>
+  <div class="asset-row">
+    <div class="asset-item">
+      <canvas id="pin-square" width="1080" height="1080" style="max-width:360px;height:auto"></canvas>
+      <span class="dims">1080 × 1080 px</span>
+      <button class="dl-btn" onclick="dl('pin-square','retold-pinned-post-1080.png')">↓ Download PNG</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bios -->
+<div class="bio-section">
+  <div class="section-label">Bios & Descriptions</div>
+
+  <div class="bio-card">
+    <div class="bio-platform">Instagram</div>
+    <div class="bio-handle">@retold.ink</div>
+    <div class="bio-text" id="bio-ig">
+      Homer's Odyssey — retold as interactive visual literature.<br>
+      24 books. 10 years. One long road home.<br>
+      Read it. Play it. Live it.<br>
+      ↓ Start the journey
+      <button class="copy-btn" onclick="copyBio('bio-ig')">Copy</button>
+    </div>
+    <p class="note">Link in bio → retold-two.vercel.app (or retold.ink once DNS resolves)</p>
+  </div>
+
+  <div class="bio-card">
+    <div class="bio-platform">Twitter / X</div>
+    <div class="bio-handle">@retoldink</div>
+    <div class="bio-text" id="bio-x">
+      Homer's Odyssey — retold as interactive visual literature. 24 books of drag puzzles, generative music, and black-figure pottery. Not an adaptation. A reinvention.
+      <button class="copy-btn" onclick="copyBio('bio-x')">Copy</button>
+    </div>
+    <p class="note">160 character limit — this fits.</p>
+  </div>
+
+  <div class="bio-card">
+    <div class="bio-platform">TikTok</div>
+    <div class="bio-handle">@retold.ink</div>
+    <div class="bio-text" id="bio-tt">
+      The Odyssey, but you live it. Interactive visual literature — puzzles, pottery, generative Greek music. 24 books. Free.
+      <button class="copy-btn" onclick="copyBio('bio-tt')">Copy</button>
+    </div>
+    <p class="note">80 character limit for display — full bio shown on profile tap.</p>
+  </div>
+</div>
+
+<script>
+// Starfield renderer
+function drawStarfield(ctx, w, h, count) {
+  for (var i = 0; i < count; i++) {
+    var x = Math.random() * w;
+    var y = Math.random() * h;
+    var r = Math.random() * 1.2 + .2;
+    var a = Math.random() * .6 + .2;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(237,227,207,' + a + ')';
+    ctx.fill();
+  }
+}
+
+function drawGradientBg(ctx, w, h) {
+  var g = ctx.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, '#060f18');
+  g.addColorStop(.45, '#0a1c2b');
+  g.addColorStop(.75, '#0f2a3d');
+  g.addColorStop(1, '#0a1c2b');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, w, h);
+}
+
+// ── Profile Picture ──
+(function() {
+  var c = document.getElementById('pfp');
+  var ctx = c.getContext('2d');
+  var w = 400, h = 400;
+
+  drawGradientBg(ctx, w, h);
+  drawStarfield(ctx, w, h, 60);
+
+  // Bronze ring
+  ctx.beginPath();
+  ctx.arc(w/2, h/2, 140, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(201,154,75,.25)';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // Inner subtle ring
+  ctx.beginPath();
+  ctx.arc(w/2, h/2, 130, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(201,154,75,.1)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // "R" letter
+  ctx.font = '600 160px "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = '#ede3cf';
+  ctx.fillText('R', w/2 + 2, h/2 - 4);
+
+  // "RETOLD" eyebrow
+  ctx.font = '600 11px ui-monospace, "SF Mono", Menlo, monospace';
+  ctx.letterSpacing = '4px';
+  ctx.fillStyle = '#c99a4b';
+  ctx.fillText('R E T O L D', w/2, h/2 + 110);
+
+  // ── Round version ──
+  var c2 = document.getElementById('pfp-round');
+  var ctx2 = c2.getContext('2d');
+
+  ctx2.beginPath();
+  ctx2.arc(w/2, h/2, w/2, 0, Math.PI * 2);
+  ctx2.closePath();
+  ctx2.clip();
+
+  drawGradientBg(ctx2, w, h);
+  drawStarfield(ctx2, w, h, 60);
+
+  ctx2.beginPath();
+  ctx2.arc(w/2, h/2, 140, 0, Math.PI * 2);
+  ctx2.strokeStyle = 'rgba(201,154,75,.25)';
+  ctx2.lineWidth = 1.5;
+  ctx2.stroke();
+
+  ctx2.beginPath();
+  ctx2.arc(w/2, h/2, 130, 0, Math.PI * 2);
+  ctx2.strokeStyle = 'rgba(201,154,75,.1)';
+  ctx2.lineWidth = 1;
+  ctx2.stroke();
+
+  ctx2.font = '600 160px "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif';
+  ctx2.textAlign = 'center';
+  ctx2.textBaseline = 'middle';
+  ctx2.fillStyle = '#ede3cf';
+  ctx2.fillText('R', w/2 + 2, h/2 - 4);
+
+  ctx2.font = '600 11px ui-monospace, "SF Mono", Menlo, monospace';
+  ctx2.fillStyle = '#c99a4b';
+  ctx2.fillText('R E T O L D', w/2, h/2 + 110);
+})();
+
+// ── Twitter/X Banner ──
+(function() {
+  var c = document.getElementById('banner-x');
+  var ctx = c.getContext('2d');
+  var w = 1500, h = 500;
+
+  var g = ctx.createLinearGradient(0, 0, w, 0);
+  g.addColorStop(0, '#060f18');
+  g.addColorStop(.3, '#0a1c2b');
+  g.addColorStop(.5, '#0f2a3d');
+  g.addColorStop(.7, '#0a1c2b');
+  g.addColorStop(1, '#060f18');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, w, h);
+
+  // Horizon glow
+  var glow = ctx.createRadialGradient(w/2, h * .75, 0, w/2, h * .75, 500);
+  glow.addColorStop(0, 'rgba(201,154,75,.06)');
+  glow.addColorStop(1, 'rgba(201,154,75,0)');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, w, h);
+
+  drawStarfield(ctx, w, h, 200);
+
+  // Moon
+  ctx.beginPath();
+  ctx.arc(w * .82, h * .22, 18, 0, Math.PI * 2);
+  var moonG = ctx.createRadialGradient(w*.82, h*.22, 0, w*.82, h*.22, 18);
+  moonG.addColorStop(0, 'rgba(237,227,207,.35)');
+  moonG.addColorStop(1, 'rgba(237,227,207,.05)');
+  ctx.fillStyle = moonG;
+  ctx.fill();
+
+  // Horizon line
+  ctx.beginPath();
+  ctx.moveTo(0, h * .72);
+  ctx.lineTo(w, h * .72);
+  ctx.strokeStyle = 'rgba(201,154,75,.12)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // Sea shimmer below horizon
+  for (var i = 0; i < 40; i++) {
+    var sx = Math.random() * w;
+    var sy = h * .72 + Math.random() * (h * .28);
+    var sw = Math.random() * 30 + 10;
+    ctx.beginPath();
+    ctx.moveTo(sx, sy);
+    ctx.lineTo(sx + sw, sy);
+    ctx.strokeStyle = 'rgba(201,154,75,' + (Math.random() * .06 + .02) + ')';
+    ctx.lineWidth = .5;
+    ctx.stroke();
+  }
+
+  // "RETOLD" eyebrow
+  ctx.font = '600 14px ui-monospace, "SF Mono", Menlo, monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = '#c99a4b';
+  ctx.fillText('R E T O L D', w/2, h * .3);
+
+  // "THE ODYSSEY"
+  ctx.font = '400 72px "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif';
+  ctx.fillStyle = '#ede3cf';
+  ctx.fillText('THE ODYSSEY', w/2, h * .46);
+
+  // Tagline
+  ctx.font = 'italic 20px "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif';
+  ctx.fillStyle = 'rgba(201,154,75,.7)';
+  ctx.fillText('The oldest story ever told. Now yours to live.', w/2, h * .58);
+})();
+
+// ── Pinned Post (1080×1080) ──
+(function() {
+  var c = document.getElementById('pin-square');
+  var ctx = c.getContext('2d');
+  var w = 1080, h = 1080;
+
+  drawGradientBg(ctx, w, h);
+  drawStarfield(ctx, w, h, 180);
+
+  // Horizon glow
+  var glow = ctx.createRadialGradient(w/2, h * .6, 0, w/2, h * .6, 400);
+  glow.addColorStop(0, 'rgba(201,154,75,.05)');
+  glow.addColorStop(1, 'rgba(201,154,75,0)');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, w, h);
+
+  // Bronze ring
+  ctx.beginPath();
+  ctx.arc(w/2, h * .38, 180, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(201,154,75,.18)';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // "RETOLD" eyebrow
+  ctx.font = '600 16px ui-monospace, "SF Mono", Menlo, monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = '#c99a4b';
+  ctx.fillText('R E T O L D', w/2, h * .22);
+
+  // "THE ODYSSEY"
+  ctx.font = '400 86px "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif';
+  ctx.fillStyle = '#ede3cf';
+  ctx.fillText('THE', w/2, h * .35);
+  ctx.fillText('ODYSSEY', w/2, h * .44);
+
+  // Divider
+  ctx.beginPath();
+  ctx.moveTo(w/2 - 60, h * .52);
+  ctx.lineTo(w/2 + 60, h * .52);
+  ctx.strokeStyle = 'rgba(201,154,75,.35)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // Tagline
+  ctx.font = 'italic 28px "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif';
+  ctx.fillStyle = 'rgba(201,154,75,.8)';
+  ctx.fillText('You watched the film.', w/2, h * .58);
+  ctx.fillText('Now live the story.', w/2, h * .63);
+
+  // Description
+  ctx.font = '22px "Iowan Old Style", "Palatino Linotype", Georgia, serif';
+  ctx.fillStyle = 'rgba(237,227,207,.55)';
+  ctx.fillText('24 books of interactive visual literature.', w/2, h * .74);
+  ctx.fillText('Drag puzzles. Generative music.', w/2, h * .78);
+  ctx.fillText('Black-figure pottery. Ancient choices.', w/2, h * .82);
+
+  // CTA
+  ctx.font = '600 14px ui-monospace, "SF Mono", Menlo, monospace';
+  ctx.fillStyle = '#c99a4b';
+  ctx.fillText('R E T O L D . I N K', w/2, h * .92);
+})();
+
+// ── Download helper ──
+function dl(id, filename) {
+  var c = document.getElementById(id);
+  var link = document.createElement('a');
+  link.download = filename;
+  link.href = c.toDataURL('image/png');
+  link.click();
+}
+
+// ── Copy bio helper ──
+function copyBio(id) {
+  var el = document.getElementById(id);
+  var text = el.textContent.replace(/\s*Copy\s*$/, '').trim();
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied';
+    setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+  });
+}
+</script>
